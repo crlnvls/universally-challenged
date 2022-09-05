@@ -5,19 +5,43 @@ const SinglePlayerLogin = () => {
   const [inputValue, setInputValue] = useState({ username: "" });
   console.log("singlePlayer: ", inputValue);
 
-  // stops page refreshing
-  const handleSubmitForm = (e) => {
-    e.preventDefault();
-  };
+  // state variable for submitting form
+  const [submitForm, setSubmitForm] = useState(false);
+
+  // state variable for validating form ensuring it's been completed correctly
+  const [isValid, setIsValid] = useState(false);
 
   // username entered inside input
   const handleUsernameInput = (e) => {
-    setInputValue({ username: e.target.value });
+    setInputValue({ ...inputValue, username: e.target.value });
+  };
+
+  const handleSubmitForm = (e) => {
+    // stops page refreshing
+    e.preventDefault();
+
+    // helps validate form before submission
+    setSubmitForm((prev) => {
+      prev = true;
+      return prev;
+    });
+
+    if (inputValue.username) {
+      setIsValid((prev) => {
+        prev = true;
+        return prev;
+      });
+    }
   };
 
   return (
     <>
       <h1>Choose your username</h1>
+
+      {submitForm && isValid ? (
+        <p style={{ color: "green" }}>Thank you for submitting your username</p>
+      ) : null}
+
       <form onSubmit={handleSubmitForm}>
         <input
           type="text"
@@ -25,6 +49,11 @@ const SinglePlayerLogin = () => {
           value={inputValue.username}
           onChange={handleUsernameInput}
         />
+        {submitForm && !inputValue.username ? (
+          <p style={{ color: "red" }}>Please enter a username</p>
+        ) : null}
+        <br />
+
         <button>Done</button>
       </form>
     </>

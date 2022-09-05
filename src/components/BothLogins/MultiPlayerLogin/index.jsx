@@ -5,9 +5,15 @@ const MultiPlayerLogin = () => {
   const [inputValues, setInputValues] = useState({
     username: "",
     room: "",
-    playerNum: 0
+    playerNum: ""
   });
-  console.log("multiPlayer: ", inputValues);
+  // console.log("multiPlayer: ", inputValue);
+
+  // state variable for submitting form
+  const [submitForm, setSubmitForm] = useState(false);
+
+  // state variable for validating form
+  const [isValid, setIsValid] = useState(false);
 
   // username entered inside its input
   const handleUsernameInput = (e) => {
@@ -24,14 +30,31 @@ const MultiPlayerLogin = () => {
     setInputValues({ ...inputValues, playerNum: e.target.value });
   };
 
-  // stops page refreshing
   const handleSubmitForm = (e) => {
+    // stops page refreshing
     e.preventDefault();
+
+    // helps validate form before submission
+    setSubmitForm((prev) => {
+      prev = true;
+      return prev;
+    });
+
+    if (inputValues.username && inputValues.room && inputValues.playerNum) {
+      setIsValid((prev) => {
+        prev = true;
+        return prev;
+      });
+    }
   };
 
   return (
     <>
       <h1>Create your room</h1>
+
+      {submitForm && isValid ? (
+        <p style={{ color: "green" }}>Thank you for creating your room</p>
+      ) : null}
 
       <form onSubmit={handleSubmitForm}>
         <label htmlFor="username">Choose your Username</label>
@@ -43,6 +66,10 @@ const MultiPlayerLogin = () => {
           value={inputValues.username}
           onChange={handleUsernameInput}
         />
+        {submitForm && !inputValues.username ? (
+          <p style={{ color: "red" }}>Please enter a username</p>
+        ) : null}
+        <br />
 
         <label htmlFor="room">Choose your room</label>
         <input
@@ -52,18 +79,23 @@ const MultiPlayerLogin = () => {
           value={inputValues.room}
           onChange={handleRoomInput}
         />
+        {submitForm && !inputValues.room ? (
+          <p style={{ color: "red" }}>Please enter a room</p>
+        ) : null}
+        <br />
 
         <label htmlFor="numOfPlayers">How many players?</label>
-        <select
-          name="numOfPlayers"
+        <input
+          type="number"
           id="numOfPlayers"
           value={inputValues.playerNum}
           onChange={handlePlayerNumInput}
-        >
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </select>
+        />
+
+        {submitForm && !inputValues.playerNum ? (
+          <p style={{ color: "red" }}>Please enter the number of players</p>
+        ) : null}
+        <br />
 
         <button>Done</button>
       </form>
