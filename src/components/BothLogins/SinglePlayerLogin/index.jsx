@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SinglePlayerLogin = () => {
   /* state variables for: username input, form submitting, form validation */
@@ -37,20 +38,28 @@ const SinglePlayerLogin = () => {
         <p style={{ color: "green" }}>Thank you for submitting your username</p>
       ) : null}
 
-      <form onSubmit={handleSubmitForm}>
-        <input
-          type="text"
-          placeholder="Enter username"
-          value={inputValue.username}
-          onChange={handleUsernameInput}
-        />
-        {submitForm && !inputValue.username ? (
-          <p style={{ color: "red" }}>Please enter a username</p>
-        ) : null}
-        <br />
+      {submitForm && isValid ? null : (
+        <form onSubmit={handleSubmitForm}>
+          <input
+            type="text"
+            placeholder="Enter username"
+            value={inputValue.username}
+            onChange={handleUsernameInput}
+          />
+          {submitForm && !inputValue.username ? (
+            <p style={{ color: "red" }}>Please enter a username</p>
+          ) : null}
+          <br />
 
-        <button>Done</button>
-      </form>
+          {submitForm && isValid ? null : <button>Submit</button>}
+        </form>
+      )}
+
+      {submitForm && isValid ? (
+        <Link to={"/category"}>
+          <button>Next</button>
+        </Link>
+      ) : null}
     </>
   );
 };
