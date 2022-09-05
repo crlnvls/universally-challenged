@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 
 import Form from "../../components/Form";
@@ -9,6 +10,5 @@ const Subjects = () => {
       <Form />
     </>
   );
-};
 
 export default Subjects;

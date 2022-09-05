@@ -1,7 +1,14 @@
 import React from "react";
 
+
+import { MultiPlayerScores } from "../../components";
+
 const ScoreMulti = () => {
-  return <div>Score</div>;
-};
+  return (
+    <>
+      <MultiPlayerScores />
+    </>
+  );
+
 
 export default ScoreMulti;
