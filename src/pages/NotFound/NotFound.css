@@ -13,10 +13,11 @@
 .link-return {
   font-family: "Press Start 2P", cursive;
   padding: 20px;
+  background-color: #22def7bb;
   border: 2px solid rgb(0, 0, 255);
   border-radius: 30px;
-  box-shadow: 1px 1px 4px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
-  text-shadow: 1px 1px 3px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
+  box-shadow: 0 0 1px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
+  text-shadow: 1px 1px 1px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
   color: rgb(0, 0, 255);
 }
 
