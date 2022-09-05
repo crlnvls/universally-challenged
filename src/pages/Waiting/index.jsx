@@ -1,7 +1,7 @@
 import React from "react";
 
-const Subjects = () => {
+const Waiting = () => {
   return <div>Waiting</div>;
 };
 
-export default Subjects;
+export default Waiting;

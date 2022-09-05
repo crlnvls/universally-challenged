@@ -1,16 +1,17 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
+import { Route, Routes } from "react-router-dom";
+
+import { Home, NotFound } from "./pages";
 import "./App.css";
 import { CreateRoom, ScoreMulti } from "./pages";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      <CreateRoom />
-      <ScoreMulti />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />}></Route>
+      <Route path="createRoom" element={<CreateRoom />}></Route>
+      <Route path="scoreMulti" element={<ScoreMulti />}></Route>
+      <Route path="*" element={<NotFound />}></Route>
+    </Routes>
   );
 }
 
