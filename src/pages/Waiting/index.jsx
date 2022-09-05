@@ -4,5 +4,6 @@ const Waiting = () => {
 
   return <div>Score</div>;
 
+};
 
 export default Waiting;
