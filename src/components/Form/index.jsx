@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -76,6 +75,7 @@ function Form() {
           min="5"
           max="10"
           onChange={handleChangeNumber}
+          required
         />
         <br />
         <label htmlFor="difficulty">Game Difficulty</label>
@@ -83,6 +83,7 @@ function Form() {
           name="difficulty"
           id="difficulty"
           onChange={handleChangeDifficulty}
+          required
         >
           <option value="easy">Easy</option>
           <option value="medium">Medium</option>
@@ -94,6 +95,5 @@ function Form() {
     </>
   );
 }
-
 
 export default Form;
