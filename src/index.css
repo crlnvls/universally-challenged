@@ -53,13 +53,13 @@ button {
   font-size: 1.2em;
   font-weight: 700;
   font-family: inherit;
-  background-color: #f722de6a;
+  background-color: #f722de3b;
   cursor: pointer;
   transition: border-color .5s;
   text-transform: uppercase;
 }
 button:hover {
-  background-color: #22def7e4;
+  background-color: #22def7bb;
   box-shadow: 0 5px 25px rgba(255, 255, 255, 0.83);
 
 }
