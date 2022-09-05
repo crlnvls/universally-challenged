@@ -8,14 +8,14 @@ const SinglePlayerLogin = () => {
   // console.log("singlePlayer: ", inputValue.username);
 
   const handleUsernameInput = (e) => {
-    // changes user input
+    // updates user input
     setInputValue({ ...inputValue, username: e.target.value });
   };
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
 
-    // helps validate form before submission
+    // the following below helps validate form before submission
     setSubmitForm((prev) => {
       prev = true;
       return prev;

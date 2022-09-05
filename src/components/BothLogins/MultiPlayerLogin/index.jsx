@@ -1,40 +1,35 @@
 import React, { useState } from "react";
 
 const MultiPlayerLogin = () => {
-  // state variable for 'create room' inputs
+  /* state variables for: 'create room' inputs, form submitting, form validation */
   const [inputValues, setInputValues] = useState({
     username: "",
     room: "",
     playerNum: ""
   });
+  const [submitForm, setSubmitForm] = useState(false);
+  const [isValid, setIsValid] = useState(false);
   // console.log("multiPlayer: ", inputValue);
 
-  // state variable for submitting form
-  const [submitForm, setSubmitForm] = useState(false);
-
-  // state variable for validating form
-  const [isValid, setIsValid] = useState(false);
-
-  // username entered inside its input
   const handleUsernameInput = (e) => {
+    // updates username input
     setInputValues({ ...inputValues, username: e.target.value });
   };
 
-  // room entered inside its input
   const handleRoomInput = (e) => {
+    // updates room input
     setInputValues({ ...inputValues, room: e.target.value });
   };
 
-  // num of players entered inside its input
   const handlePlayerNumInput = (e) => {
+    // updates player num input
     setInputValues({ ...inputValues, playerNum: e.target.value });
   };
 
   const handleSubmitForm = (e) => {
-    // stops page refreshing
     e.preventDefault();
 
-    // helps validate form before submission
+    // the following below helps validate form before submission
     setSubmitForm((prev) => {
       prev = true;
       return prev;
