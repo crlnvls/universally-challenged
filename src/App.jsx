@@ -1,11 +1,16 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
+import { Route, Routes } from "react-router-dom";
+
+import { Home, NotFound, ScoreSingle } from "./pages";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <div className="App"></div>;
+  return (
+    <Routes>
+      <Route path="/" element={<Home />}></Route>
+      <Route path="*" element={<NotFound />}></Route>
+      <Route path="/ScoreSingle" element={<ScoreSingle/>}></Route>
+    </Routes>
+  );
 }
 
 export default App;
