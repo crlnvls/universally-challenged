@@ -4,12 +4,13 @@ import axios from "axios";
 import "./Form.css";
 
 function Form() {
-  const [subject, setSubject] = useState(27);
+  const [subject, setSubject] = useState(9);
   const [number, setNumber] = useState("5");
   const [difficulty, setDifficulty] = useState("easy");
   const [questionData, setQuestionData] = useState([]);
 
   const handleChangeSubject = (e) => {
+    e.preventDefault();
     setSubject(e.target.value);
   };
 
@@ -42,31 +43,55 @@ function Form() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <button>Animals</button>
-        <label htmlFor="animals">Animals</label>
-        <input
-          type="radio"
-          id="animals"
-          name="animals"
-          value="27"
-          onChange={handleChangeSubject}
-        ></input>
-        <label htmlFor="sports">Sports</label>
-        <input
-          type="radio"
-          id="sports"
-          name="sports"
-          value="21"
-          onChange={handleChangeSubject}
-        ></input>
-        <label htmlFor="general">General Knowledge</label>
-        <input
-          type="radio"
-          id="general"
-          name="general"
-          value="9"
-          onChange={handleChangeSubject}
-        ></input>
+        <div className="container">
+          <button
+            className="btn-category"
+            value="9"
+            onClick={handleChangeSubject}
+          >
+            General Knowledge
+          </button>
+
+          <button
+            className="btn-category"
+            value="27"
+            onClick={handleChangeSubject}
+          >
+            Animals
+          </button>
+
+          <button
+            className="btn-category"
+            value="21"
+            onClick={handleChangeSubject}
+          >
+            Sports
+          </button>
+
+          <button
+            className="btn-category"
+            value="18"
+            onClick={handleChangeSubject}
+          >
+            Computers
+          </button>
+
+          <button
+            className="btn-category"
+            value="15"
+            onClick={handleChangeSubject}
+          >
+            Video Games
+          </button>
+
+          <button
+            className="btn-category"
+            value="11"
+            onClick={handleChangeSubject}
+          >
+            Film
+          </button>
+        </div>
         <p>Number of questions</p>
         <label htmlFor="number-questions"></label>
         <input
@@ -78,7 +103,6 @@ function Form() {
           value={number}
           onChange={handleChangeNumber}
         />
-
         <p>Game Difficulty</p>
         <label htmlFor="difficulty"></label>
         <select
@@ -92,7 +116,15 @@ function Form() {
           <option value="hard">Hard </option>
         </select>
         <div>
-          <input className="submit-btn" type="submit" value="Start" />
+          <button className="submit-btn" type="submit">
+            Start
+            <img
+              className="img-submit"
+              src="/public/arrowheads.png"
+              alt=""
+              width={30}
+            />
+          </button>
         </div>
       </form>
     </>
