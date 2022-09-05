@@ -1,23 +1,18 @@
 import React, { useState } from "react";
 
 const SinglePlayerLogin = () => {
-  // state variable for single username input
+  /* state variables for: username input, form submitting, form validation */
   const [inputValue, setInputValue] = useState({ username: "" });
-  console.log("singlePlayer: ", inputValue);
-
-  // state variable for submitting form
   const [submitForm, setSubmitForm] = useState(false);
-
-  // state variable for validating form ensuring it's been completed correctly
   const [isValid, setIsValid] = useState(false);
+  // console.log("singlePlayer: ", inputValue.username);
 
-  // username entered inside input
   const handleUsernameInput = (e) => {
+    // changes user input
     setInputValue({ ...inputValue, username: e.target.value });
   };
 
   const handleSubmitForm = (e) => {
-    // stops page refreshing
     e.preventDefault();
 
     // helps validate form before submission
