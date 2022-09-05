@@ -1,9 +1,14 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import {
+  Home,
+  NotFound,
+  ScoreSingle,
+  CreateRoom,
+  ScoreMulti,
+  Subjects,
+} from "./pages";
 import { DataProvider } from "./context/dataContext";
-
-import { Home, CreateRoom, Subjects, ScoreSingle, ScoreMulti, NotFound } from "./pages";
-import "./App.css";
 
 function App() {
   return (
