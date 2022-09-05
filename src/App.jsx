@@ -4,13 +4,13 @@ import "./App.css";
 import { CreateRoom, ScoreMulti } from "./pages";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      <CreateRoom />
-      <ScoreMulti />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />}></Route>
+      <Route path="createRoom" element={<CreateRoom />}></Route>
+      <Route path="scoreMulti" element={<ScoreMulti />}></Route>
+      <Route path="*" element={<NotFound />}></Route>
+    </Routes>
   );
 }
 

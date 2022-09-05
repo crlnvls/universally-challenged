@@ -8,5 +8,4 @@ const ScoreMulti = () => {
     </>
   );
 };
-
 export default ScoreMulti;
