@@ -1,7 +1,7 @@
 import React from "react";
 
-const Score = () => {
+const ScoreSingle = () => {
   return <div>Score</div>;
 };
 
-export default Score;
+export default ScoreSingle;

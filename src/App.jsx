@@ -1,11 +1,15 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+
 import "./App.css";
+import * as Pages from "./pages";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <div className="App"></div>;
+  return (
+    <Routes>
+      <Route path="/" element={<Pages.Subjects />}></Route>
+    </Routes>
+  );
 }
 
 export default App;
