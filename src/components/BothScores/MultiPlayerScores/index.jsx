@@ -6,7 +6,7 @@ const MultiPlayerScores = () => {
       <h1>Winner</h1>
 
       <h3>shaquille.oatmeal.</h3>
-      <i class="fa-solid fa-trophy"></i>
+      <i className="fa-solid fa-trophy"></i>
 
       <ul>
         <li>
