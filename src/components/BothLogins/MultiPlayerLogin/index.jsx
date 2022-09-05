@@ -19,7 +19,7 @@ const MultiPlayerLogin = () => {
           <option value="3">3</option>
         </select>
 
-        <input type="button" value="Done" />
+        <button>Done</button>
       </form>
     </>
   );

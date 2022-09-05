@@ -6,7 +6,7 @@ const SinglePlayerLogin = () => {
       <h1>Choose your username</h1>
       <form>
         <input type="text" placeholder="Enter username" />
-        <input type="button" value="Done" />
+        <button>Done</button>
       </form>
     </>
   );
