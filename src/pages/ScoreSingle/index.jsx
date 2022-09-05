@@ -1,6 +1,7 @@
 import React from "react";
 
 const ScoreSingle = () => {
+
   return <>
     <h1>Your Score:</h1>
    
@@ -18,6 +19,7 @@ const ScoreSingle = () => {
     <button>Return Home</button>
 
     </>;
+
 };
 
 
