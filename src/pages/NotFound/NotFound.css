@@ -18,15 +18,41 @@
   box-shadow: 1px 0 2px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
   text-shadow: 1px 0 2px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
   color: rgb(0, 0, 255);
-  transition: transform 0.2s ease-in-out;
+}
+
+@keyframes wiggle {
+  0%,
+  7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-5deg);
+  }
+  20% {
+    transform: rotateZ(5deg);
+  }
+  25% {
+    transform: rotateZ(-5deg);
+  }
+  30% {
+    transform: rotateZ(4deg);
+  }
+  35% {
+    transform: rotateZ(-3deg);
+  }
+  40%,
+  100% {
+    transform: rotateZ(0);
+  }
 }
 
 .link-return:hover {
-  color: rgb(0, 0, 255);
+  background-color: rgb(226, 223, 223);
 }
 
 .zoom {
   transition: transform 0.2s;
+  animation: wiggle 3s linear infinite;
 }
 
 .zoom:hover {
