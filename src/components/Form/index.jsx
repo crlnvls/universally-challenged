@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import "./Form.css";
+
 function Form() {
   const [subject, setSubject] = useState(27);
   const [number, setNumber] = useState("27");
