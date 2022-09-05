@@ -7,7 +7,7 @@ import * as Pages from "./pages";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Pages.Subjects />}></Route>
+      <Route path="/category" element={<Pages.Subjects />}></Route>
     </Routes>
   );
 }
