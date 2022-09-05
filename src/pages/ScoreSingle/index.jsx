@@ -1,6 +1,6 @@
 import React from "react";
 
-const ScoreSingle = () => {
+
   return <>
     <h1>Your Score:</h1>
     // Pseudo-code to diplay results from quiz round
@@ -14,6 +14,7 @@ const ScoreSingle = () => {
     <button>Return Home</button>
 
     </>;
+
 };
 
 export default ScoreSingle;
