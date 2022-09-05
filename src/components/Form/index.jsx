@@ -5,7 +5,7 @@ import "./Form.css";
 
 function Form() {
   const [subject, setSubject] = useState(27);
-  const [number, setNumber] = useState("27");
+  const [number, setNumber] = useState("5");
   const [difficulty, setDifficulty] = useState("easy");
   const [questionData, setQuestionData] = useState([]);
 
@@ -42,6 +42,7 @@ function Form() {
   return (
     <>
       <form onSubmit={handleSubmit}>
+        <button>Animals</button>
         <label htmlFor="animals">Animals</label>
         <input
           type="radio"
@@ -50,7 +51,6 @@ function Form() {
           value="27"
           onChange={handleChangeSubject}
         ></input>
-        <br />
         <label htmlFor="sports">Sports</label>
         <input
           type="radio"
@@ -59,7 +59,6 @@ function Form() {
           value="21"
           onChange={handleChangeSubject}
         ></input>
-        <br />
         <label htmlFor="general">General Knowledge</label>
         <input
           type="radio"
@@ -68,19 +67,20 @@ function Form() {
           value="9"
           onChange={handleChangeSubject}
         ></input>
-        <br />
-        <label htmlFor="number">Number of questions</label>
+        <p>Number of questions</p>
+        <label htmlFor="number-questions"></label>
         <input
           type="number"
-          id="number"
-          name="number"
-          min="5"
-          max="10"
+          id="number-questions"
+          name="number-questions"
+          min={5}
+          max={10}
+          value={number}
           onChange={handleChangeNumber}
-          required
         />
-        <br />
-        <label htmlFor="difficulty">Game Difficulty</label>
+
+        <p>Game Difficulty</p>
+        <label htmlFor="difficulty"></label>
         <select
           name="difficulty"
           id="difficulty"
@@ -91,8 +91,9 @@ function Form() {
           <option value="medium">Medium</option>
           <option value="hard">Hard </option>
         </select>
-        <br />
-        <input type="submit" value="Start" />
+        <div>
+          <input className="submit-btn" type="submit" value="Start" />
+        </div>
       </form>
     </>
   );
