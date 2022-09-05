@@ -1,10 +1,11 @@
 import React from "react";
-import { SinglePlayerLogin } from "../../components";
+import { MultiPlayerLogin, SinglePlayerLogin } from "../../components";
 
 const CreateRoom = () => {
   return (
     <>
       <SinglePlayerLogin />
+      <MultiPlayerLogin />
     </>
   );
 };
