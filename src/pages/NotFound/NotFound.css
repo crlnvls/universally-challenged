@@ -1,0 +1,61 @@
+.not-found {
+  font-family: "Press Start 2P", cursive;
+  margin-bottom: 60px;
+  font-size: 40px;
+}
+
+@media screen and (max-width: 600px) {
+  .not-found {
+    font-size: 25px;
+  }
+}
+
+.link-return {
+  font-family: "Press Start 2P", cursive;
+  padding: 20px;
+  background-color: #22def7bb;
+  border: 2px solid rgb(0, 0, 255);
+  border-radius: 30px;
+  box-shadow: 0 0 1px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
+  text-shadow: 1px 1px 1px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
+  color: rgb(0, 0, 255);
+}
+
+@keyframes wiggle {
+  0%,
+  7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-5deg);
+  }
+  20% {
+    transform: rotateZ(5deg);
+  }
+  25% {
+    transform: rotateZ(-5deg);
+  }
+  30% {
+    transform: rotateZ(4deg);
+  }
+  35% {
+    transform: rotateZ(-3deg);
+  }
+  40%,
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+.link-return:hover {
+  background-color: rgb(226, 223, 223);
+}
+
+.zoom {
+  transition: transform 0.2s;
+  animation: wiggle 3s linear infinite;
+}
+
+.zoom:hover {
+  transform: scale(1.2);
+}
