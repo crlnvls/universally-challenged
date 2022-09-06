@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import "./MultiPlayerLogin.css";
+
 const MultiPlayerLogin = () => {
   /* state variables for: 'create room' inputs, form submitting, form validation */
   const [inputValues, setInputValues] = useState({
@@ -53,16 +55,15 @@ const MultiPlayerLogin = () => {
 
   return (
     <>
-      <h1>Create your room</h1>
+      <h1 id="multiPlayerLoginTitle">Create your room</h1>
 
       {submitForm && isValid ? (
         <p style={{ color: "green" }}>Thank you for creating your room</p>
       ) : null}
 
       {submitForm && isValid ? null : (
-        <form onSubmit={handleSubmitForm}>
+        <form onSubmit={handleSubmitForm} id="multiPlayerFormContainer">
           <label htmlFor="username">Choose your Username</label>
-
           <input
             autoComplete="off"
             type="text"
@@ -99,7 +100,6 @@ const MultiPlayerLogin = () => {
             value={inputValues.playerNum}
             onChange={handlePlayerNumInput}
           />
-
           {(submitForm && !inputValues.playerNum) ||
           (submitForm && inputValues.playerNum.includes(".")) ||
           (submitForm && parseInt(inputValues.playerNum) < 2) ||
