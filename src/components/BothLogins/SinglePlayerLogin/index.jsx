@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import DataContext from "../../../context/dataContext";
+import { NavLink } from "react-router-dom";
 
 const SinglePlayerLogin = () => {
   const { handleUsernameInput, inputValue } = useContext(DataContext);
@@ -44,7 +45,7 @@ const SinglePlayerLogin = () => {
       {submitForm && isValid ? (
         <p style={{ color: "green" }}>Thank you for submitting your username</p>
       ) : null}
-
+      <NavLink to="/score-single">Score</NavLink>
       <form onSubmit={handleSubmitForm}>
         <input
           type="text"

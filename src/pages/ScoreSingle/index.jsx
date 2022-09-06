@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useNavigate } from "react";
 import DataContext from "../../context/dataContext";
 
 const ScoreSingle = () => {
@@ -7,7 +7,7 @@ const ScoreSingle = () => {
 
   return (
     <>
-      <h1>{inputValue} Score:</h1>
+      <h1>{inputValue["username"]} Score:</h1>
 
       {/* Pseudo-code to display results from quiz round */}
 

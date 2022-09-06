@@ -7,17 +7,10 @@ const Home = () => {
   const [player, setPlayer] = useState("");
 
   const handlePlayer = (e) => {
-    if (e.target.value == first) {
-      setPlayer();
-    }
-    console.log(player);
+    e.preventDefault();
+    setPlayer(e.target.value);
+    console.log(e.target.value);
   };
-
-  const handleClick = (e) => {};
-
-  useEffect(() => {
-    handlePlayer(e);
-  }, [player]);
 
   return (
     <>
@@ -34,11 +27,11 @@ const Home = () => {
       <h2 className="neonText">Start Quiz</h2>
 
       <div className="homeButtons">
-        <button className="btn" value="first" onClick={handlePlayer}>
+        <button className="btn" value="single" onClick={handlePlayer}>
           Single Player
         </button>
 
-        <button className="btn" value="second" onClick={handlePlayer}>
+        <button className="btn" value="multi" onClick={handlePlayer}>
           Multi Player
         </button>
       </div>
