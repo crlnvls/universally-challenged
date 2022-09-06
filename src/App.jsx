@@ -13,6 +13,7 @@ function App() {
         <Route path="createMultiRoom" element={<Pages.CreateMultiRoom />}></Route>
         <Route path="/category" element={<Pages.Subjects />}></Route>
         <Route path="/waiting" element={<Pages.Waiting />}></Route>
+        <Route path="/quiz" element={<Pages.Quiz />}></Route>
         <Route path="/score-single" element={<Pages.ScoreSingle />}></Route>
         <Route path="scoreMulti" element={<Pages.ScoreMulti />}></Route>
         <Route path="*" element={<Pages.NotFound />}></Route>
