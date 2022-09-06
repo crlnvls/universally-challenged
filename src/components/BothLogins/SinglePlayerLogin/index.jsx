@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import "./SinglePlayerLogin.css";
+
 const SinglePlayerLogin = () => {
   /* state variables for: username input, form submitting, form validation */
   const [inputValue, setInputValue] = useState({ username: "" });
@@ -32,33 +34,39 @@ const SinglePlayerLogin = () => {
 
   return (
     <>
-      <h1>Choose your username</h1>
-
-      {submitForm && isValid ? (
-        <p style={{ color: "green" }}>Thank you for submitting your username</p>
-      ) : null}
+      {submitForm && isValid ? null : (
+        <h1 id="singlePlayerTitle">Choose your username</h1>
+      )}
 
       {submitForm && isValid ? null : (
-        <form onSubmit={handleSubmitForm}>
+        <form onSubmit={handleSubmitForm} id="singlePlayerFormBg">
           <input
-            autocomplete="off"
+            autoComplete="off"
             type="text"
             placeholder="Enter username"
             value={inputValue.username}
             onChange={handleUsernameInput}
           />
           {submitForm && !inputValue.username ? (
-            <p style={{ color: "red" }}>Please enter a username</p>
+            <p>Please enter a username</p>
           ) : null}
           <br />
 
-          {submitForm && isValid ? null : <button>Submit</button>}
+          {submitForm && isValid ? null : (
+            <button>
+              Submit<i className="fa-solid fa-paper-plane"></i>
+            </button>
+          )}
         </form>
       )}
 
       {submitForm && isValid ? (
+        <p id="thankYouMessage">Thank you for submitting your username</p>
+      ) : null}
+
+      {submitForm && isValid ? (
         <Link to={"/category"}>
-          <button>Next</button>
+          <button id="nextBtn">Next</button>
         </Link>
       ) : null}
     </>
