@@ -3,55 +3,51 @@ import { Link } from "react-router-dom";
 
 const MultiPlayerScores = () => {
   /* state variables for: username & score */
-  const [currentUserResults, setCurrentUserResults] = useState({});
-  const [allPlayers, setAllPlayers] = useState([]);
+  const [allPlayers, setAllPlayers] = useState({});
 
-  getCurrentUserUser();
-  getAllUsers();
-
-  function getCurrentUserUser() {
+  function getAllPlayers() {
     useEffect(() => {
-      fetch(`https://universallychallenged.herokuapp.com/users/admin`) // needs to accommodate for correct current player & quiz subject
-        .then((res) => res.json())
-        .then((data) => {
-          setCurrentUserResults((prev) => {
-            return {
-              ...prev,
-              data: data
-            };
-          });
-        })
-        .catch((err) => console.log("Something went wrong: ", err));
+      async function fetchUsers() {
+        const response = await fetch(
+          "https://universallychallenged.herokuapp.com/users"
+        );
+        const json = await response.json();
+        setAllPlayers((prev) => {
+          prev = json;
+          return prev;
+        });
+      }
+      fetchUsers();
     }, []);
   }
+  getAllPlayers();
 
-  function getAllUsers() {
-    useEffect(() => {
-      fetch("https://universallychallenged.herokuapp.com/users")
-        .then((res) => res.json())
-        .then((data) => {
-          setAllPlayers(data);
-        })
-        .catch((err) => console.log("Something went wrong: ", err));
-    }, []);
+  function findWinner() {
+    let winnerObj = allPlayers.users.reduce(function (prev, current) {
+      if (+current.id > +prev.id) {
+        return current;
+      } else {
+        return prev;
+      }
+    });
+
+    return winnerObj;
   }
 
   return (
     <>
       <h1>Winner</h1>
 
-      <h3>{currentUserResults.data.user.username}</h3>
+      <h3>{findWinner().username}</h3>
       <i className="fa-solid fa-trophy"></i>
 
+      {/* works when cut out, browser refreshed, pasted back in, vs code saved 😩*/}
       <ul>
-        {allPlayers.users.map((singleUserObj) => {
-          {
-            /* needs to accommodate correct 5 chosen users & quiz subject score */
-          }
+        {allPlayers.users.map((oneUserObj) => {
           return (
-            <li>
-              {singleUserObj.username}{" "}
-              <span>{singleUserObj.scores.animals}/5</span>
+            <li key={oneUserObj._id}>
+              <span>{oneUserObj.username}</span>{" "}
+              <span>{oneUserObj.scores.animals}/5</span>
             </li>
           );
         })}
