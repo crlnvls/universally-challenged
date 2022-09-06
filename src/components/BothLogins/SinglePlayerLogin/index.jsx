@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import DataContext from "../../../context/dataContext";
+import { NavLink } from "react-router-dom";
 
 const SinglePlayerLogin = () => {
+  const { handleUsernameInput, inputValue } = useContext(DataContext);
+
   // state variable for single username input
-  const [inputValue, setInputValue] = useState({ username: "" });
+  // const [inputValue, setInputValue] = useState({ username: "" });
   console.log("singlePlayer: ", inputValue);
 
   // state variable for submitting form
@@ -12,9 +16,9 @@ const SinglePlayerLogin = () => {
   const [isValid, setIsValid] = useState(false);
 
   // username entered inside input
-  const handleUsernameInput = (e) => {
-    setInputValue({ ...inputValue, username: e.target.value });
-  };
+  // const handleUsernameInput = (e) => {
+  //   setInputValue({ ...inputValue, username: e.target.value });
+  // };
 
   const handleSubmitForm = (e) => {
     // stops page refreshing
@@ -41,7 +45,7 @@ const SinglePlayerLogin = () => {
       {submitForm && isValid ? (
         <p style={{ color: "green" }}>Thank you for submitting your username</p>
       ) : null}
-
+      <NavLink to="/score-single">Score</NavLink>
       <form onSubmit={handleSubmitForm}>
         <input
           type="text"
