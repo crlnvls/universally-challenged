@@ -58,7 +58,7 @@ const MultiPlayerLogin = () => {
       <h1 id="multiPlayerLoginTitle">Create your room</h1>
 
       {submitForm && isValid ? (
-        <p style={{ color: "green" }}>Thank you for creating your room</p>
+        <p>Hello {inputValues.username}</p>
       ) : null}
 
       {submitForm && isValid ? null : (
