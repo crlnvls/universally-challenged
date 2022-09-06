@@ -9,11 +9,11 @@ function App() {
     <DataProvider>
       <Routes>
         <Route path="/" element={<Pages.Home />}></Route>
-        <Route path="create-room" element={<Pages.CreateRoom />}></Route>
+        <Route path="createRoom" element={<Pages.CreateRoom />}></Route>
         <Route path="/category" element={<Pages.Subjects />}></Route>
         <Route path="/waiting" element={<Pages.Waiting />}></Route>
         <Route path="/score-single" element={<Pages.ScoreSingle />}></Route>
-        <Route path="score-multi" element={<Pages.ScoreMulti />}></Route>
+        <Route path="scoreMulti" element={<Pages.ScoreMulti />}></Route>
         <Route path="*" element={<Pages.NotFound />}></Route>
       </Routes>
     </DataProvider>
