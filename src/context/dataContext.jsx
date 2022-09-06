@@ -4,28 +4,61 @@ import axios from "axios";
 const DataContext = createContext({});
 
 export const DataProvider = ({ children }) => {
-  const [questions, setQuestions] = useState([]);
-  const [subject, setSubject] = useState([]);
+  const [subject, setSubject] = useState(9);
+  const [number, setNumber] = useState("5");
+  const [difficulty, setDifficulty] = useState("easy");
+  const [questionData, setQuestionData] = useState([]);
+  const [inputValue, setInputValue] = useState({ username: "" });
 
-  //Fetching quiz data:
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const handleChangeSubject = (e) => {
+    e.preventDefault();
+    setSubject(e.target.value);
+  };
 
-  // replace with carolines code
-  async function fetchData() {
-    try {
-      const response = await axios.get(
-        `https://opentdb.com/api.php?amount=${amount_of_questions}&difficulty=${question_difficulty}&category=${question_category}`
-      );
-      const data = await response.data;
-      setQuestions(data.results);
-      return data.results;
-    } catch (err) {
-      console.log(err);
+  const handleChangeNumber = (e) => {
+    setNumber(e.target.value);
+  };
+
+  const handleChangeDifficulty = (e) => {
+    setDifficulty(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    e.target.reset();
+
+    async function getQuiz(subject, number, difficulty) {
+      try {
+        const result = await axios.get(
+          `https://opentdb.com/api.php?amount=${number}&category=${subject}&difficulty=${difficulty}&type=multiple`
+        );
+        console.log(result.data);
+        setQuestionData(result.data);
+      } catch (err) {
+        console.log(err);
+      }
     }
-  }
-  return <DataContext.Provider value={{}}>{children}</DataContext.Provider>;
+    getQuiz(subject, number, difficulty);
+  };
+
+  const handleUsernameInput = (e) => {
+    setInputValue({ inputValue, username: e.target.value });
+  };
+
+  return (
+    <DataContext.Provider
+      value={{
+        handleChangeSubject,
+        handleChangeNumber,
+        handleChangeDifficulty,
+        handleSubmit,
+        handleUsernameInput,
+        inputValue,
+      }}
+    >
+      {children}
+    </DataContext.Provider>
+  );
 };
 
 export default DataContext;
