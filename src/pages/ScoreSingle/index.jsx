@@ -8,7 +8,7 @@ const ScoreSingle = () => {
 
   const navigate = useNavigate();
   const navigateToSinglePlayer = () => {
-    navigate('/create-room')
+    navigate('/createSingleRoom')
   }
   const navigateHome = () => {
     navigate('/')
@@ -21,10 +21,10 @@ const ScoreSingle = () => {
       <h2>Previous Scores:</h2>
   
     {/* onClick navigate back to quiz start */}
-    <button class="btn" onClick={navigateToSinglePlayer}>Play Again</button>
+    <button className="btn" onClick={navigateToSinglePlayer}>Play Again</button>
 
     {/* onClick navigate to home page */}
-    <button class="btn" onClick={navigateHome}>Return Home</button>
+    <button className="btn" onClick={navigateHome}>Return Home</button>
     </>
   );
 };
