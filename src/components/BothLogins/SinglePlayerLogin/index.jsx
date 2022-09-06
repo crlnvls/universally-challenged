@@ -11,8 +11,8 @@ const SinglePlayerLogin = () => {
   // const [inputValue, setInputValue] = useState({ username: "" });
   const [submitForm, setSubmitForm] = useState(false);
   const [isValid, setIsValid] = useState(false);
- //console.log("singlePlayer: ", inputValue);
-//console.log("singlePlayer: ", inputValue.username);
+  //console.log("singlePlayer: ", inputValue);
+  //console.log("singlePlayer: ", inputValue.username);
 
   // const handleUsernameInput = (e) => {
   // // updates user input
@@ -43,26 +43,28 @@ const SinglePlayerLogin = () => {
       )}
 
       {submitForm && isValid ? null : (
-        <NavLink to="/score-single">Score</NavLink>
-        <form onSubmit={handleSubmitForm} id="singlePlayerFormContainer">
-          <input
-            autoComplete="off"
-            type="text"
-            placeholder="Enter username"
-            value={inputValue.username}
-            onChange={handleUsernameInput}
-          />
-          {submitForm && !inputValue.username ? (
-            <p>Please enter a username</p>
-          ) : null}
-          <br />
+        <>
+          <NavLink to="/score-single">Score</NavLink>
+          <form onSubmit={handleSubmitForm} id="singlePlayerFormContainer">
+            <input
+              autoComplete="off"
+              type="text"
+              placeholder="Enter username"
+              value={inputValue.username}
+              onChange={handleUsernameInput}
+            />
+            {submitForm && !inputValue.username ? (
+              <p>Please enter a username</p>
+            ) : null}
+            <br />
 
-          {submitForm && isValid ? null : (
-            <button>
-              Submit<i className="fa-solid fa-paper-plane"></i>
-            </button>
-          )}
-        </form>
+            {submitForm && isValid ? null : (
+              <button>
+                Submit<i className="fa-solid fa-paper-plane"></i>
+              </button>
+            )}
+          </form>
+        </>
       )}
 
       {submitForm && isValid ? (
@@ -74,7 +76,6 @@ const SinglePlayerLogin = () => {
           <Link to={"/category"}>Next</Link>
         </button>
       ) : null}
-
     </>
   );
 };
