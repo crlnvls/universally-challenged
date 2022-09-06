@@ -1,10 +1,21 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import DataContext from "../../context/dataContext";
+import { useNavigate } from 'react-router-dom';
+
 import "./style.css";
 
 const Home = () => {
   // store if btn is single or multi
+
   const { handlePlayer } = useContext(DataContext);
+  
+  const navigate = useNavigate();
+  const navigateToSinglePlayer = () => {
+    navigate('/create-room')
+  }
+  const navigateToMultiPlayer = () => {
+    navigate('/create-room')
+  }
 
   return (
     <>
@@ -21,6 +32,10 @@ const Home = () => {
       <h2 className="neonText">Start Quiz</h2>
 
       <div className="homeButtons">
+
+      <button class="btn" onClick={navigateToSinglePlayer}>Single Player</button>
+      <button class="btn" onClick={navigateToMultiPlayer}>Multi Player</button>
+{/*
         <button className="btn" value="single" onClick={handlePlayer}>
           Single Player
         </button>
@@ -28,6 +43,7 @@ const Home = () => {
         <button className="btn" value="multi" onClick={handlePlayer}>
           Multi Player
         </button>
+*/}
       </div>
     </>
   );

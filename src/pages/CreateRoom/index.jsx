@@ -8,6 +8,7 @@ const CreateRoom = () => {
   // if playerMode == "multi" {render MultiPlayerLogin}
   return (
     <>
+      {/* conditionally show based on btn clicked */}
       <SinglePlayerLogin />
       <MultiPlayerLogin />
     </>
