@@ -64,6 +64,7 @@ const MultiPlayerLogin = () => {
           <label htmlFor="username">Choose your Username</label>
 
           <input
+            autocomplete="off"
             type="text"
             placeholder="Enter username"
             id="username"
@@ -77,6 +78,7 @@ const MultiPlayerLogin = () => {
 
           <label htmlFor="room">Choose your room</label>
           <input
+            autocomplete="off"
             type="text"
             placeholder="Enter room"
             id="room"
@@ -90,6 +92,7 @@ const MultiPlayerLogin = () => {
 
           <label htmlFor="numOfPlayers">How many players (2-5)?</label>
           <input
+            autocomplete="off"
             type="number"
             placeholder="Enter number of players"
             id="numOfPlayers"
