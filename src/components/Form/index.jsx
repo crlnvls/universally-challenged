@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import DataContext from "../../context/dataContext";
 
 import "./Form.css";
@@ -9,6 +9,7 @@ function Form() {
     handleChangeDifficulty,
     handleChangeSubject,
     handleSubmit,
+    number,
   } = useContext(DataContext);
 
   return (

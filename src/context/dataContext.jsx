@@ -52,6 +52,7 @@ export const DataProvider = ({ children }) => {
         handleChangeNumber,
         handleChangeDifficulty,
         handleSubmit,
+        number,
         handleUsernameInput,
         inputValue,
       }}
