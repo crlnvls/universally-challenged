@@ -1,15 +1,22 @@
 import React, { useState, useEffect, useContext } from "react";
-import DataContext from "../../context/dataContext";
+import { useNavigate } from "react-router-dom"; /* vivian added this so this page links to the category page 🙂 */
 
+import DataContext from "../../context/dataContext";
 import "./Form.css";
 
 function Form() {
+  /* vivian added this so this page links to the category page 🙂 */
+  const navigate = useNavigate();
+  function moveToNextPage() {
+    navigate("/quiz");
+  }
+
   const {
     handleChangeNumber,
     handleChangeDifficulty,
     handleChangeSubject,
     handleSubmit,
-    number,
+    number
   } = useContext(DataContext);
 
   return (
@@ -88,7 +95,8 @@ function Form() {
           <option value="hard">Hard </option>
         </select>
         <div>
-          <button className="submit-btn" type="submit">
+          {/* vivian added the 'onClick={moveToNextPage}' so this page links to the category page 🙂 */}
+          <button className="submit-btn" type="submit" onClick={moveToNextPage}>
             Start
             <img
               className="img-submit"
