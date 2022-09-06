@@ -1,39 +1,30 @@
 .neonText {
-  animation: flicker 2s infinite alternate;
-  color: #fff;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-/* Flickering animation */
-@keyframes flicker {
-  0%,
-  18%,
-  22%,
-  25%,
-  53%,
-  57%,
-  100% {
-    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff,
-      0 0 40px rgb(0, 0, 255), 0 0 80px rgb(0, 0, 255), 0 0 90px rgb(0, 0, 255),
-      0 0 100px rgb(0, 0, 255), 0 0 150px rgb(0, 0, 255);
+    animation: flicker 3s infinite alternate;
+    color: #fff;
   }
+  
+  
+  /* Flickering animation */
+  @keyframes flicker {
+      
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        text-shadow:
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px rgb(0, 208, 255),
+        0 0 80px rgb(0, 208, 255),
+        0 0 90px rgb(0, 208, 255),
+        0 0 100px rgb(0, 208, 255),
+        0 0 150px rgb(0, 208, 255);
 
-  20%,
-  24%,
-  55% {
-    text-shadow: none;
+    }
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }    
   }
-}
-
 /* Additional styling */
-
-h2 {
-  font-size: 2.5rem;
-}
-
 .container {
   margin-top: 20vh;
 }
@@ -46,9 +37,11 @@ body {
 
 h1,
 h2 {
+  font-size: 2.5rem;
   text-align: center;
   text-transform: uppercase;
   font-weight: 400;
+  object-fit: scale-down;
 }
 
 .homeButtons {
@@ -57,9 +50,20 @@ h2 {
   justify-content: space-evenly;
   padding: 20px;
   height: 200px;
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 1.2rem;
   font-family: "Press Start 2P", cursive;
   /* font-family: "Audiowide", cursive; */
   /* font-weight: 700; */
   /* width: 500px ; */
+}
+
+
+
+img {
+  object-fit:scale-down;
+  width: 100%;
+  height: 250px;
 }

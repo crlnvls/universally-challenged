@@ -1,19 +1,21 @@
-import axios from "axios";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import DataContext from "../../../context/dataContext";
+import { NavLink, Link } from "react-router-dom";
 
 import "./SinglePlayerLogin.css";
 
 const SinglePlayerLogin = () => {
+  const { handleUsernameInput, inputValue } = useContext(DataContext);
+
   /* state variables for: username input, form submitting, form validation */
-  const [inputValue, setInputValue] = useState({ username: "" });
+  // const [inputValue, setInputValue] = useState({ username: "" });
   const [submitForm, setSubmitForm] = useState(false);
   const [isValid, setIsValid] = useState(false);
 
-  const handleUsernameInput = (e) => {
-    // updates user input
-    setInputValue({ ...inputValue, username: e.target.value });
-  };
+  // const handleUsernameInput = (e) => {
+  // // updates user input
+  //   setInputValue({ ...inputValue, username: e.target.value });
+  // };
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -64,27 +66,30 @@ const SinglePlayerLogin = () => {
       )}
 
       {submitForm && isValid ? null : (
-        <form onSubmit={handleSubmitForm} id="singlePlayerFormContainer">
-          <input
-            name="username"
-            id="username"
-            autoComplete="off"
-            type="text"
-            placeholder="Enter username"
-            value={inputValue.username}
-            onChange={handleUsernameInput}
-          />
-          {submitForm && !inputValue.username ? (
-            <p>Please enter a username</p>
-          ) : null}
-          <br />
+        <>
+          <NavLink to="/score-single">Score</NavLink>
+          <form onSubmit={handleSubmitForm} id="singlePlayerFormContainer">
+            <input
+              name="username"
+              id="username"
+              autoComplete="off"
+              type="text"
+              placeholder="Enter username"
+              value={inputValue.username}
+              onChange={handleUsernameInput}
+            />
+            {submitForm && !inputValue.username ? (
+              <p>Please enter a username</p>
+            ) : null}
+            <br />
 
-          {submitForm && isValid ? null : (
-            <button>
-              Submit<i className="fa-solid fa-paper-plane"></i>
-            </button>
-          )}
-        </form>
+            {submitForm && isValid ? null : (
+              <button>
+                Submit<i className="fa-solid fa-paper-plane"></i>
+              </button>
+            )}
+          </form>
+        </>
       )}
 
       {submitForm && isValid ? (
