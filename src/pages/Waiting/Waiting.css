@@ -6,7 +6,7 @@
   text-shadow: 1px 0 2px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .header-waiting {
     font-size: 25px;
   }
@@ -24,4 +24,4 @@
   overflow: hidden;
   height: 50vh;
   width: 50%;
-}
+} */

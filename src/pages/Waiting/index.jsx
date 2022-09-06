@@ -6,7 +6,7 @@ const Waiting = () => {
     <>
       <div className="waiting-body">
         <h1 className="header-waiting">Waiting Room </h1>
-        <div className="container-pacman">
+        {/* <div className="container-pacman">
           <div className="path"></div>
           <div className="path"></div>
           <div className="path"></div>
@@ -15,7 +15,7 @@ const Waiting = () => {
           <div className="path"></div>
           <div className="path"></div>
           <div className="path"></div>
-        </div>
+        </div> */}
       </div>
     </>
   );
