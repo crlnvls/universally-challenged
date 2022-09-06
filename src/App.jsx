@@ -9,7 +9,8 @@ function App() {
     <DataProvider>
       <Routes>
         <Route path="/" element={<Pages.Home />}></Route>
-        <Route path="createRoom" element={<Pages.CreateRoom />}></Route>
+        <Route path="createSingleRoom" element={<Pages.CreateSingleRoom />}></Route>
+        <Route path="createMultiRoom" element={<Pages.CreateMultiRoom />}></Route>
         <Route path="/category" element={<Pages.Subjects />}></Route>
         <Route path="/waiting" element={<Pages.Waiting />}></Route>
         <Route path="/score-single" element={<Pages.ScoreSingle />}></Route>
