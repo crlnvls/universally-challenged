@@ -1,5 +1,5 @@
-import React, { useContext, useNavigate } from "react";
-import { useNavigate } from 'react-router-dom';
+import React, { useContext } from "react";
+import { useNavigate } from 'react-router-dom'
 import DataContext from "../../context/dataContext";
 
 const ScoreSingle = () => {
