@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -8,7 +9,6 @@ const SinglePlayerLogin = () => {
   const [inputValue, setInputValue] = useState({ username: "" });
   const [submitForm, setSubmitForm] = useState(false);
   const [isValid, setIsValid] = useState(false);
-  // console.log("singlePlayer: ", inputValue.username);
 
   const handleUsernameInput = (e) => {
     // updates user input
@@ -30,7 +30,44 @@ const SinglePlayerLogin = () => {
         return prev;
       });
     }
+
+    getAllUsers();
+    getOneUser();
   };
+
+  function getAllUsers() {
+    fetch("https://universallychallenged.herokuapp.com/users")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("All Users: ", data);
+      })
+      .catch((err) => console.log("Something went wrong: ", err));
+  }
+
+  function getOneUser() {
+    fetch(
+      `https://universallychallenged.herokuapp.com/users/${inputValue.username}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("admin's full data: ", data);
+        console.log("admin's name: ", data.user.username);
+      })
+      .catch((err) => console.log("Something went wrong: ", err));
+  }
+
+  function createNewUser() {
+    axios
+      .post("https://universallychallenged.herokuapp.com/users", { username })
+      .then((response) => {
+        if (response.data.success) {
+          console.log("username created");
+        }
+      })
+      .catch((err) => {
+        console.log("An error occurred: ", err);
+      });
+  }
 
   return (
     <>
@@ -41,6 +78,8 @@ const SinglePlayerLogin = () => {
       {submitForm && isValid ? null : (
         <form onSubmit={handleSubmitForm} id="singlePlayerFormContainer">
           <input
+            name="username"
+            id="username"
             autoComplete="off"
             type="text"
             placeholder="Enter username"
@@ -61,7 +100,7 @@ const SinglePlayerLogin = () => {
       )}
 
       {submitForm && isValid ? (
-        <p id="thankYouMessage">Thank you for submitting your username</p>
+        <p id="thankYouMessage">Hello {inputValue.username}</p> // get name from backend
       ) : null}
 
       {submitForm && isValid ? (
