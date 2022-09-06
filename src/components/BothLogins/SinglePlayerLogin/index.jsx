@@ -41,6 +41,7 @@ const SinglePlayerLogin = () => {
       {submitForm && isValid ? null : (
         <form onSubmit={handleSubmitForm}>
           <input
+            autocomplete="off"
             type="text"
             placeholder="Enter username"
             value={inputValue.username}
