@@ -39,7 +39,7 @@ const SinglePlayerLogin = () => {
       )}
 
       {submitForm && isValid ? null : (
-        <form onSubmit={handleSubmitForm} id="singlePlayerFormBg">
+        <form onSubmit={handleSubmitForm} id="singlePlayerFormContainer">
           <input
             autoComplete="off"
             type="text"
@@ -65,9 +65,9 @@ const SinglePlayerLogin = () => {
       ) : null}
 
       {submitForm && isValid ? (
-        <Link to={"/category"}>
-          <button id="nextBtn">Next</button>
-        </Link>
+        <button id="nextBtn">
+          <Link to={"/category"}>Next</Link>
+        </button>
       ) : null}
     </>
   );
