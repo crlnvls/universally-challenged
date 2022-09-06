@@ -1,8 +1,17 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import "./style.css";
 
 const Home = () => {
+
+  const navigate = useNavigate();
+  const navigateToSinglePlayer = () => {
+    navigate('/create-room')
+  }
+  const navigateToMultiPlayer = () => {
+    navigate('/create-room')
+  }
+
   return (
     <>
       <h1 className="neonText">Welcome To</h1>
@@ -18,9 +27,9 @@ const Home = () => {
       <h2 className="neonText">Start Quiz</h2>
 
       <div className="homeButtons">
-        <Link className="btn" to={"create-room"}>Single Player</Link>
+      <button class="btn" onClick={navigateToSinglePlayer}>Single Player</button>
 
-        <Link className="btn" to={"create-room"}>Multi Player</Link>
+      <button class="btn" onClick={navigateToMultiPlayer}>Multi Player</button>
       </div>
     </>
   );
