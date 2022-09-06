@@ -11,7 +11,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #fafafa;
   text-decoration: inherit;
 }
 a:hover {
@@ -36,13 +36,24 @@ body {
 }
 
 h1 {
-  color: white;
+  
   font-size: 3.5rem;
-  line-height: 1.1;
+ 
 }
 
 h2 {
   font-size: 3.5rem;
+}
+
+h1,h2 {
+  color: white;
+  
+  text-shadow: 
+  0 0 4px #fff,
+  0 0 19px #fff,
+  0 0 40px rgb(0, 208, 255),
+  0 0 100px rgb(0, 208, 255),
+  0 0 150px rgb(0, 208, 255);
 }
 
 .btn {
