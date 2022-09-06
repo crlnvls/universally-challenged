@@ -135,7 +135,11 @@ const MultiPlayerLogin = () => {
           ) : null}
           <br />
 
-          {submitForm && isValid ? null : <button>Submit</button>}
+          {submitForm && isValid ? null : (
+            <button>
+              Submit <i className="fa-solid fa-paper-plane"></i>
+            </button>
+          )}
         </form>
       )}
 
