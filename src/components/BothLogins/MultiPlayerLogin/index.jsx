@@ -51,15 +51,39 @@ const MultiPlayerLogin = () => {
         return prev;
       });
     }
+
+    // creates new user in mongodb
+    createNewUser();
   };
+
+  function createNewUser() {
+    const options = {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: inputValues.username
+      })
+    };
+
+    fetch(`https://universallychallenged.herokuapp.com/users`, options)
+      .then((res) => res.json())
+      .then(() => {
+        setInputValues((prev) => {
+          console.log();
+          return prev;
+        });
+      })
+      .catch((err) => console.log("Something went wrong: ", err));
+  }
 
   return (
     <>
       <h1 id="multiPlayerLoginTitle">Create your room</h1>
 
-      {submitForm && isValid ? (
-        <p>Hello {inputValues.username}</p>
-      ) : null}
+      {submitForm && isValid ? <p>Hello {inputValues.username}</p> : null}
 
       {submitForm && isValid ? null : (
         <form onSubmit={handleSubmitForm} id="multiPlayerFormContainer">
@@ -93,6 +117,7 @@ const MultiPlayerLogin = () => {
 
           <label htmlFor="numOfPlayers">How many players (2-5)?</label>
           <input
+            min="2"
             autoComplete="off"
             type="number"
             placeholder="Enter number of players"
@@ -105,7 +130,7 @@ const MultiPlayerLogin = () => {
           (submitForm && parseInt(inputValues.playerNum) < 2) ||
           (submitForm && parseInt(inputValues.playerNum) > 5) ? (
             <p style={{ color: "red" }}>
-              Please select a whole number between 2 and 5
+              Please select a number between 2 and 5
             </p>
           ) : null}
           <br />
