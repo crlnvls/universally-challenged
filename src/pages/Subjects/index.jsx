@@ -1,12 +1,14 @@
 import React from "react";
 
 import Form from "../../components/Form";
-import "./Subject.css";
+// import "./Subject.css";
 
 const Subjects = () => {
   return (
     <>
-      <h1 className="header-subjects">Choose your category</h1>
+      <h1 className="header-subjects" role="header-subjects">
+        Choose your category
+      </h1>
       <Form />
     </>
   );
