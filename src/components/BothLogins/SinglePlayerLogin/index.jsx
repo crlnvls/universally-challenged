@@ -1,19 +1,23 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import DataContext from "../../../context/dataContext";
+import { NavLink, Link } from "react-router-dom";
 
 import "./SinglePlayerLogin.css";
 
 const SinglePlayerLogin = () => {
+  const { handleUsernameInput, inputValue } = useContext(DataContext);
+
   /* state variables for: username input, form submitting, form validation */
-  const [inputValue, setInputValue] = useState({ username: "" });
+  // const [inputValue, setInputValue] = useState({ username: "" });
   const [submitForm, setSubmitForm] = useState(false);
   const [isValid, setIsValid] = useState(false);
-  // console.log("singlePlayer: ", inputValue.username);
+ //console.log("singlePlayer: ", inputValue);
+//console.log("singlePlayer: ", inputValue.username);
 
-  const handleUsernameInput = (e) => {
-    // updates user input
-    setInputValue({ ...inputValue, username: e.target.value });
-  };
+  // const handleUsernameInput = (e) => {
+  // // updates user input
+  //   setInputValue({ ...inputValue, username: e.target.value });
+  // };
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -39,6 +43,7 @@ const SinglePlayerLogin = () => {
       )}
 
       {submitForm && isValid ? null : (
+        <NavLink to="/score-single">Score</NavLink>
         <form onSubmit={handleSubmitForm} id="singlePlayerFormContainer">
           <input
             autoComplete="off"
@@ -69,6 +74,7 @@ const SinglePlayerLogin = () => {
           <Link to={"/category"}>Next</Link>
         </button>
       ) : null}
+
     </>
   );
 };
