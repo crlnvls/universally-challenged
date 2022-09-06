@@ -1,28 +1,69 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const MultiPlayerScores = () => {
+  /* state variables for: username & score */
+  const [currentUserResults, setCurrentUserResults] = useState({});
+  const [allPlayers, setAllPlayers] = useState([]);
+
+  getCurrentUserUser();
+  getAllUsers();
+
+  function getCurrentUserUser() {
+    useEffect(() => {
+      fetch(`https://universallychallenged.herokuapp.com/users/admin`) // needs to accommodate for correct current player & quiz subject
+        .then((res) => res.json())
+        .then((data) => {
+          setCurrentUserResults((prev) => {
+            return {
+              ...prev,
+              data: data
+            };
+          });
+        })
+        .catch((err) => console.log("Something went wrong: ", err));
+    }, []);
+  }
+
+  function getAllUsers() {
+    useEffect(() => {
+      fetch("https://universallychallenged.herokuapp.com/users")
+        .then((res) => res.json())
+        .then((data) => {
+          setAllPlayers(data);
+        })
+        .catch((err) => console.log("Something went wrong: ", err));
+    }, []);
+  }
+
   return (
     <>
       <h1>Winner</h1>
 
-      <h3>shaquille.oatmeal.</h3>
+      <h3>{currentUserResults.data.user.username}</h3>
       <i className="fa-solid fa-trophy"></i>
 
       <ul>
-        <li>
-          shaquille.oatmeal. <span>4/5</span>
-        </li>
-        <li>
-          google_was_my_idea. <span>3/5</span>
-        </li>
-        <li>
-          averagestudent <span>1/5</span>
-        </li>
+        {allPlayers.users.map((singleUserObj) => {
+          {
+            /* needs to accommodate correct 5 chosen users & quiz subject score */
+          }
+          return (
+            <li>
+              {singleUserObj.username}{" "}
+              <span>{singleUserObj.scores.animals}/5</span>
+            </li>
+          );
+        })}
       </ul>
 
-      <Link to={"/category"}><button>Play again</button></Link>
-      <Link to={"/"}><button>Return home</button></Link>
+      <button>
+        <Link to={"/category"}>Play again</Link>
+      </button>
+
+      <button>
+        <Link to={"/"}>Return home</Link>
+      </button>
     </>
   );
 };
