@@ -10,6 +10,8 @@ export const DataProvider = ({ children }) => {
   const [difficulty, setDifficulty] = useState("easy");
   const [questionData, setQuestionData] = useState([]);
   const [inputValue, setInputValue] = useState({ username: "" });
+  const [playerMode, setPlayerMode] = useState("");
+
   const navigate = useNavigate();
 
   const handleChangeSubject = (e) => {
@@ -48,6 +50,12 @@ export const DataProvider = ({ children }) => {
     setInputValue({ inputValue, username: e.target.value });
   };
 
+  const handlePlayer = (e) => {
+    e.preventDefault();
+    setPlayerMode(e.target.value);
+    console.log(e.target.value);
+  };
+
   return (
     <DataContext.Provider
       value={{
@@ -55,10 +63,12 @@ export const DataProvider = ({ children }) => {
         handleChangeNumber,
         handleChangeDifficulty,
         handleSubmit,
-        number,
         handleUsernameInput,
+        handlePlayer,
+        number,
         inputValue,
         questionData,
+        playerMode,
       }}
     >
       {children}
