@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import DataContext from "../../context/dataContext";
 import "./Waiting.css";
 
 const Waiting = () => {
+  const { playerMode } = useContext(DataContext);
+
   return (
     <>
       <div className="waiting-body">

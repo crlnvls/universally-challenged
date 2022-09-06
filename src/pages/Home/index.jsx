@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
+import DataContext from "../../context/dataContext";
 import "./style.css";
 
 const Home = () => {
   // store if btn is single or multi
-
-  const [player, setPlayer] = useState("");
-
-  const handlePlayer = (e) => {
-    e.preventDefault();
-    setPlayer(e.target.value);
-    console.log(e.target.value);
-  };
+  const { handlePlayer } = useContext(DataContext);
 
   return (
     <>
