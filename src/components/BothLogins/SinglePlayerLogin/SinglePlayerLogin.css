@@ -19,16 +19,38 @@ body {
   margin-top: -1rem;
 }
 
+@media (min-width: 576px) {
+  #singlePlayerTitle {
+    margin-top: -5rem;
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #singlePlayerTitle {
+    margin-top: -6rem;
+    font-size: 4rem;
+    padding: 4rem 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  #singlePlayerTitle {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
 /************************************************************************** form */
-#singlePlayerFormBg {
+#singlePlayerFormContainer {
   margin-top: 2rem;
 }
 
-#singlePlayerFormBg input::placeholder {
+#singlePlayerFormContainer input::placeholder {
   color: rgba(255, 255, 255, 0.633);
 }
 
-#singlePlayerFormBg input[type='text'] {
+#singlePlayerFormContainer input[type='text'] {
   border: 0.5rem solid transparent;
   width: 100%;
   color: white;
@@ -41,20 +63,19 @@ body {
   margin-bottom: 1rem;
 }
 
-#singlePlayerFormBg input[type='text']:focus,
-#singlePlayerFormBg input[type='text']:hover {
+#singlePlayerFormContainer input[type='text']:focus,
+#singlePlayerFormContainer input[type='text']:hover {
   outline: 0.2rem solid #f0f8ff;
-  border-color: none;
 }
 
-#singlePlayerFormBg p {
+#singlePlayerFormContainer p {
   margin-bottom: 0.5rem;
   color: red;
   font-size: 1.5rem;
   font-weight: 900;
 }
 
-#singlePlayerFormBg button {
+#singlePlayerFormContainer button {
   display: grid;
   grid-template-columns: auto auto;
   padding: 1.2rem;
@@ -70,8 +91,46 @@ body {
   text-transform: uppercase;
 }
 
-#singlePlayerFormBg button:hover {
+#singlePlayerFormContainer button:hover {
   background-color: #22def784;
+  /* background-color: transparent; */
+}
+
+@media (min-width: 576px) {
+  #singlePlayerFormContainer {
+    margin-top: 3rem;
+  }
+
+  #singlePlayerFormContainer input[type='text'] {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  #singlePlayerFormContainer p {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #singlePlayerFormContainer {
+    margin-top: 3.5rem;
+  }
+
+  #singlePlayerFormContainer input[type='text'] {
+    font-size: 2.5rem;
+    width: 45rem;
+  }
+
+  #singlePlayerFormContainer p {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+  }
+
+  #singlePlayerFormContainer button {
+    width: 17rem;
+    font-size: 2rem;
+    padding: 1.5rem;
+  }
 }
 
 /************************************************************************** navigate next */
@@ -83,7 +142,7 @@ body {
 }
 
 #nextBtn {
- display: grid;
+  display: grid;
   grid-template-columns: auto auto;
   padding: 1.2rem;
   margin: 0 auto;
@@ -100,4 +159,33 @@ body {
 
 #nextBtn:hover {
   background-color: #22def784;
+  /* background-color: transparent; */
+}
+
+#nextBtn a {
+  color: #000;
+}
+
+@media (min-width: 576px) {
+  #thankYouMessage {
+    font-size: 2rem;
+  }
+
+  #nextBtn {
+    width: 10rem;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #thankYouMessage {
+    font-size: 3rem;
+    line-height: 1.6;
+  }
+
+  #nextBtn {
+    width: 15.2rem;
+    font-size: 3rem;
+    padding: 1.5rem 2rem;
+  }
 }
