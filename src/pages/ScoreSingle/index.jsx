@@ -1,6 +1,18 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
+
 
 const ScoreSingle = () => {
+
+  const navigate = useNavigate();
+  
+  const navigateToSinglePlayer = () => {
+    navigate('/create-room')
+  }
+
+  const navigateHome = () => {
+    navigate('/')
+  }
 
   return <>
     <h1>Your Score:</h1>
@@ -13,10 +25,10 @@ const ScoreSingle = () => {
 
   
     {/* onClick navigate back to quiz start */}
-    <button>Play Again</button>
+    <button class="btn" onClick={navigateToSinglePlayer}>Play Again</button>
 
     {/* onClick navigate to home page */}
-    <button>Return Home</button>
+    <button class="btn" onClick={navigateHome}>Return Home</button>
 
     </>;
 
