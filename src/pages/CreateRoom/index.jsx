@@ -4,6 +4,7 @@ import { MultiPlayerLogin, SinglePlayerLogin } from "../../components";
 const CreateRoom = () => {
   return (
     <>
+      {/* conditionally show based on btn clicked */}
       <SinglePlayerLogin />
       <MultiPlayerLogin />
     </>

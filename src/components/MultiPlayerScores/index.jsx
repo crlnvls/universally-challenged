@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MultiPlayerScores = () => {
   return (
@@ -20,8 +21,8 @@ const MultiPlayerScores = () => {
         </li>
       </ul>
 
-      <button>Play again</button>
-      <button>Return Home</button>
+      <Link to={"/category"}><button>Play again</button></Link>
+      <Link to={"/"}><button>Return home</button></Link>
     </>
   );
 };
