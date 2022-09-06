@@ -1,5 +1,5 @@
 .neonText {
-    animation: flicker 2s infinite alternate;
+    animation: flicker 3s infinite alternate;
     color: #fff;
   }
   
@@ -16,11 +16,11 @@
         0 0 4px #fff,
         0 0 11px #fff,
         0 0 19px #fff,
-        0 0 40px rgb(0, 0, 255),
-        0 0 80px rgb(0, 0, 255),
-        0 0 90px rgb(0, 0, 255),
-        0 0 100px rgb(0, 0, 255),
-        0 0 150px rgb(0, 0, 255);
+        0 0 40px rgb(0, 208, 255),
+        0 0 80px rgb(0, 208, 255),
+        0 0 90px rgb(0, 208, 255),
+        0 0 100px rgb(0, 208, 255),
+        0 0 150px rgb(0, 208, 255);
 
     }
     
@@ -58,7 +58,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding: 20px;
+    padding: 50px;
     height: 200px;
     font-size: 1.2rem;
     /* font-weight: 700; */
