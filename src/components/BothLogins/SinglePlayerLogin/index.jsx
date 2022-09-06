@@ -67,7 +67,7 @@ const SinglePlayerLogin = () => {
 
       {submitForm && isValid ? null : (
         <>
-          <NavLink to="/score-single">Score</NavLink>
+          {/* <NavLink to="/score-single">Score</NavLink> */}
           <form onSubmit={handleSubmitForm} id="singlePlayerFormContainer">
             <input
               name="username"
@@ -93,7 +93,7 @@ const SinglePlayerLogin = () => {
       )}
 
       {submitForm && isValid ? (
-        <p id="thankYouMessage">Welcome {inputValue.username}</p>
+        <p id="welcomeMessage">Welcome {inputValue.username}</p>
       ) : null}
 
       {submitForm && isValid ? (
