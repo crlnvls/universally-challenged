@@ -115,9 +115,9 @@ const MultiPlayerLogin = () => {
       )}
 
       {submitForm && isValid ? (
-        <Link to={"/waiting"}>
-          <button>Next</button>
-        </Link>
+        <button>
+          <Link to={"/waiting"}>Next</Link>
+        </button>
       ) : null}
     </>
   );
