@@ -31,42 +31,30 @@ const SinglePlayerLogin = () => {
       });
     }
 
-    getAllUsers();
-    getOneUser();
+    // creates new user in mongodb
+    createNewUser();
   };
 
-  function getAllUsers() {
-    fetch("https://universallychallenged.herokuapp.com/users")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("All Users: ", data);
-      })
-      .catch((err) => console.log("Something went wrong: ", err));
-  }
-
-  function getOneUser() {
-    fetch(
-      `https://universallychallenged.herokuapp.com/users/${inputValue.username}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("admin's full data: ", data);
-        console.log("admin's name: ", data.user.username);
-      })
-      .catch((err) => console.log("Something went wrong: ", err));
-  }
-
   function createNewUser() {
-    axios
-      .post("https://universallychallenged.herokuapp.com/users", { username })
-      .then((response) => {
-        if (response.data.success) {
-          console.log("username created");
-        }
+    const options = {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: inputValue.username
       })
-      .catch((err) => {
-        console.log("An error occurred: ", err);
-      });
+    };
+
+    fetch(`https://universallychallenged.herokuapp.com/users`, options)
+      .then((res) => res.json())
+      .then(() => {
+        setInputValue((prev) => {
+          return prev;
+        });
+      })
+      .catch((err) => console.log("Something went wrong: ", err));
   }
 
   return (
@@ -100,7 +88,7 @@ const SinglePlayerLogin = () => {
       )}
 
       {submitForm && isValid ? (
-        <p id="thankYouMessage">Hello {inputValue.username}</p> // get name from backend
+        <p id="thankYouMessage">Welcome {inputValue.username}</p>
       ) : null}
 
       {submitForm && isValid ? (
