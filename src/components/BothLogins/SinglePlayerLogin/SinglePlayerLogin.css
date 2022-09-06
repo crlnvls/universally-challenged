@@ -17,6 +17,7 @@ body {
   text-shadow: 1px 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
   font-size: 2rem;
   margin-top: -1rem;
+  line-height: 1.6;
 }
 
 @media (min-width: 576px) {
@@ -69,7 +70,6 @@ body {
 }
 
 #singlePlayerFormContainer p {
-  margin-bottom: 0.5rem;
   color: red;
   font-size: 1.5rem;
   font-weight: 900;
@@ -134,7 +134,7 @@ body {
 }
 
 /************************************************************************** navigate next */
-#thankYouMessage {
+#welcomeMessage {
   color: #fff;
   margin: 3rem 0;
   font-size: 1.5rem;
@@ -167,7 +167,7 @@ body {
 }
 
 @media (min-width: 576px) {
-  #thankYouMessage {
+  #welcomeMessage {
     font-size: 2rem;
   }
 
@@ -178,7 +178,7 @@ body {
 }
 
 @media (min-width: 768px) {
-  #thankYouMessage {
+  #welcomeMessage {
     font-size: 3rem;
     line-height: 1.6;
   }
