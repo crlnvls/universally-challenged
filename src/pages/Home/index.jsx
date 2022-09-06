@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import "./style.css";
 
 const Home = () => {
@@ -17,9 +18,9 @@ const Home = () => {
       <h2 className="neonText">Start Quiz</h2>
 
       <div className="homeButtons">
-        <button className="btn">Single Player</button>
+        <Link className="btn" to={"create-room"}>Single Player</Link>
 
-        <button className="btn">Multi Player</button>
+        <Link className="btn" to={"create-room"}>Multi Player</Link>
       </div>
     </>
   );
