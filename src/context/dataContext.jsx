@@ -1,4 +1,5 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const DataContext = createContext({});
@@ -9,6 +10,7 @@ export const DataProvider = ({ children }) => {
   const [difficulty, setDifficulty] = useState("easy");
   const [questionData, setQuestionData] = useState([]);
   const [inputValue, setInputValue] = useState({ username: "" });
+  const navigate = useNavigate();
 
   const handleChangeSubject = (e) => {
     e.preventDefault();
@@ -39,6 +41,7 @@ export const DataProvider = ({ children }) => {
       }
     }
     getQuiz(subject, number, difficulty);
+    navigate("/Quiz");
   };
 
   const handleUsernameInput = (e) => {
@@ -55,6 +58,7 @@ export const DataProvider = ({ children }) => {
         number,
         handleUsernameInput,
         inputValue,
+        questionData,
       }}
     >
       {children}
