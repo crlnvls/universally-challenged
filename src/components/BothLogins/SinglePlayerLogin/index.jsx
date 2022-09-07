@@ -91,7 +91,7 @@ const SinglePlayerLogin = () => {
               autoComplete="off"
               type="text"
               placeholder="Enter username"
-              value={inputValue}
+              value={inputValue.username}
               // value={inputValue.username} // for testing, it needs to be inputValue???
               onChange={handleUsernameInput}
             />
