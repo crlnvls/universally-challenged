@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import "./MultiPlayerScores.css";
+
 const MultiPlayerScores = () => {
   /* state variables for: username & score */
   const [allPlayers, setAllPlayers] = useState({});
@@ -74,27 +76,30 @@ const MultiPlayerScores = () => {
 
   return (
     <>
-      <h1>Winner</h1>
+      <section id="winnerPageSectionContainer">
+        <h1 id="winnerTitle">Winner</h1>
 
-      {/* works when cut out, browser refreshed, pasted back in, vs code saved 😩*/}
-      <h3>{findWinner()}</h3>
-      <i className="fa-solid fa-trophy"></i>
+        {/* works when cut out, browser refreshed, pasted back in, vs code saved 😩*/}
+        <h3 id="winningUsername">{findWinner()}</h3>
+        <i className="fa-solid fa-trophy"></i>
 
-      <ul>
-        {allPlayers.users?.map((oneUserObj) => {
-          return (
-            <li key={oneUserObj._id}>
-              <span>{oneUserObj.username}</span>{" "}
-              <span>{oneUserObj.scores.animals}/5</span>
-            </li>
-          );
-        })}
-      </ul>
-      {/* works when cut out, browser refreshed, pasted back in, vs code saved 😩*/}
+        <ul id="multiPlayerContainer">
+          {allPlayers.users?.map((oneUserObj) => {
+            return (
+              <li key={oneUserObj._id}>
+                <span>{oneUserObj.username}</span>{" "}
+                <span>{oneUserObj.scores.animals}/5</span>
+              </li>
+            );
+          })}
+        </ul>
+        {/* works when cut out, browser refreshed, pasted back in, vs code saved 😩*/}
 
-      <button onClick={moveBackToCategory}>Play again </button>
-
-      <button onClick={moveBackToHome}>Return home</button>
+        <div id="btnContainer">
+          <button onClick={moveBackToCategory}>Play again </button>
+          <button onClick={moveBackToHome}>Return home</button>
+        </div>
+      </section>
     </>
   );
 };
