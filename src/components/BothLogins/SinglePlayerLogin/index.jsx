@@ -55,11 +55,9 @@ const SinglePlayerLogin = () => {
 
     fetch(`https://universallychallenged.herokuapp.com/users`, options)
       .then((res) => res.json())
-      .then(() => {
-        handleUsernameInput((prev) => {
-          // console.log("prev==> ", prev);
-          return prev;
-        });
+      .then((data) => console.log("data==> ", data))
+      .then((data) => {
+        handleUsernameInput(data);
       })
       .catch((err) => console.log("Something went wrong: ", err));
   }
@@ -68,6 +66,8 @@ const SinglePlayerLogin = () => {
   function moveToNextPage() {
     navigate("/category");
   }
+  // console.log("inputValue==> ", inputValue)
+  // console.log("handleUsernameInput==> ", handleUsernameInput)
 
   return (
     <>
