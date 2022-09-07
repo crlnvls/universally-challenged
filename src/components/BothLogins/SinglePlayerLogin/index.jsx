@@ -66,8 +66,9 @@ const SinglePlayerLogin = () => {
   function moveToNextPage() {
     navigate("/category");
   }
-  // console.log("inputValue==> ", inputValue)
   // console.log("handleUsernameInput==> ", handleUsernameInput)
+  // console.log("inputValue==> ", inputValue)
+  // console.log("inputValue.username==> ", inputValue.username)
 
   return (
     <>
@@ -78,23 +79,29 @@ const SinglePlayerLogin = () => {
       {submitForm && isValid ? null : (
         <>
           {/* <NavLink to="/score-single">Score</NavLink> */}
-          <form onSubmit={handleSubmitForm} id="singlePlayerFormContainer">
+          <form
+            onSubmit={handleSubmitForm}
+            id="singlePlayerFormContainer"
+            role="form"
+          >
             <input
+              role="input"
               name="username"
               id="username"
               autoComplete="off"
               type="text"
               placeholder="Enter username"
-              value={inputValue.username}
+              value={inputValue}
+              // value={inputValue.username} // for testing, it needs to be inputValue???
               onChange={handleUsernameInput}
             />
             {submitForm && !inputValue.username ? (
-              <p>Please enter a username</p>
+              <p role="paragraph">Please enter a username</p>
             ) : null}
             <br />
 
             {submitForm && isValid ? null : (
-              <button>
+              <button role="submit">
                 Submit<i className="fa-solid fa-paper-plane"></i>
               </button>
             )}
