@@ -1,12 +1,13 @@
-import React, { useContext } from "react";
-import DataContext from "../../context/dataContext";
+import React from "react";
 
-const Question = () => {
-  const { questionData } = useContext(DataContext);
-
+const Question = ({ currentQuestion, questionData }) => {
   return (
     <>
-      <h3>{questionData.length ? questionData[0].question : "loading"}</h3>
+      <h3>
+        {questionData.length
+          ? questionData[currentQuestion].question
+          : "loading"}
+      </h3>
     </>
   );
 };

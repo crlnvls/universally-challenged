@@ -1,12 +1,9 @@
-import React, { useContext } from "react";
-import DataContext from "../../context/dataContext";
+import React from "react";
 
-const QNumber = () => {
-  const { questionData } = useContext(DataContext);
-
+const QNumber = ({ currentQuestion, questionData }) => {
   return (
     <>
-      <h5>Question{questionData.length}</h5>
+      <h5>Question {currentQuestion + 1}</h5>
     </>
   );
 };
