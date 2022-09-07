@@ -1,9 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const MultiPlayerScores = () => {
   /* state variables for: username & score */
   const [allPlayers, setAllPlayers] = useState({});
+  const navigate = useNavigate();
+
+  const moveBackToCategory = () => {
+    navigate("/category");
+  };
+
+  const moveBackToHome = () => {
+    navigate("/");
+  };
 
   function getAllPlayers() {
     useEffect(() => {
@@ -54,13 +63,9 @@ const MultiPlayerScores = () => {
       </ul>
       {/* works when cut out, browser refreshed, pasted back in, vs code saved 😩*/}
 
-      <button>
-        <Link to={"/createRoom"}>Play again</Link>
-      </button>
+      <button onClick={moveBackToCategory}>Play again </button>
 
-      <button>
-        <Link to={"/"}>Return home</Link>
-      </button>
+      <button onClick={moveBackToHome}>Return home</button>
     </>
   );
 };
