@@ -4,7 +4,7 @@ import { Questions } from "../../components";
 import DataContext from "../../context/dataContext";
 
 const Quiz = () => {
-  const { questionData, subject } = useContext(DataContext);
+  const { questionData, subject, playerMode } = useContext(DataContext);
 
   return (
     <>

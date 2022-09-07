@@ -1,5 +1,5 @@
 import React from "react";
-import { MultiPlayerLogin } from "../../components";
+import { MultiPlayerLogin } from "../../../components";
 
 const CreateMultiRoom = () => {
   return (

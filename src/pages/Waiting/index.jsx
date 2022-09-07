@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom"; /* vivian added this so this page links to the category page 🙂 */
 
+import DataContext from "../../context/dataContext";
 import "./Waiting.css";
 
 const Waiting = () => {
@@ -9,6 +10,8 @@ const Waiting = () => {
   function moveToNextPage() {
     navigate("/quiz");
   }
+
+  const { playerMode } = useContext(DataContext);
 
   return (
     <>

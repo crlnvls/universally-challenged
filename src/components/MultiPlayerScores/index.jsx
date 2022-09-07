@@ -54,7 +54,7 @@ const MultiPlayerScores = () => {
       </ul>
 
       <button>
-        <Link to={"/category"}>Play again</Link>
+        <Link to={"/createRoom"}>Play again</Link>
       </button>
 
       <button>

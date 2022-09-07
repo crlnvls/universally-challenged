@@ -1,5 +1,5 @@
 import React from "react";
-import { SinglePlayerLogin } from "../../components";
+import { SinglePlayerLogin } from "../../../components";
 
 const CreateSingleRoom = () => {
   return (

@@ -8,7 +8,7 @@ const ScoreSingle = () => {
 
   const navigate = useNavigate();
   const navigateToSinglePlayer = () => {
-    navigate('/createSingleRoom')
+    navigate('/createRoom')
   }
   const navigateHome = () => {
     navigate('/')

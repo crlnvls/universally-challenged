@@ -1,24 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import DataContext from "../../context/dataContext";
 import { useNavigate } from 'react-router-dom';
+
 import "./style.css";
 
 const Home = () => {
   // store if btn is single or multi
 
-  const [player, setPlayer] = useState("");
-
-  const handlePlayer = (e) => {
-    e.preventDefault();
-    setPlayer(e.target.value);
-    console.log(e.target.value);
-  };
+  const { handlePlayer } = useContext(DataContext);
   
   const navigate = useNavigate();
   const navigateToSinglePlayer = () => {
-    navigate('/createSingleRoom')
+    navigate('/createRoom')
   }
   const navigateToMultiPlayer = () => {
-    navigate('/createMultiRoom')
+    navigate('/createRoom')
   }
 
   return (
