@@ -1,7 +1,7 @@
 import React from "react";
 
 import Form from "../../components/Form";
-// import "./Subject.css";
+import "./Subject.css";
 
 const Subjects = () => {
   return (

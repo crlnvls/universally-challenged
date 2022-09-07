@@ -1,45 +1,14 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-
+import React, { useContext } from "react";
+import DataContext from "../../context/dataContext";
 import "./Form.css";
-
 function Form() {
-  const [subject, setSubject] = useState(9);
-  const [number, setNumber] = useState("5");
-  const [difficulty, setDifficulty] = useState("easy");
-  const [questionData, setQuestionData] = useState([]);
-
-  const handleChangeSubject = (e) => {
-    e.preventDefault();
-    setSubject(e.target.value);
-  };
-
-  const handleChangeNumber = (e) => {
-    setNumber(e.target.value);
-  };
-
-  const handleChangeDifficulty = (e) => {
-    setDifficulty(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    e.target.reset();
-
-    async function getQuiz(subject, number, difficulty) {
-      try {
-        const result = await axios.get(
-          `https://opentdb.com/api.php?amount=${number}&category=${subject}&difficulty=${difficulty}&type=multiple`
-        );
-        console.log(result.data);
-        setQuestionData(result.data);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    getQuiz(subject, number, difficulty);
-  };
-
+  const {
+    handleChangeNumber,
+    handleChangeDifficulty,
+    handleChangeSubject,
+    handleSubmit,
+    number,
+  } = useContext(DataContext);
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -51,7 +20,6 @@ function Form() {
           >
             General Knowledge
           </button>
-
           <button
             className="btn-category"
             value="27"
@@ -59,7 +27,6 @@ function Form() {
           >
             Animals
           </button>
-
           <button
             className="btn-category"
             value="21"
@@ -67,7 +34,6 @@ function Form() {
           >
             Sports
           </button>
-
           <button
             className="btn-category"
             value="18"
@@ -75,7 +41,6 @@ function Form() {
           >
             Computers
           </button>
-
           <button
             className="btn-category"
             value="15"
@@ -83,7 +48,6 @@ function Form() {
           >
             Video Games
           </button>
-
           <button
             className="btn-category"
             value="11"
@@ -130,5 +94,4 @@ function Form() {
     </>
   );
 }
-
 export default Form;
