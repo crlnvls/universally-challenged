@@ -8,7 +8,7 @@ const ScoreSingle = () => {
 
   const navigate = useNavigate();
   const navigateToSinglePlayer = () => {
-    navigate('/createRoom')
+    navigate('/category') // vivian changed this from '/createRoom' to '/category'
   }
   const navigateHome = () => {
     navigate('/')
