@@ -8,39 +8,52 @@ export const DataProvider = ({ children }) => {
   const [difficulty, setDifficulty] = useState("easy");
   const [questionData, setQuestionData] = useState([]);
   const [inputValue, setInputValue] = useState({ username: "" });
+  const [playerMode, setPlayerMode] = useState("");
+
   const navigate = useNavigate();
+
   const handleChangeSubject = (e) => {
     e.preventDefault();
     setSubject(e.target.value);
   };
+
   const handleChangeNumber = (e) => {
     setNumber(e.target.value);
   };
+
   const handleChangeDifficulty = (e) => {
     setDifficulty(e.target.value);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     e.target.reset();
+
     async function getQuiz(subject, number, difficulty) {
       try {
         const result = await axios.get(
           `https://opentdb.com/api.php?amount=${number}&category=${subject}&difficulty=${difficulty}&type=multiple`
         );
-        const data = await result.data;
-        // console.log(result.data["results"]);
-        setQuestionData(data["results"]);
-        return data.results;
+        console.log(result.data);
+        setQuestionData(result.data);
       } catch (err) {
         console.log(err);
       }
     }
     getQuiz(subject, number, difficulty);
-    navigate("/quiz");
+    navigate("/Quiz");
   };
+
   const handleUsernameInput = (e) => {
     setInputValue({ inputValue, username: e.target.value });
   };
+
+  const handlePlayer = (e) => {
+    e.preventDefault();
+    setPlayerMode(e.target.value);
+    console.log(e.target.value);
+  };
+
   return (
     <DataContext.Provider
       value={{
@@ -48,10 +61,12 @@ export const DataProvider = ({ children }) => {
         handleChangeNumber,
         handleChangeDifficulty,
         handleSubmit,
-        number,
         handleUsernameInput,
+        handlePlayer,
+        number,
         inputValue,
         questionData,
+        playerMode,
       }}
     >
       {children}

@@ -1,26 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import DataContext from "../../../context/dataContext";
+import { NavLink, useNavigate } from "react-router-dom";
+
+import "./SinglePlayerLogin.css";
 
 const SinglePlayerLogin = () => {
-  // state variable for single username input
-  const [inputValue, setInputValue] = useState({ username: "" });
-  console.log("singlePlayer: ", inputValue);
+  const { handleUsernameInput, inputValue } = useContext(DataContext);
+  const navigate = useNavigate();
 
-  // state variable for submitting form
+  /* state variables for: username input, form submitting, form validation */
+  // const [inputValue, setInputValue] = useState({ username: "" });
   const [submitForm, setSubmitForm] = useState(false);
-
-  // state variable for validating form ensuring it's been completed correctly
   const [isValid, setIsValid] = useState(false);
 
-  // username entered inside input
-  const handleUsernameInput = (e) => {
-    setInputValue({ ...inputValue, username: e.target.value });
-  };
+  // const handleUsernameInput = (e) => {
+  // // updates user input
+  //   setInputValue({ ...inputValue, username: e.target.value });
+  // };
 
   const handleSubmitForm = (e) => {
-    // stops page refreshing
     e.preventDefault();
 
-    // helps validate form before submission
+    // the following below helps validate form before submission
     setSubmitForm((prev) => {
       prev = true;
       return prev;
@@ -31,31 +32,81 @@ const SinglePlayerLogin = () => {
         prev = true;
         return prev;
       });
+
+      // slows move to next page to show username & spinner
+      setTimeout(moveToNextPage, 800);
+
+      // creates new user in mongodb
+      createNewUser();
     }
   };
 
+  function createNewUser() {
+    const options = {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: inputValue.username
+      })
+    };
+
+    fetch(`https://universallychallenged.herokuapp.com/users`, options)
+      .then((res) => res.json())
+      .then(() => {
+        setInputValue((prev) => {
+          return prev;
+        });
+      })
+      .catch((err) => console.log("Something went wrong: ", err));
+  }
+
+  // move to next page
+  function moveToNextPage() {
+    navigate("/category");
+  }
+
   return (
     <>
-      <h1>Choose your username</h1>
+      {submitForm && isValid ? null : (
+        <h1 id="singlePlayerTitle">Choose your username</h1>
+      )}
+
+      {submitForm && isValid ? null : (
+        <>
+          {/* <NavLink to="/score-single">Score</NavLink> */}
+          <form onSubmit={handleSubmitForm} id="singlePlayerFormContainer">
+            <input
+              name="username"
+              id="username"
+              autoComplete="off"
+              type="text"
+              placeholder="Enter username"
+              value={inputValue.username}
+              onChange={handleUsernameInput}
+            />
+            {submitForm && !inputValue.username ? (
+              <p>Please enter a username</p>
+            ) : null}
+            <br />
+
+            {submitForm && isValid ? null : (
+              <button>
+                Submit<i className="fa-solid fa-paper-plane"></i>
+              </button>
+            )}
+          </form>
+        </>
+      )}
 
       {submitForm && isValid ? (
-        <p style={{ color: "green" }}>Thank you for submitting your username</p>
+        <>
+          <p id="welcomeMessage">Welcome {inputValue.username}</p>
+          <i className="fa-solid fa-spinner fa-spin-pulse"></i>
+        </>
       ) : null}
-
-      <form onSubmit={handleSubmitForm}>
-        <input
-          type="text"
-          placeholder="Enter username"
-          value={inputValue.username}
-          onChange={handleUsernameInput}
-        />
-        {submitForm && !inputValue.username ? (
-          <p style={{ color: "red" }}>Please enter a username</p>
-        ) : null}
-        <br />
-
-        <button>Done</button>
-      </form>
     </>
   );
 };

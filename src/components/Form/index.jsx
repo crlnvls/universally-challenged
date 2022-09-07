@@ -84,7 +84,7 @@ function Form() {
             Start
             <img
               className="img-submit"
-              src="/public/arrowheads.png"
+              src="/arrowheads.png"
               alt=""
               width={30}
             />
