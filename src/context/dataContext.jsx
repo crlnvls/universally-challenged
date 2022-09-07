@@ -43,11 +43,12 @@ export const DataProvider = ({ children }) => {
       }
     }
     getQuiz(subject, number, difficulty);
-    navigate("/Quiz");
+    navigate("/quiz");
   };
 
   const handleUsernameInput = (e) => {
-    setInputValue({ inputValue, username: e.target.value });
+    console.log("dataContext==> ", { username: e.target.value });
+    setInputValue({ ...inputValue, username: e.target.value });
   };
 
   const handlePlayer = (e) => {

@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 import DataContext from "../../context/dataContext";
 import "./Form.css";
 
 function Form() {
-  const { playerMode } = useContext(DataContext);
-  const navigate = useNavigate();
-  function moveToNextPage() {
-    if (playerMode === "single") {
-      navigate("/quiz"); // for single players
-    } else {
-      navigate("/waiting"); // for multi players
-    }
-  }
+  // const { playerMode } = useContext(DataContext);
+  // const navigate = useNavigate();
+  // function moveToNextPage() {
+  //   if (playerMode === "single") {
+  //     navigate("/quiz"); // for single players
+  //   } else {
+  //     navigate("/waiting"); // for multi players
+  //   }
+  // }
 
   const {
     handleChangeNumber,
@@ -99,7 +99,7 @@ function Form() {
           <option value="hard">Hard </option>
         </select>
         <div>
-          <button className="submit-btn" type="submit" onClick={moveToNextPage}>
+          <button className="submit-btn" type="submit" >
             Start
             <img
               className="img-submit"
