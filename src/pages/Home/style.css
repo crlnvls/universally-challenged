@@ -1,38 +1,31 @@
 .neonText {
-    animation: flicker 3s infinite alternate;
-    color: #fff;
-  }
-  
-  
-  /* Flickering animation */
-  @keyframes flicker {
-      
-    0%, 18%, 22%, 25%, 53%, 57%, 100% {
-  
-        text-shadow:
-        0 0 4px #fff,
-        0 0 11px #fff,
-        0 0 19px #fff,
-        0 0 40px rgb(0, 208, 255),
-        0 0 80px rgb(0, 208, 255),
-        0 0 90px rgb(0, 208, 255),
-        0 0 100px rgb(0, 208, 255),
-        0 0 150px rgb(0, 208, 255);
+  animation: flicker 3s infinite alternate;
+  color: rgb(236, 232, 232);
+}
 
-    }
-    20%, 24%, 55% {        
-        text-shadow: none;
-    }    
+/* Flickering animation */
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px rgb(236, 232, 232), 0 0 11px rgb(112, 112, 112),
+      0 0 19px rgb(112, 112, 112), 0 0 40px rgb(33, 185, 220),
+      0 0 80px rgb(0, 208, 255), 0 0 90px rgb(33, 185, 220),
+      0 0 100px rgb(0, 208, 255), 0 0 150px rgb(33, 185, 220);
   }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
 /* Additional styling */
 .container {
   margin-top: 20vh;
-}
-
-body {
-  font-size: 18px;
-  /* font-family: "Helvetica Neue", sans-serif; */
-  background-color: #010a01;
 }
 
 h1,
@@ -40,11 +33,11 @@ h2 {
   font-size: 2.5rem;
   text-align: center;
   text-transform: uppercase;
-  font-weight: 400;
   object-fit: scale-down;
 }
 
 .homeButtons {
+  margin-top: 70px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -53,17 +46,10 @@ h2 {
   max-width: 60%;
   margin-left: auto;
   margin-right: auto;
-  font-size: 1.2rem;
-  font-family: "Press Start 2P", cursive;
-  /* font-family: "Audiowide", cursive; */
-  /* font-weight: 700; */
-  /* width: 500px ; */
 }
 
-
-
 img {
-  object-fit:scale-down;
+  object-fit: scale-down;
   width: 100%;
   height: 250px;
 }
