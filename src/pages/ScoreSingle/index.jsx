@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import DataContext from "../../context/dataContext";
 
 const ScoreSingle = () => {
-  const { inputValue } = useContext(DataContext);
-  console.log(inputValue);
+  const { inputValue, score } = useContext(DataContext);
 
   const navigate = useNavigate();
   const navigateToSinglePlayer = () => {
@@ -16,7 +15,9 @@ const ScoreSingle = () => {
 
   return (
     <>
-      <h1>{inputValue["username"]} Score:</h1>
+      <h1>
+        {inputValue["username"]} Score: {score}
+      </h1>
 
       <h2>Previous Scores:</h2>
 
