@@ -100,7 +100,7 @@ function Form() {
             Start
             <img
               className="img-submit"
-              src="/public/arrowheads.png"
+              src="/arrowheads.png" // vivian changed this to remove react warning error in terminal
               alt=""
               width={30}
             />
