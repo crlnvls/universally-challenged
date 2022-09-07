@@ -96,8 +96,12 @@ const MultiPlayerScores = () => {
         {/* works when cut out, browser refreshed, pasted back in, vs code saved 😩*/}
 
         <div id="btnContainer">
-          <button onClick={moveBackToCategory}>Play again </button>
-          <button onClick={moveBackToHome}>Return home</button>
+          <button onClick={moveBackToCategory} className="btn">
+            Play again
+          </button>
+          <button onClick={moveBackToHome} className="btn">
+            Return home
+          </button>
         </div>
       </section>
     </>
