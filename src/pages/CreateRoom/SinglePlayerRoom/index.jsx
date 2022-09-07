@@ -1,7 +1,7 @@
 import React from "react";
 import { SinglePlayerLogin } from "../../../components";
 
-const CreateSingleRoom = () => {
+const SinglePlayerRoom = () => {
   return (
     <>
       <SinglePlayerLogin />
@@ -9,6 +9,6 @@ const CreateSingleRoom = () => {
   );
 };
 
-export default CreateSingleRoom;
+export default SinglePlayerRoom;
 
 // for both multiplayer and single: render components based on previous choice

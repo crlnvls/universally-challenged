@@ -1,7 +1,7 @@
 import React from "react";
 import { MultiPlayerLogin } from "../../../components";
 
-const CreateMultiRoom = () => {
+const MultiPlayerRoom = () => {
   return (
     <>
       <MultiPlayerLogin />
@@ -9,6 +9,6 @@ const CreateMultiRoom = () => {
   );
 };
 
-export default CreateMultiRoom;
+export default MultiPlayerRoom;
 
 // for both multiplayer and single: render components based on previous choice
