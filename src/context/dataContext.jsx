@@ -9,6 +9,7 @@ export const DataProvider = ({ children }) => {
   const [questionData, setQuestionData] = useState([]);
   const [inputValue, setInputValue] = useState({ username: "" });
   const [playerMode, setPlayerMode] = useState("");
+  // const [username]
 
   const navigate = useNavigate();
 
@@ -34,8 +35,10 @@ export const DataProvider = ({ children }) => {
         const result = await axios.get(
           `https://opentdb.com/api.php?amount=${number}&category=${subject}&difficulty=${difficulty}&type=multiple`
         );
-        console.log(result.data);
-        setQuestionData(result.data);
+        const data = await result.data;
+        // console.log(result.data[“results”]);
+        setQuestionData(data["results"]);
+        return data.results;
       } catch (err) {
         console.log(err);
       }
