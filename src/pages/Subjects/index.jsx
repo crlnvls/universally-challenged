@@ -6,7 +6,9 @@ import "./Subject.css";
 const Subjects = () => {
   return (
     <>
-      <h1 className="header-subjects">Choose your category</h1>
+      <h1 className="header-subjects" role="header-subjects">
+        Choose your category
+      </h1>
       <Form />
     </>
   );

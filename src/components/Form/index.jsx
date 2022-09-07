@@ -1,23 +1,14 @@
-import React, { useState, useEffect, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-
+import React, { useContext } from "react";
 import DataContext from "../../context/dataContext";
 import "./Form.css";
-
 function Form() {
-  const navigate = useNavigate();
-  function moveToNextPage() {
-    navigate("/waiting");
-  }
-
   const {
     handleChangeNumber,
     handleChangeDifficulty,
     handleChangeSubject,
     handleSubmit,
-    number
+    number,
   } = useContext(DataContext);
-
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -29,7 +20,6 @@ function Form() {
           >
             General Knowledge
           </button>
-
           <button
             className="btn-category"
             value="27"
@@ -37,7 +27,6 @@ function Form() {
           >
             Animals
           </button>
-
           <button
             className="btn-category"
             value="21"
@@ -45,7 +34,6 @@ function Form() {
           >
             Sports
           </button>
-
           <button
             className="btn-category"
             value="18"
@@ -53,7 +41,6 @@ function Form() {
           >
             Computers
           </button>
-
           <button
             className="btn-category"
             value="15"
@@ -61,7 +48,6 @@ function Form() {
           >
             Video Games
           </button>
-
           <button
             className="btn-category"
             value="11"
@@ -94,7 +80,7 @@ function Form() {
           <option value="hard">Hard </option>
         </select>
         <div>
-          <button className="submit-btn" type="submit" onClick={moveToNextPage}>
+          <button className="submit-btn" type="submit">
             Start
             <img
               className="img-submit"
@@ -108,5 +94,4 @@ function Form() {
     </>
   );
 }
-
 export default Form;

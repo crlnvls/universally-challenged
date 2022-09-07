@@ -28,6 +28,7 @@ const Waiting = () => {
         </div>
 
         <button onClick={moveToNextPage}>Let's play</button>
+        <button onClick={navigate(-1)}>Back</button>
       </div>
     </>
   );
