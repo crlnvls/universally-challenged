@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import DataContext from "../../context/dataContext";
+import Sports from "./Sports";
 
 const Questions = () => {
   const { playerMode } = useContext(DataContext);
@@ -16,7 +17,10 @@ const Questions = () => {
 
   return (
     <>
-      <div>Questions</div>
+      <div>
+        <h1>Questions</h1>
+        <Sports />
+      </div>
 
       <button onClick={moveToNextPage}>
         click here for single or multi scores
