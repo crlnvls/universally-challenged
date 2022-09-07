@@ -1,12 +1,24 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import DataContext from "../../context/dataContext";
 
 const AnswerForm = () => {
   const { questionData } = useContext(DataContext);
+  const [answers, setAnswers] = useState([]);
+  const [score, setScore] = useState(0);
 
-  const handleSubmit = (e) => {
+  const calcScore = () => {
+    let count = 0;
+    if (answers == questionData[0]["correct_answer"]) {
+      setScore(count++);
+    }
+    console.log(answers);
+    console.log(score);
+  };
+
+  const handleAnswer = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
+    setAnswers(e.target.value);
+    calcScore();
   };
 
   return (
@@ -14,14 +26,14 @@ const AnswerForm = () => {
       {questionData.length
         ? questionData[0]["incorrect_answers"].map((d, index) => {
             return (
-              <button onClick={handleSubmit} key={index} value={d}>
+              <button onClick={handleAnswer} key={index} value={d}>
                 {d}
               </button>
             );
           })
         : "loading"}
       <button
-        onClick={handleSubmit}
+        onClick={handleAnswer}
         value={
           questionData.length ? questionData[0]["correct_answer"] : "loading"
         }
