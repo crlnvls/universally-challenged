@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import React, { useState } from "react";
+import React from "react";
 import * as router from "react-router";
 import { screen, render } from "@testing-library/react";
 import "@testing-library/jest-dom";

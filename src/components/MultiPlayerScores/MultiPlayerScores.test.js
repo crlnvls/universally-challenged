@@ -3,10 +3,17 @@
  */
 
 import React from "react";
+import * as router from "react-router";
 import { screen, render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import MultiPlayerScores from ".";
+
+const navigate = jest.fn();
+
+beforeEach(() => {
+  jest.spyOn(router, "useNavigate").mockImplementation(() => navigate);
+});
 
 describe("MultiPlayerScores component", () => {
   beforeEach(() => {
