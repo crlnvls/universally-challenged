@@ -1,21 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
+import DataContext from "../../context/dataContext";
+
 const Questions = () => {
+  const { playerMode } = useContext(DataContext);
   const navigate = useNavigate();
-  function moveToNextPageSingle() {
-    navigate("/score-single");
-  }
-  function moveToNextPageMulti() {
-    navigate("/scoreMulti");
+  function moveToNextPage() {
+    if (playerMode === "single") {
+      navigate("/score-single"); // for single players
+    } else {
+      navigate("/scoreMulti"); // for multi players
+    }
   }
 
   return (
     <>
       <div>Questions</div>
 
-      <button onClick={moveToNextPageSingle}>For single</button>
-      <button onClick={moveToNextPageMulti}>For Multi</button>
+      <button onClick={moveToNextPage}>
+        click here for single or multi scores
+      </button>
     </>
   );
 };
