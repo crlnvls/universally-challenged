@@ -1,18 +1,19 @@
 import React, { useContext } from "react";
+import { MultiPlayerLogin, SinglePlayerLogin } from "../../components";
 
 import DataContext from "../../context/dataContext";
-import MultiPlayerRoom from "./MultiPlayerRoom";
-import SinglePlayerRoom from "./SinglePlayerRoom";
 
 const CreateRoom = () => {
   const { playerMode } = useContext(DataContext);
   // if playerMode == "single" {render SinglePlayerRoom}
   // if playerMode == "multi" {render MultiPlayerRoom}
+
+  console.log("CreateRoom playerMode==> ", playerMode);
+
   return (
     <>
       {/* conditionally show based on btn clicked */}
-      <SinglePlayerRoom />
-      <MultiPlayerRoom />
+      {playerMode == "single" ? <SinglePlayerLogin /> : <MultiPlayerLogin />}
     </>
   );
 };
