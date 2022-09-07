@@ -15,7 +15,7 @@ beforeEach(() => {
   jest.spyOn(router, "useNavigate").mockImplementation(() => navigate);
 });
 
-describe("SinglePlayerLogin component", () => {
+describe("SinglePlayerLogin component element roles", () => {
   beforeEach(() => {
     render(<SinglePlayerLogin inputValue={{ username: "Test" }} />);
   });
@@ -48,5 +48,46 @@ describe("SinglePlayerLogin component", () => {
       const button = screen.queryByRole("submit");
       expect(button).toBeInTheDocument();
     });
+  });
+});
+
+describe("Running SinglePlayerLogin component", () => {
+  let component;
+
+  beforeEach(() => {
+    component = render(<SinglePlayerLogin />);
+  });
+
+  it("Renders without crashing", () => {
+    component;
+  });
+});
+
+describe("Attribute testing", () => {
+  test("should find 'h1' id attribute", () => {
+    const { container } = render(<SinglePlayerLogin />);
+    console.log("LOOK==> ", container.outerHTML);
+    const mockComponent = container.querySelector("h1#singlePlayerTitle");
+    expect(mockComponent).toBeInTheDocument();
+  });
+
+  test("should find form id attribute", () => {
+    const { container } = render(<SinglePlayerLogin />);
+    const mockComponent = container.querySelector(
+      "form#singlePlayerFormContainer"
+    );
+    expect(mockComponent).toBeInTheDocument();
+  });
+
+  test("should find input id attribute", () => {
+    const { container } = render(<SinglePlayerLogin />);
+    const mockComponent = container.querySelector("input#username");
+    expect(mockComponent).toBeInTheDocument();
+  });
+
+  test("should find button class attribute", () => {
+    const { container } = render(<SinglePlayerLogin />);
+    const mockComponent = container.querySelector("button.btn");
+    expect(mockComponent).toBeInTheDocument();
   });
 });
