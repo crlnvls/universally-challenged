@@ -8,12 +8,12 @@ const CreateRoom = () => {
   // if playerMode == "single" {render SinglePlayerRoom}
   // if playerMode == "multi" {render MultiPlayerRoom}
 
-  console.log("CreateRoom playerMode==> ", playerMode);
+  console.log("playerMode (createRoom)==> ", playerMode);
 
   return (
     <>
       {/* conditionally show based on btn clicked */}
-      {playerMode == "single" ? <SinglePlayerLogin /> : <MultiPlayerLogin />}
+      {playerMode === "single" ? <SinglePlayerLogin /> : <MultiPlayerLogin />}
     </>
   );
 };

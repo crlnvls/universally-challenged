@@ -9,13 +9,15 @@ const Home = () => {
 
   const { handlePlayer } = useContext(DataContext);
   
-  const navigate = useNavigate();
-  const navigateToSinglePlayer = () => {
-    navigate('/createRoom')
-  }
-  const navigateToMultiPlayer = () => {
-    navigate('/createRoom')
-  }
+  // const navigate = useNavigate();
+  // const navigateToSinglePlayer = () => {
+  //   handlePlayer()
+  //   navigate('/createRoom')
+  // }
+  // const navigateToMultiPlayer = () => {
+  //   handlePlayer()
+  //   navigate('/createRoom')
+  // }
 
   return (
     <>
@@ -33,8 +35,14 @@ const Home = () => {
 
       <div className="homeButtons">
 
+      <button className="btn" onClick={handlePlayer} value="single">Single Player</button>
+      <button className="btn" onClick={handlePlayer} value="multi">Multi Player</button>
+
+{/* 
       <button className="btn" onClick={navigateToSinglePlayer}>Single Player</button>
-      <button className="btn" onClick={navigateToMultiPlayer}>Multi Player</button>
+      <button className="btn" onClick={navigateToMultiPlayer}>Multi Player</button>       
+*/}
+
 {/*
         <button className="btn" value="single" onClick={handlePlayer}>
           Single Player
