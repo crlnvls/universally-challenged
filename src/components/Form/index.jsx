@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useNavigate } from "react-router-dom"; /* vivian added this so this page links to the category page 🙂 */
+import { useNavigate } from "react-router-dom";
 
 import DataContext from "../../context/dataContext";
 import "./Form.css";
 
 function Form() {
-  /* vivian added this so this page links to the category page 🙂 */
   const navigate = useNavigate();
   function moveToNextPage() {
     navigate("/waiting");
@@ -95,12 +94,11 @@ function Form() {
           <option value="hard">Hard </option>
         </select>
         <div>
-          {/* vivian added the 'onClick={moveToNextPage}' so this page links to the category page 🙂 */}
           <button className="submit-btn" type="submit" onClick={moveToNextPage}>
             Start
             <img
               className="img-submit"
-              src="/arrowheads.png" // vivian changed this to remove react warning error in terminal
+              src="/arrowheads.png"
               alt=""
               width={30}
             />

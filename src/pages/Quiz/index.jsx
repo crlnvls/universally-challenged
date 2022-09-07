@@ -10,7 +10,6 @@ const Quiz = () => {
     <>
       <div>Quiz</div>
 
-      {/* vivian added this so this page links to the category page 🙂 */}
       <Questions />
     </>
   );
