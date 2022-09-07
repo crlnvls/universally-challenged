@@ -7,7 +7,7 @@ const Waiting = () => {
   /* vivian added this so this page links to the category page 🙂 */
   const navigate = useNavigate();
   function moveToNextPage() {
-    navigate("/category");
+    navigate("/quiz");
   }
 
   return (

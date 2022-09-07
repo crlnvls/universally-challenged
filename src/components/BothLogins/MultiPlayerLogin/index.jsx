@@ -84,7 +84,7 @@ const MultiPlayerLogin = () => {
 
   // move to next page
   function moveToNextPage() {
-    navigate("/waiting");
+    navigate("/category");
   }
 
   return (
