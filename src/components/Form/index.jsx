@@ -85,7 +85,7 @@ function Form() {
             <img
               className="img-submit"
               src="/arrowheads.png"
-              alt=""
+              alt="start button"
               width={30}
             />
           </button>
