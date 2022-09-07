@@ -56,7 +56,8 @@ const SinglePlayerLogin = () => {
     fetch(`https://universallychallenged.herokuapp.com/users`, options)
       .then((res) => res.json())
       .then(() => {
-        setInputValue((prev) => {
+        handleUsernameInput((prev) => {
+          // console.log("prev==> ", prev);
           return prev;
         });
       })
