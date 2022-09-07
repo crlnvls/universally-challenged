@@ -110,7 +110,7 @@ body {
   margin-top: 1rem;
 }
 
-#btnContainer button {
+/* #btnContainer button {
   padding: 0.5rem 1rem;
   width: 18rem;
   box-shadow: 0 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
@@ -125,8 +125,7 @@ body {
 
 #btnContainer button:hover {
   background-color: #22def784;
-  /* background-color: transparent; */
-}
+} */
 
 @media (min-width: 992px) {
   #btnContainer {
@@ -139,7 +138,7 @@ body {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   #btnContainer {
     margin-top: 2rem;
   }

@@ -75,7 +75,7 @@ body {
   font-weight: 900;
 }
 
-#singlePlayerFormContainer button {
+/* #singlePlayerFormContainer button {
   display: grid;
   grid-template-columns: auto auto;
   padding: 1.2rem;
@@ -93,8 +93,7 @@ body {
 
 #singlePlayerFormContainer button:hover {
   background-color: #22def784;
-  /* background-color: transparent; */
-}
+} */
 
 @media (min-width: 576px) {
   #singlePlayerFormContainer {
