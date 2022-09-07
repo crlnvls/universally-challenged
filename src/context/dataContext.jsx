@@ -1,9 +1,7 @@
 import { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
 const DataContext = createContext({});
-
 export const DataProvider = ({ children }) => {
   const [subject, setSubject] = useState(9);
   const [number, setNumber] = useState("5");
@@ -11,6 +9,7 @@ export const DataProvider = ({ children }) => {
   const [questionData, setQuestionData] = useState([]);
   const [inputValue, setInputValue] = useState({ username: "" });
   const [playerMode, setPlayerMode] = useState("");
+  // const [username]
 
   const navigate = useNavigate();
 
@@ -36,8 +35,10 @@ export const DataProvider = ({ children }) => {
         const result = await axios.get(
           `https://opentdb.com/api.php?amount=${number}&category=${subject}&difficulty=${difficulty}&type=multiple`
         );
-        console.log(result.data);
-        setQuestionData(result.data);
+        const data = await result.data;
+        // console.log(result.data[“results”]);
+        setQuestionData(data["results"]);
+        return data.results;
       } catch (err) {
         console.log(err);
       }
@@ -79,5 +80,4 @@ export const DataProvider = ({ children }) => {
     </DataContext.Provider>
   );
 };
-
 export default DataContext;

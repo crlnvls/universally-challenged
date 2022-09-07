@@ -34,10 +34,10 @@ const SinglePlayerLogin = () => {
       });
 
       // slows move to next page to show username & spinner
-      setTimeout(moveToNextPage, 800);
+      setTimeout(moveToNextPage, 0);
 
       // creates new user in mongodb
-      createNewUser();
+      // createNewUser();
     }
   };
 
@@ -46,19 +46,15 @@ const SinglePlayerLogin = () => {
       method: "post",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username: inputValue.username
-      })
+        username: inputValue.username,
+      }),
     };
 
     fetch(`https://universallychallenged.herokuapp.com/users`, options)
       .then((res) => res.json())
-      .then((data) => console.log("data==> ", data))
-      .then((data) => {
-        handleUsernameInput(data);
-      })
       .catch((err) => console.log("Something went wrong: ", err));
   }
 
