@@ -5,9 +5,14 @@ import DataContext from "../../context/dataContext";
 import "./Form.css";
 
 function Form() {
+  const { playerMode } = useContext(DataContext);
   const navigate = useNavigate();
   function moveToNextPage() {
-    navigate("/waiting");
+    if (playerMode === "single") {
+      navigate("/quiz"); // for single players
+    } else {
+      navigate("/waiting"); // for multi players
+    }
   }
 
   const {
