@@ -11,19 +11,30 @@ const Quiz = () => {
   const navigate = useNavigate();
 
   const calcScore = () => {
+    console.log(questionData[currentQuestion]["correct_answer"]);
+    console.log(answers[currentQuestion]);
+    console.log(answers[0]);
+    console.log(answers[1]);
+    console.log(answers[2]);
+    console.log(answers[3]);
+    console.log(answers[4]);
+    // Answers is not behaving properly BUG
     if (answers == questionData[currentQuestion]["correct_answer"]) {
       setScore(score + 1);
+      console.log("ducks");
     }
   };
 
   const handleAnswer = (e) => {
     e.preventDefault();
-    setAnswers(e.target.value);
+    setAnswers((answers) => [...answers, e.target.value]);
     setCurrentQuestion(currentQuestion + 1);
     calcScore();
     if (currentQuestion + 1 == questionData.length) {
       navigate("/score-single");
     }
+    // console.log(answers);
+    console.log(score);
   };
   return (
     <>
