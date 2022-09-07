@@ -7,12 +7,12 @@ const ScoreSingle = () => {
 
   const navigate = useNavigate();
   const navigateToSinglePlayer = () => {
-    navigate("/createRoom");
+    navigate("/create-room");
   };
   const navigateHome = () => {
     navigate("/");
   };
-  // console.log(score);
+
   return (
     <>
       <h1>
