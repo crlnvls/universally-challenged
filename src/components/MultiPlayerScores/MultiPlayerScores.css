@@ -1,0 +1,146 @@
+/************************************************************************** default customs */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  cursor: default;
+}
+
+#winnerPageSectionContainer {
+  display: grid;
+  grid-template-columns: auto;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+/************************************************************************** titles */
+#winnerTitle {
+  font-family: 'Press Start 2P', sans-serif;
+  padding: 30px;
+  box-shadow: 1px 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
+  text-shadow: 1px 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
+  font-size: 2rem;
+  margin-top: 0rem;
+  line-height: 1.6;
+}
+
+#winningUsername {
+  font-size: 2rem;
+  margin-top: 2rem;
+  text-shadow: 1px 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
+}
+
+.fa-solid.fa-trophy {
+  font-size: 4rem;
+  margin-top: 2rem;
+  text-shadow: 1px 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
+  border-radius: 2rem;
+}
+
+@media (min-width: 576px) {
+  #winnerTitle {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  #winnerTitle {
+    font-size: 4rem;
+  }
+
+  #winningUsername {
+    font-size: 3rem;
+  }
+
+  .fa-solid.fa-trophy {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  #winnerTitle {
+    font-size: 4.5rem;
+    padding: 1rem 6rem;
+  }
+
+  #winningUsername {
+    font-size: 3.5rem;
+  }
+
+  .fa-solid.fa-trophy {
+    font-size: 5.5rem;
+  }
+}
+
+/************************************************************************** multi players names */
+#multiPlayerContainer {
+  list-style: none;
+  margin-top: 2rem;
+  height: 16rem;
+  overflow-x: hidden;
+  /* overflow-y: scroll; */
+  box-shadow: 1px 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
+}
+
+#multiPlayerContainer li {
+  font-size: 2rem;
+  line-height: 3rem;
+  text-shadow: none;
+}
+
+@media (min-width: 1200px) {
+  #multiPlayerContainer {
+    margin-top: 1rem;
+    width: 35rem;
+  }
+}
+
+/************************************************************************** btns */
+#btnContainer {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+  justify-items: center;
+  grid-gap: 1rem;
+  margin-top: 1rem;
+}
+
+#btnContainer button {
+  padding: 0.5rem 1rem;
+  width: 18rem;
+  box-shadow: 0 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
+  background-color: #22def7bb;
+  border-radius: 1.25rem;
+  border: 0.063rem solid transparent;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-family: 'Press Start 2P', sans-serif;
+  text-transform: uppercase;
+}
+
+#btnContainer button:hover {
+  background-color: #22def784;
+  /* background-color: transparent; */
+}
+
+@media (min-width: 992px) {
+  #btnContainer {
+    grid-template-columns: auto auto;
+  }
+
+  #btnContainer button {
+    padding: 1.5rem 1rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  #btnContainer {
+    margin-top: 2rem;
+  }
+}
