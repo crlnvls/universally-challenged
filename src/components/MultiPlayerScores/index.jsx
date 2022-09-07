@@ -52,6 +52,7 @@ const MultiPlayerScores = () => {
           );
         })}
       </ul>
+      {/* works when cut out, browser refreshed, pasted back in, vs code saved 😩*/}
 
       <button>
         <Link to={"/createRoom"}>Play again</Link>
