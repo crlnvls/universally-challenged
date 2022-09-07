@@ -1,9 +1,6 @@
-import React, { useContext } from "react";
-import DataContext from "../../context/dataContext";
+import React from "react";
 
-const Subject = () => {
-  const { questionData } = useContext(DataContext);
-  console.log("Quiz page", questionData);
+const Subject = ({ questionData }) => {
   return (
     <>
       <h1>{questionData.length ? questionData[0].category : "loading"}</h1>

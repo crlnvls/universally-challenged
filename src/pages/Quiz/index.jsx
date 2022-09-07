@@ -22,7 +22,7 @@ const Quiz = () => {
   };
   return (
     <>
-      <Subject />
+      <Subject questionData={questionData} />
       <Question />
       <AnswerForm
         handleAnswer={handleAnswer}
