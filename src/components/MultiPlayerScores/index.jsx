@@ -38,10 +38,10 @@ const MultiPlayerScores = () => {
     <>
       <h1>Winner</h1>
 
+      {/* works when cut out, browser refreshed, pasted back in, vs code saved 😩*/}
       <h3>{findWinner().username}</h3>
       <i className="fa-solid fa-trophy"></i>
 
-      {/* works when cut out, browser refreshed, pasted back in, vs code saved 😩*/}
       <ul>
         {allPlayers.users.map((oneUserObj) => {
           return (
