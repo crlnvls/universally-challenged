@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "./MultiPlayerLogin.css";
 
@@ -12,7 +12,7 @@ const MultiPlayerLogin = () => {
   });
   const [submitForm, setSubmitForm] = useState(false);
   const [isValid, setIsValid] = useState(false);
-  // console.log("multiplayer: ", inputValues);
+  const navigate = useNavigate();
 
   const handleUsernameInput = (e) => {
     // updates username input
@@ -50,16 +50,48 @@ const MultiPlayerLogin = () => {
         prev = true;
         return prev;
       });
+
+      // slows move to next page to show username & spinner
+      setTimeout(moveToNextPage, 800);
+
+      // creates new user in mongodb
+      createNewUser();
     }
   };
 
+  function createNewUser() {
+    const options = {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: inputValues.username
+      })
+    };
+
+    fetch(`https://universallychallenged.herokuapp.com/users`, options)
+      .then((res) => res.json())
+      .then(() => {
+        setInputValues((prev) => {
+          console.log();
+          return prev;
+        });
+      })
+      .catch((err) => console.log("Something went wrong: ", err));
+  }
+
+  // move to next page
+  function moveToNextPage() {
+    navigate("/category");
+  }
+
   return (
     <>
-      <h1 id="multiPlayerLoginTitle">Create your room</h1>
-
-      {submitForm && isValid ? (
-        <p style={{ color: "green" }}>Thank you for creating your room</p>
-      ) : null}
+      {submitForm && isValid ? null : (
+        <h1 id="multiPlayerLoginTitle">Create your room</h1>
+      )}
 
       {submitForm && isValid ? null : (
         <form onSubmit={handleSubmitForm} id="multiPlayerFormContainer">
@@ -77,7 +109,7 @@ const MultiPlayerLogin = () => {
           ) : null}
           <br />
 
-          <label htmlFor="room">Choose your room</label>
+          <label htmlFor="room">Choose your room name</label>
           <input
             autoComplete="off"
             type="text"
@@ -87,12 +119,13 @@ const MultiPlayerLogin = () => {
             onChange={handleRoomInput}
           />
           {submitForm && !inputValues.room ? (
-            <p style={{ color: "red" }}>Please enter a room</p>
+            <p style={{ color: "red" }}>Please enter a room name</p>
           ) : null}
           <br />
 
           <label htmlFor="numOfPlayers">How many players (2-5)?</label>
           <input
+            min="2"
             autoComplete="off"
             type="number"
             placeholder="Enter number of players"
@@ -105,19 +138,24 @@ const MultiPlayerLogin = () => {
           (submitForm && parseInt(inputValues.playerNum) < 2) ||
           (submitForm && parseInt(inputValues.playerNum) > 5) ? (
             <p style={{ color: "red" }}>
-              Please select a whole number between 2 and 5
+              Please select a number between 2 and 5
             </p>
           ) : null}
           <br />
 
-          {submitForm && isValid ? null : <button>Submit</button>}
+          {submitForm && isValid ? null : (
+            <button>
+              Submit <i className="fa-solid fa-paper-plane"></i>
+            </button>
+          )}
         </form>
       )}
 
       {submitForm && isValid ? (
-        <button>
-          <Link to={"/waiting"}>Next</Link>
-        </button>
+        <>
+          <p>Hello {inputValues.username}</p>
+          <i className="fa-solid fa-spinner fa-spin-pulse"></i>
+        </>
       ) : null}
     </>
   );

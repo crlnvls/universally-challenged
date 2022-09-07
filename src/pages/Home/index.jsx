@@ -11,10 +11,10 @@ const Home = () => {
   
   const navigate = useNavigate();
   const navigateToSinglePlayer = () => {
-    navigate('/create-room')
+    navigate('/createRoom')
   }
   const navigateToMultiPlayer = () => {
-    navigate('/create-room')
+    navigate('/createRoom')
   }
 
   return (
@@ -33,8 +33,8 @@ const Home = () => {
 
       <div className="homeButtons">
 
-      <button class="btn" onClick={navigateToSinglePlayer}>Single Player</button>
-      <button class="btn" onClick={navigateToMultiPlayer}>Multi Player</button>
+      <button className="btn" onClick={navigateToSinglePlayer}>Single Player</button>
+      <button className="btn" onClick={navigateToMultiPlayer}>Multi Player</button>
 {/*
         <button className="btn" value="single" onClick={handlePlayer}>
           Single Player

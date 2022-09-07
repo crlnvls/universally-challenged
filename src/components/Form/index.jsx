@@ -1,15 +1,21 @@
 import React, { useState, useEffect, useContext } from "react";
-import DataContext from "../../context/dataContext";
+import { useNavigate } from "react-router-dom";
 
+import DataContext from "../../context/dataContext";
 import "./Form.css";
 
 function Form() {
+  const navigate = useNavigate();
+  function moveToNextPage() {
+    navigate("/waiting");
+  }
+
   const {
     handleChangeNumber,
     handleChangeDifficulty,
     handleChangeSubject,
     handleSubmit,
-    number,
+    number
   } = useContext(DataContext);
 
   return (
@@ -88,11 +94,11 @@ function Form() {
           <option value="hard">Hard </option>
         </select>
         <div>
-          <button className="submit-btn" type="submit">
+          <button className="submit-btn" type="submit" onClick={moveToNextPage}>
             Start
             <img
               className="img-submit"
-              src="/public/arrowheads.png"
+              src="/arrowheads.png"
               alt=""
               width={30}
             />
