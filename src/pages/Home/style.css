@@ -48,7 +48,7 @@ h2 {
   margin-right: auto;
 }
 
-img {
+.logo {
   object-fit: scale-down;
   width: 100%;
   height: 250px;
