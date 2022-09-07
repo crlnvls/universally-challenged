@@ -1,30 +1,29 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import DataContext from "../../context/dataContext";
 
 const AnswerForm = () => {
   const { questionData } = useContext(DataContext);
   const [answers, setAnswers] = useState([]);
   const [score, setScore] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
 
   const calcScore = () => {
-    let count = 0;
-    if (answers == questionData[0]["correct_answer"]) {
-      setScore(count++);
+    if (answers == questionData[currentQuestion]["correct_answer"]) {
+      setScore(score + 1);
     }
-    console.log(answers);
-    console.log(score);
   };
 
   const handleAnswer = (e) => {
     e.preventDefault();
     setAnswers(e.target.value);
+    setCurrentQuestion(currentQuestion + 1);
     calcScore();
   };
 
   return (
     <>
       {questionData.length
-        ? questionData[0]["incorrect_answers"].map((d, index) => {
+        ? questionData[currentQuestion]["incorrect_answers"].map((d, index) => {
             return (
               <button onClick={handleAnswer} key={index} value={d}>
                 {d}
@@ -35,10 +34,14 @@ const AnswerForm = () => {
       <button
         onClick={handleAnswer}
         value={
-          questionData.length ? questionData[0]["correct_answer"] : "loading"
+          questionData.length
+            ? questionData[currentQuestion]["correct_answer"]
+            : "loading"
         }
       >
-        {questionData.length ? questionData[0]["correct_answer"] : "loading"}
+        {questionData.length
+          ? questionData[currentQuestion]["correct_answer"]
+          : "loading"}
       </button>
     </>
   );
