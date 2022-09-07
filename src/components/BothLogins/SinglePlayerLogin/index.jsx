@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import DataContext from "../../../context/dataContext";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "./SinglePlayerLogin.css";
 
@@ -74,7 +74,6 @@ const SinglePlayerLogin = () => {
 
       {submitForm && isValid ? null : (
         <>
-          {/* <NavLink to="/score-single">Score</NavLink> */}
           <form
             onSubmit={handleSubmitForm}
             id="singlePlayerFormContainer"
@@ -107,7 +106,7 @@ const SinglePlayerLogin = () => {
 
       {submitForm && isValid ? (
         <>
-          <p id="welcomeMessage">Welcome {inputValue.username}</p>
+          <p id="singleWelcome">Welcome {inputValue.username}</p>
           <i className="fa-solid fa-spinner fa-spin-pulse"></i>
         </>
       ) : null}

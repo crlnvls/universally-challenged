@@ -153,7 +153,7 @@ const MultiPlayerLogin = () => {
 
       {submitForm && isValid ? (
         <>
-          <p>Hello {inputValues.username}</p>
+          <p id="multiWelcome">Welcome {inputValues.username}</p>
           <i className="fa-solid fa-spinner fa-spin-pulse"></i>
         </>
       ) : null}
