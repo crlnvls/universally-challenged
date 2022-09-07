@@ -4,7 +4,7 @@ import DataContext from "../../context/dataContext";
 import { Subject, Question, AnswerForm, QNumber } from "../../components";
 
 const Quiz = () => {
-  const { questionData } = useContext(DataContext);
+  const { questionData, playerMode } = useContext(DataContext);
   const [answers, setAnswers] = useState([]);
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -22,7 +22,11 @@ const Quiz = () => {
     setCurrentQuestion(currentQuestion + 1);
     calcScore();
     if (currentQuestion + 1 == questionData.length) {
-      navigate("/score-single");
+      if (playerMode === "single") {
+        navigate("/score-single"); // if user chose single player
+      } else {
+        navigate("/scoreMulti"); // if user chose multi player
+      }
     }
   };
   return (
