@@ -30,7 +30,7 @@ const ScoreSingle = () => {
               alt="start button"
               className="img-nav"
               width={30}
-            />{" "}
+            />
             Leaderboard
             <img
               src="/alien.png"
