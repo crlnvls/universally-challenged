@@ -201,32 +201,3 @@ describe("Component text content", () => {
     expect(btnText.textContent).toBe("Submit");
   });
 });
-
-describe("User events", () => {
-  beforeEach(() => {
-    render(
-      <BrowserRouter>
-        <SinglePlayerLogin />
-      </BrowserRouter>
-    );
-  });
-
-  // it("Checks input value changes", async () => {
-  //   // console.log("LOOK==> ", inputField);
-  //   const inputField = screen.queryByRole("input"); // get input field
-  //   const warningMessage = screen.queryByRole("paragraph"); // get warning para
-  //   const submitBtn = screen.queryByRole("submit"); // get warning para
-
-  //   expect(inputField.textContent).toBe(""); // input empty at first
-  //   expect(warningMessage.textContent).toBeFalsy(); // para empty at first
-  //   expect(warningMessage.textContent).toBe(""); // might not work...
-
-  //   await userEvent.click(submitBtn)
-
-  //   if (inputField.textContent === "") {
-  //     expect(warningMessage.textContent).toBe("Please enter a username");
-  //     expect(warningMessage.textContent).toBeTruthy();
-  //   }
-
-  // });
-});
