@@ -3,33 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 import "./MultiPlayerScores.css";
 
-const MultiPlayerScores = () => {
+const LeaderBoard = () => {
   /* state variables for: username & score */
   const [allPlayers, setAllPlayers] = useState({});
   const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   fetch("https://universallychallenged.herokuapp.com/users")
-  //     .then((response) => response.json())
-  //     .then((data) => console.log(data))
-  //     .catch(console.log(err));
-  // }, []);
-
-  useEffect(() => {
-    async function fetchUsers() {
-      const response = await fetch(
-        "https://universallychallenged.herokuapp.com/users"
-      );
-      const json = await response.json();
-      setAllPlayers((prev) => {
-        prev = json;
-        return prev;
-      });
-    }
-    fetchUsers();
-  }, []);
-
-  console.log(allPlayers);
 
   const moveBackToCategory = () => {
     navigate("/category");
@@ -74,6 +51,30 @@ const MultiPlayerScores = () => {
     // return winnerObj;
   }
 
+  function getAllPlayers() {
+    useEffect(() => {
+      fetch("https://universallychallenged.herokuapp.com/users") // "http://127.0.0.1:5173/waiting" or "https://universally-challenged.netlify.app/waiting"
+        .then((response) => response.json())
+        .then((data) => setAllPlayers(data));
+    }, []);
+
+    // useEffect(() => {
+    //   async function fetchUsers() {
+    //     const response = await fetch(
+    //       "https://universallychallenged.herokuapp.com/users"
+    //     );
+    //     const json = await response.json();
+    //     setAllPlayers((prev) => {
+    //       prev = json;
+    //       return prev;
+    //     });
+    //   }
+    //   fetchUsers();
+    // }, []);
+  }
+
+  getAllPlayers();
+
   return (
     <>
       <section id="winnerPageSectionContainer">
@@ -82,17 +83,16 @@ const MultiPlayerScores = () => {
         {/* works when cut out, browser refreshed, pasted back in, vs code saved 😩*/}
         <h3 id="winningUsername">{findWinner()}</h3>
         <i className="fa-solid fa-trophy"></i>
+
         <ul id="multiPlayerContainer">
-          {allPlayers.length
-            ? allPlayers.users?.map((oneUserObj) => {
-                return (
-                  <li key={oneUserObj._id}>
-                    <span>{oneUserObj.username}</span>{" "}
-                    <span>{oneUserObj.scores.animals}/5</span>
-                  </li>
-                );
-              })
-            : "Loading"}
+          {allPlayers.users?.map((oneUserObj) => {
+            return (
+              <li key={oneUserObj._id}>
+                <span>{oneUserObj.username}</span>{" "}
+                <span>{oneUserObj.scores.animals}/5</span>
+              </li>
+            );
+          })}
         </ul>
         {/* works when cut out, browser refreshed, pasted back in, vs code saved 😩*/}
 
@@ -109,4 +109,4 @@ const MultiPlayerScores = () => {
   );
 };
 
-export default MultiPlayerScores;
+export default LeaderBoard;
