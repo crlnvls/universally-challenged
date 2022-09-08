@@ -55,12 +55,9 @@ export const DataProvider = ({ children }) => {
   };
 
   const handlePlayer = (e) => {
-    setPlayerMode(prev => {
-      prev = e.target.value;
-      return prev;
-    });
+    setPlayerMode(e.target.value);
     // console.log("playerMode (dataContext)==> ", playerMode);
-    navigate('/createRoom')
+    navigate("/createRoom");
   };
 
   return (
