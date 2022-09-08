@@ -9,13 +9,19 @@ import { BrowserRouter } from "react-router-dom";
 import * as router from "react-router";
 
 import SinglePlayerLogin from ".";
+import handleSubmitForm from ".";
+import moveToNextPage from ".";
+import createNewUser from ".";
+import { DataProvider } from "../../../context/dataContext";
 
+console.log("render==> ", render);
 describe("Running component", () => {
   it("Renders without crashing", () => {
-    render(
-      <BrowserRouter>
-        <SinglePlayerLogin />
-      </BrowserRouter>
+    render(<DataProvider>
+        <BrowserRouter>
+          <SinglePlayerLogin />
+        </BrowserRouter>
+      </DataProvider>
     );
   });
 });
@@ -38,31 +44,31 @@ describe("Component element roles", () => {
     });
   });
 
-  it("Check one 'h1' role = 'heading", () => {
+  it("Check one 'h1' role = 'heading'", () => {
     const heading = screen.queryByRole("heading");
     expect(heading).toBeInTheDocument();
     expect(heading).toBeTruthy();
   });
 
-  it("Checks 'form' element role = 'form", () => {
+  it("Checks 'form' element role = 'form'", () => {
     const form = screen.queryByRole("form");
     expect(form).toBeInTheDocument();
     expect(form).toBeTruthy();
   });
 
-  it("Checks 'input' element role = 'input", () => {
+  it("Checks 'input' element role = 'input'", () => {
     const input = screen.queryByRole("input");
     expect(input).toBeInTheDocument();
     expect(input).toBeTruthy();
   });
 
-  it("Checks 'p' element role = 'warningPara", () => {
+  it("Checks 'p' element role = 'warningPara'", () => {
     const paraElem = screen.queryByRole("warningPara");
     expect(paraElem).not.toBeInTheDocument();
     expect(paraElem).toBeFalsy();
   });
 
-  it("Checks 'button' element role = 'submit", () => {
+  it("Checks 'button' element role = 'submit'", () => {
     const button = screen.queryByRole("submit");
     expect(button).toBeInTheDocument();
     expect(button).toBeTruthy();
@@ -168,10 +174,11 @@ describe("Other selector testing", () => {
 
 describe("Component text content", () => {
   beforeEach(() => {
-    render(
-      <BrowserRouter>
-        <SinglePlayerLogin />
-      </BrowserRouter>
+    render(<DataProvider>
+        <BrowserRouter>
+          <SinglePlayerLogin />
+        </BrowserRouter>
+      </DataProvider>
     );
   });
 
@@ -198,5 +205,19 @@ describe("Component text content", () => {
     const btnText = screen.queryByRole("submit");
     expect(btnText.textContent).toBeTruthy();
     expect(btnText.textContent).toBe("Submit");
+  });
+});
+
+describe("Running functions should not throw errors", () => {
+  test("handleSubmitForm()", () => {
+    expect(() => handleSubmitForm).not.toThrow();
+  });
+
+  test("moveToNextPage()", () => {
+    expect(() => moveToNextPage).not.toThrow();
+  });
+
+  test("createNewUser()", () => {
+    expect(() => createNewUser).not.toThrow();
   });
 });

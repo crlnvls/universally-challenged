@@ -6,6 +6,7 @@ import React from "react";
 import * as router from "react-router";
 import { screen, render } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import axios from "axios";
 
 import MultiPlayerScores from ".";
 
@@ -26,5 +27,23 @@ describe("MultiPlayerScores component", () => {
     heading.map((singleHeadingInArr) => {
       expect(singleHeadingInArr).toBeInTheDocument();
     });
+  });
+});
+
+describe("Displaying scores", () => {
+  it("Shows winner main title", async () => {
+    jest.spyOn(axios, "get").mockResolvedValueOnce({ data: [] });
+
+    render(
+      <BrowserRouter>
+        <MultiPlayerScores />
+      </BrowserRouter>
+    );
+
+    await waitForElementToBeRemoved(() => screen.queryByText("Loading..."));
+
+    const heading = screen.queryByRole("heading");
+
+    expect(heading).toBeInTheDocument();
   });
 });

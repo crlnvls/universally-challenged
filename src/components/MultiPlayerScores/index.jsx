@@ -107,7 +107,7 @@ const MultiPlayerScores = () => {
         </section>
       ) : (
         <section id="winnerPageSectionContainer">
-          <h3 id="winningUsername">Loading</h3>
+          <h3 id="winningUsername">Loading...</h3>
         </section>
       )}
     </>
