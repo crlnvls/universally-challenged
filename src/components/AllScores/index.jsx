@@ -58,9 +58,9 @@ const AllScores = () => {
         <section>
           <h1 className="header-leader">Leaderboard</h1>
           <h3 className="winner">
-            <i className="fa-solid fa-trophy"></i>
+            <i className="fa-solid fa-trophy trophy"></i>
             {findWinner()}
-            <i className="fa-solid fa-trophy"></i>
+            <i className="fa-solid fa-trophy trophy"></i>
           </h3>
           <div className="container-leader">
             <ul id="multiPlayerContainer">
@@ -77,7 +77,7 @@ const AllScores = () => {
 
           <div id="btnContainer">
             <button onClick={moveBack} className="btn-leader">
-              Go Back
+              Back
             </button>
             <button onClick={moveBackToHome} className="btn-leader">
               Return home
