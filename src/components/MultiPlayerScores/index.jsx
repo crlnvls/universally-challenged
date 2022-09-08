@@ -29,7 +29,7 @@ const MultiPlayerScores = () => {
     fetchUsers();
   }, []);
 
-  console.log(allPlayers);
+  // console.log("allPlayers==> ", allPlayers);
 
   const moveBackToCategory = () => {
     navigate("/category");
@@ -40,8 +40,8 @@ const MultiPlayerScores = () => {
   };
 
   function findWinner() {
-    console.log("allPlayers: ", allPlayers);
-    console.log("allPlayers.users: ", allPlayers.users);
+    // console.log("allPlayers: ", allPlayers);
+    // console.log("allPlayers.users: ", allPlayers.users);
 
     let winnerName;
 
@@ -51,7 +51,7 @@ const MultiPlayerScores = () => {
         return singleObj.scores.animals;
       })
     );
-    console.log("maxScore==> ", maxScore);
+    // console.log("maxScore==> ", maxScore);
 
     for (let i = 0; i < allPlayers.users.length; i++) {
       let singleObj = allPlayers.users[i];
@@ -60,7 +60,7 @@ const MultiPlayerScores = () => {
       }
     }
 
-    console.log("winnerName==> ", winnerName);
+    // console.log("winnerName==> ", winnerName);
     return winnerName;
 
     // let winnerObj = allPlayers.users.reduce(function (prev, current) {
@@ -76,35 +76,40 @@ const MultiPlayerScores = () => {
 
   return (
     <>
-      <section id="winnerPageSectionContainer">
-        <h1 id="winnerTitle">Winner</h1>
+      {/* check length of obj instead of list */}
+      {Object.keys(allPlayers).length !== 0 ? (
+        <section id="winnerPageSectionContainer">
+          <h1 id="winnerTitle">Winner</h1>
 
-        {/* works when cut out, browser refreshed, pasted back in, vs code saved 😩*/}
-        <h3 id="winningUsername">{findWinner()}</h3>
-        <i className="fa-solid fa-trophy"></i>
-        <ul id="multiPlayerContainer">
-          {allPlayers.length
-            ? allPlayers.users?.map((oneUserObj) => {
-                return (
-                  <li key={oneUserObj._id}>
-                    <span>{oneUserObj.username}</span>{" "}
-                    <span>{oneUserObj.scores.animals}/5</span>
-                  </li>
-                );
-              })
-            : "Loading"}
-        </ul>
-        {/* works when cut out, browser refreshed, pasted back in, vs code saved 😩*/}
+          {/* works when cut out, browser refreshed, pasted back in, vs code saved 😩*/}
+          <h3 id="winningUsername">{findWinner()}</h3>
+          <i className="fa-solid fa-trophy"></i>
+          <ul id="multiPlayerContainer">
+            {allPlayers.users?.map((oneUserObj) => {
+              return (
+                <li key={oneUserObj._id}>
+                  <span>{oneUserObj.username}</span>{" "}
+                  <span>{oneUserObj.scores.animals}/5</span>
+                </li>
+              );
+            })}
+          </ul>
+          {/* works when cut out, browser refreshed, pasted back in, vs code saved 😩*/}
 
-        <div id="btnContainer">
-          <button onClick={moveBackToCategory} className="btn">
-            Play again
-          </button>
-          <button onClick={moveBackToHome} className="btn">
-            Return home
-          </button>
-        </div>
-      </section>
+          <div id="btnContainer">
+            <button onClick={moveBackToCategory} className="btn">
+              Play again
+            </button>
+            <button onClick={moveBackToHome} className="btn">
+              Return home
+            </button>
+          </div>
+        </section>
+      ) : (
+        <section id="winnerPageSectionContainer">
+          <h3 id="winningUsername">Loading</h3>
+        </section>
+      )}
     </>
   );
 };
