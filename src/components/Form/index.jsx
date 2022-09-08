@@ -57,29 +57,31 @@ function Form() {
             Film
           </button>
         </div>
-        <p>Number of questions</p>
-        <label htmlFor="number-questions"></label>
-        <input
-          type="number"
-          id="number-questions"
-          name="number-questions"
-          min={5}
-          max={10}
-          value={number}
-          onChange={handleChangeNumber}
-        />
-        <p>Game Difficulty</p>
-        <label htmlFor="difficulty"></label>
-        <select
-          name="difficulty"
-          id="difficulty"
-          onChange={handleChangeDifficulty}
-          required
-        >
-          <option value="easy">Easy</option>
-          <option value="medium">Medium</option>
-          <option value="hard">Hard </option>
-        </select>
+        <div className="container-p">
+          <p>Number of questions</p>
+          <label htmlFor="number-questions"></label>
+          <input
+            type="number"
+            id="number-questions"
+            name="number-questions"
+            min={5}
+            max={10}
+            value={number}
+            onChange={handleChangeNumber}
+          />
+          <p>Game Difficulty</p>
+          <label htmlFor="difficulty"></label>
+          <select
+            name="difficulty"
+            id="difficulty"
+            onChange={handleChangeDifficulty}
+            required
+          >
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard </option>
+          </select>
+        </div>
         <div>
           <button className="submit-btn" type="submit">
             Start
