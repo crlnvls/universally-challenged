@@ -34,7 +34,7 @@ const Quiz = () => {
       if (playerMode === "single") {
         navigate("/score-single"); // if user chose single player
       } else {
-        navigate("/scoreMulti"); // if user chose multi player
+        navigate("/score-multi"); // if user chose multi player
       }
     }
     // console.log(answers);

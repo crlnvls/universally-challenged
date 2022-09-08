@@ -4,11 +4,16 @@ import "./Question.css";
 const Question = ({ currentQuestion, questionData }) => {
   return (
     <>
-      <h3 className="question">
-        {questionData.length
-          ? questionData[currentQuestion].question
-          : "loading"}
-      </h3>
+      {questionData.length ? (
+        <h3
+          className="question"
+          dangerouslySetInnerHTML={{
+            __html: questionData[currentQuestion].question,
+          }}
+        ></h3>
+      ) : (
+        "loading"
+      )}
     </>
   );
 };
