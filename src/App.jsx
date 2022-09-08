@@ -15,6 +15,7 @@ function App() {
         <Route path="/quiz" element={<Pages.Quiz />}></Route>
         <Route path="/score-single" element={<Pages.ScoreSingle />}></Route>
         <Route path="/score-multi" element={<Pages.ScoreMulti />}></Route>
+        <Route path="/leaderboard" element={<Pages.LeaderBoard />}></Route>
         <Route path="*" element={<Pages.NotFound />}></Route>
       </Routes>
     </DataProvider>
