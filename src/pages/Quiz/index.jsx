@@ -22,7 +22,7 @@ const Quiz = () => {
       if (playerMode === "single") {
         navigate("/score-single"); // if user chose single player
       } else {
-        navigate("/scoreMulti"); // if user chose multi player
+        navigate("/score-multi"); // if user chose multi player
       }
     }
   };
@@ -30,13 +30,13 @@ const Quiz = () => {
   return (
     <>
       <Subject questionData={questionData} />
+      <QNumber currentQuestion={currentQuestion} questionData={questionData} />
       <Question currentQuestion={currentQuestion} questionData={questionData} />
       <AnswerForm
         handleAnswer={handleAnswer}
         currentQuestion={currentQuestion}
         questionData={questionData}
       />
-      <QNumber currentQuestion={currentQuestion} questionData={questionData} />
     </>
   );
 };

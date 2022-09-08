@@ -1,0 +1,44 @@
+.container-answer {
+  margin-top: 90px;
+}
+.btn-answer {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  padding: 15px 25px;
+  font-size: 23px;
+  background-color: #24b2c5e5;
+  box-shadow: 0 0 2px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
+  text-transform: uppercase;
+  font-family: "Press Start 2P", cursive;
+  max-width: 80%;
+}
+
+.btn-answer:hover {
+  background-color: #921d82;
+}
+
+@media screen and (max-width: 1050px) {
+  .btn-answer {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    font-size: 15px;
+    background-color: #24b2c5e5;
+    box-shadow: 0 0 2px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
+    text-transform: uppercase;
+    font-family: "Press Start 2P", cursive;
+    max-width: 80%;
+  }
+}
