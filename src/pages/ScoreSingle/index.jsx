@@ -19,8 +19,6 @@ const ScoreSingle = () => {
         {inputValue["username"]} Score: {score}
       </h1>
 
-      <h2>Previous Scores:</h2>
-
       {/* onClick navigate back to quiz start */}
       <button className="btn" onClick={navigateToSinglePlayer}>
         Play Again

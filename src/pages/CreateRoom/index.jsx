@@ -5,14 +5,9 @@ import DataContext from "../../context/dataContext";
 
 const CreateRoom = () => {
   const { playerMode } = useContext(DataContext);
-  // if playerMode == "single" {render SinglePlayerRoom}
-  // if playerMode == "multi" {render MultiPlayerRoom}
-
-  // console.log("playerMode (create-room)==> ", playerMode);
 
   return (
     <>
-      {/* conditionally show based on btn clicked */}
       {playerMode === "single" ? <SinglePlayerLogin /> : <MultiPlayerLogin />}
     </>
   );
@@ -20,4 +15,4 @@ const CreateRoom = () => {
 
 export default CreateRoom;
 
-// for both multiplayer and single: render components based on previous choice
+// ✅

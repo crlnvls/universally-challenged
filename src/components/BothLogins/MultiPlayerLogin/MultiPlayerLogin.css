@@ -1,37 +1,19 @@
 /************************************************************************** default customs */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  cursor: default;
-}
+} */
 
 /************************************************************************** title */
 #multiPlayerLoginTitle {
-  font-family: 'Press Start 2P', sans-serif;
+  font-family: "Press Start 2P", sans-serif;
   padding: 1rem;
   box-shadow: 1px 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
   text-shadow: 1px 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
   font-size: 2rem;
   margin-top: -1rem;
   line-height: 1.4;
-}
-
-@media (min-width: 576px) {
-  #multiPlayerLoginTitle {
-    margin-top: 0rem;
-    font-size: 3rem;
-  }
-}
-
-@media (min-width: 992px) {
-  #multiPlayerLoginTitle {
-    font-size: 3.5rem;
-    padding: 1.5rem 2rem;
-  }
 }
 
 /************************************************************************** form */
@@ -49,8 +31,8 @@ body {
   color: rgba(255, 255, 255, 0.633);
 }
 
-#multiPlayerFormContainer input[type='text'],
-#multiPlayerFormContainer input[type='number'] {
+#multiPlayerFormContainer input[type="text"],
+#multiPlayerFormContainer input[type="number"] {
   border: 0.5rem solid transparent;
   width: 100%;
   color: white;
@@ -64,10 +46,10 @@ body {
   margin-top: 0.2rem;
 }
 
-#multiPlayerFormContainer input[type='text']:focus,
-#multiPlayerFormContainer input[type='text']:hover,
-#multiPlayerFormContainer input[type='number']:focus,
-#multiPlayerFormContainer input[type='number']:hover {
+#multiPlayerFormContainer input[type="text"]:focus,
+#multiPlayerFormContainer input[type="text"]:hover,
+#multiPlayerFormContainer input[type="number"]:focus,
+#multiPlayerFormContainer input[type="number"]:hover {
   outline: 0.2rem solid #f0f8ff;
 }
 
@@ -89,7 +71,7 @@ body {
   border: 0.063rem solid transparent;
   cursor: pointer;
   font-size: 1.5rem;
-  font-family: 'Press Start 2P', sans-serif;
+  font-family: "Press Start 2P", sans-serif;
   text-transform: uppercase;
 }
 
@@ -98,8 +80,8 @@ body {
 } */
 
 @media (min-width: 576px) {
-  #multiPlayerFormContainer input[type='text'],
-  #multiPlayerFormContainer input[type='number'] {
+  #multiPlayerFormContainer input[type="text"],
+  #multiPlayerFormContainer input[type="number"] {
     font-size: 2rem;
   }
 }
@@ -115,8 +97,8 @@ body {
     font-size: 2.5rem;
   }
 
-  #multiPlayerFormContainer input[type='text'],
-  #multiPlayerFormContainer input[type='number'] {
+  #multiPlayerFormContainer input[type="text"],
+  #multiPlayerFormContainer input[type="number"] {
     font-size: 2.2rem;
     width: 45rem;
     margin-top: 1rem;

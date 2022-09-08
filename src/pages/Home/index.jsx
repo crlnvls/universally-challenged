@@ -5,17 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 const Home = () => {
-  // store if btn is single or multi
-
   const { handlePlayer } = useContext(DataContext);
-
-  const navigate = useNavigate();
-  const navigateToSinglePlayer = () => {
-    navigate("/create-room");
-  };
-  const navigateToMultiPlayer = () => {
-    navigate("/create-room");
-  };
 
   return (
     <>
@@ -33,11 +23,17 @@ const Home = () => {
       <h2 className="neonText">Start Quiz</h2>
 
       <div className="homeButtons">
-      <button className="btn" onClick={handlePlayer} value="single">Single Player</button>
-      <button className="btn" onClick={handlePlayer} value="multi">Multi Player</button>
+        <button className="btn" onClick={handlePlayer} value="single">
+          Single Player
+        </button>
+        <button className="btn" onClick={handlePlayer} value="multi">
+          Multi Player
+        </button>
       </div>
     </>
   );
 };
 
 export default Home;
+
+// ✅
