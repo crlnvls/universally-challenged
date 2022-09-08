@@ -9,15 +9,16 @@ const Waiting = () => {
   function moveToNextPage() {
     navigate("/quiz");
   }
-
-  const { playerMode } = useContext(DataContext);
+  function back() {
+    navigate(-1);
+  }
 
   return (
     <>
       <h1 className="header-waiting">Waiting Room </h1>
 
       <button onClick={moveToNextPage}>Let's play</button>
-      <button onClick={navigate(-1)}>Back</button>
+      <button onClick={back}>Back</button>
     </>
   );
 };
