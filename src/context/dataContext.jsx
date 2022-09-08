@@ -47,7 +47,11 @@ export const DataProvider = ({ children }) => {
       }
     }
     getQuiz(subject, number, difficulty);
-    navigate("/quiz");
+    if (playerMode == "single") {
+      navigate("/quiz");
+    } else if (playerMode == "multi") {
+      navigate("/waiting");
+    }
   };
 
   const handleUsernameInput = (e) => {
