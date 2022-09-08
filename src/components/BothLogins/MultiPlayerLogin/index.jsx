@@ -96,19 +96,19 @@ const MultiPlayerLogin = () => {
       {submitForm && isValid ? null : (
         <form onSubmit={handleSubmitForm} id="multiPlayerFormContainer">
           <label className="label-multi" htmlFor="username">
-            Choose your Username
+            Choose your Nickname
           </label>
           <input
             autoFocus
             autoComplete="off"
             type="text"
-            placeholder="Enter username"
+            placeholder="Enter nickname"
             id="username"
             value={inputValues.username}
             onChange={handleUsernameInput}
           />
           {submitForm && !inputValues.username ? (
-            <p style={{ color: "red" }}>Please enter a username</p>
+            <p style={{ color: "red" }}>Please enter a nickname</p>
           ) : null}
           <br />
 

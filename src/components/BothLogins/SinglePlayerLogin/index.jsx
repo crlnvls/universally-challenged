@@ -69,7 +69,7 @@ const SinglePlayerLogin = () => {
   return (
     <>
       {submitForm && isValid ? null : (
-        <h1 className="header-single">Choose your username</h1>
+        <h1 className="header-single">Choose your nickname</h1>
       )}
 
       {submitForm && isValid ? null : (
@@ -86,7 +86,7 @@ const SinglePlayerLogin = () => {
               id="username"
               autoComplete="off"
               type="text"
-              placeholder="Enter username"
+              placeholder="Enter nickname"
               value={inputValue.username}
               // value={inputValue.username} // for testing, it needs to be inputValue???
               onChange={handleUsernameInput}
