@@ -51,7 +51,6 @@ export const DataProvider = ({ children }) => {
   };
 
   const handleUsernameInput = (e) => {
-    console.log("dataContext==> ", { username: e.target.value });
     setInputValue({ ...inputValue, username: e.target.value });
   };
 
