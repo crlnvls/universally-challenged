@@ -9,6 +9,7 @@ export const DataProvider = ({ children }) => {
   const [questionData, setQuestionData] = useState([]);
   const [inputValue, setInputValue] = useState({ username: "" });
   const [playerMode, setPlayerMode] = useState("");
+  const [score, setScore] = useState(0);
   // const [username]
   const [isActive, setActive] = useState("");
 
@@ -73,6 +74,8 @@ export const DataProvider = ({ children }) => {
         questionData,
         playerMode,
         isActive,
+        score,
+        setScore,
       }}
     >
       {children}
