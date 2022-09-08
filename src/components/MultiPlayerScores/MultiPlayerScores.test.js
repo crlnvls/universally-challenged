@@ -3,14 +3,21 @@
  */
 
 import React from "react";
+import * as router from "react-router";
 import { screen, render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import SinglePlayerLogin from ".";
+import MultiPlayerScores from ".";
 
-describe("SinglePlayerLogin component", () => {
+const navigate = jest.fn();
+
+beforeEach(() => {
+  jest.spyOn(router, "useNavigate").mockImplementation(() => navigate);
+});
+
+describe("MultiPlayerScores component", () => {
   beforeEach(() => {
-    render(<SinglePlayerLogin />);
+    render(<MultiPlayerScores />);
   });
 
   it("Maps through all 'h1' & checks role is 'heading'", () => {

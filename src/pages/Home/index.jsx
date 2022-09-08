@@ -33,12 +33,8 @@ const Home = () => {
       <h2 className="neonText">Start Quiz</h2>
 
       <div className="homeButtons">
-        <button className="btn" onClick={navigateToSinglePlayer}>
-          Single Player
-        </button>
-        <button className="btn" onClick={navigateToMultiPlayer}>
-          Multi Player
-        </button>
+      <button className="btn" onClick={handlePlayer} value="single">Single Player</button>
+      <button className="btn" onClick={handlePlayer} value="multi">Multi Player</button>
       </div>
     </>
   );
