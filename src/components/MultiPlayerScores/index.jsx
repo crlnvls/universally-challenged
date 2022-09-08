@@ -22,6 +22,7 @@ const MultiPlayerScores = () => {
 
     let winnerName;
 
+    // BUG
     const maxScore = Math.max(
       ...allPlayers.users.map((singleObj) => {
         return singleObj.scores.animals;

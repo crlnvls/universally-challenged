@@ -5,11 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 const Home = () => {
-  // store if btn is single or multi
-
   const { handlePlayer } = useContext(DataContext);
-
-  const navigate = useNavigate();
 
   return (
     <>
@@ -39,3 +35,5 @@ const Home = () => {
 };
 
 export default Home;
+
+// ✅

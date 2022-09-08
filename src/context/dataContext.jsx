@@ -9,6 +9,7 @@ export const DataProvider = ({ children }) => {
   const [questionData, setQuestionData] = useState([]);
   const [inputValue, setInputValue] = useState({ username: "" });
   const [playerMode, setPlayerMode] = useState("");
+  const [score, setScore] = useState(0);
   // const [username]
   const [isActive, setActive] = useState("");
 
@@ -50,13 +51,11 @@ export const DataProvider = ({ children }) => {
   };
 
   const handleUsernameInput = (e) => {
-    console.log("dataContext==> ", { username: e.target.value });
     setInputValue({ ...inputValue, username: e.target.value });
   };
 
   const handlePlayer = (e) => {
     setPlayerMode(e.target.value);
-    // console.log("playerMode (dataContext)==> ", playerMode);
     navigate("/create-room");
   };
 
@@ -74,6 +73,8 @@ export const DataProvider = ({ children }) => {
         questionData,
         playerMode,
         isActive,
+        score,
+        setScore,
       }}
     >
       {children}
