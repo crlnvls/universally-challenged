@@ -9,6 +9,7 @@ import "@testing-library/jest-dom";
 import axios from "axios";
 
 import MultiPlayerScores from ".";
+import { BrowserRouter } from "react-router-dom";
 
 const navigate = jest.fn();
 

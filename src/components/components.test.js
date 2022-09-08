@@ -40,3 +40,28 @@ describe("Running components", () => {
     );
   });
 });
+
+describe("Check type", () => {
+  const componentsArr = [
+    AnswerForm,
+    SinglePlayerLogin,
+    MultiPlayerLogin,
+    Form,
+    MultiPlayerScores,
+    QNumber,
+    Question,
+    Subject
+  ];
+  it("Returns a function", () => {
+    const componentFunc = () => () => {
+      <BrowserRouter>
+        {componentsArr.forEach((singleComponent) => {
+          return singleComponent;
+        })}
+      </BrowserRouter>;
+    };
+    const result = componentFunc();
+    expect(typeof result).toBe("function");
+    expect(result).toBeTruthy();
+  });
+});
