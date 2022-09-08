@@ -46,11 +46,11 @@ const SinglePlayerLogin = () => {
       method: "post",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username: inputValue.username
-      })
+        username: inputValue.username,
+      }),
     };
 
     fetch(`https://universallychallenged.herokuapp.com/users`, options)
@@ -69,7 +69,7 @@ const SinglePlayerLogin = () => {
   return (
     <>
       {submitForm && isValid ? null : (
-        <h1 id="singlePlayerTitle">Choose your username</h1>
+        <h1 className="header-single">Choose your username</h1>
       )}
 
       {submitForm && isValid ? null : (
@@ -80,6 +80,7 @@ const SinglePlayerLogin = () => {
             role="form"
           >
             <input
+              autoFocus
               role="input"
               name="username"
               id="username"
@@ -96,7 +97,7 @@ const SinglePlayerLogin = () => {
             <br />
 
             {submitForm && isValid ? null : (
-              <button role="submit" className="btn">
+              <button role="submit" className="btn-single">
                 Submit
               </button>
             )}
