@@ -10,16 +10,14 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const navigate = useNavigate();
 
+  let i = 0;
+
   const calcScore = () => {
+    i++;
     console.log(questionData[currentQuestion]["correct_answer"]);
-    console.log(answers[currentQuestion]);
-    console.log(answers[0]);
-    console.log(answers[1]);
-    console.log(answers[2]);
-    console.log(answers[3]);
-    console.log(answers[4]);
+    console.log(answers[i]);
     // Answers is not behaving properly BUG
-    if (answers == questionData[currentQuestion]["correct_answer"]) {
+    if (answers[i] == questionData[currentQuestion]["correct_answer"]) {
       setScore(score + 1);
       console.log("ducks");
     }
