@@ -41,4 +41,8 @@
     font-family: "Press Start 2P", cursive;
     max-width: 80%;
   }
+
+  .container-answer {
+    margin-top: 60px;
+  }
 }
