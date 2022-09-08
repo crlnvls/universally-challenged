@@ -45,6 +45,19 @@
   font-family: "Press Start 2P", cursive;
 }
 
+.clicked {
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: #1e0e1c;
+  box-shadow: 0 0 2px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
+  text-transform: uppercase;
+  font-family: "Press Start 2P", cursive;
+}
+
 @media screen and (max-width: 600px) {
   .btn-category {
     margin-top: 20px;
@@ -54,6 +67,18 @@
     font-size: 10px;
     background-color: #22def796;
     box-shadow: 0 0 2px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
+    text-transform: uppercase;
+    font-family: "Press Start 2P", cursive;
+  }
+
+  .clicked {
+    margin-top: 20px;
+    border-radius: px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 10px;
+    background-color: #1e0e1c;
+    box-shadow: 0 0 2px #fff, 0 0 25px #921d82, 0 0 5px #fff;
     text-transform: uppercase;
     font-family: "Press Start 2P", cursive;
   }

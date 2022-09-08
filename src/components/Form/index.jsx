@@ -8,48 +8,49 @@ function Form() {
     handleChangeSubject,
     handleSubmit,
     number,
+    isActive,
   } = useContext(DataContext);
   return (
     <>
       <form onSubmit={handleSubmit}>
         <div className="container">
           <button
-            className="btn-category"
+            className={isActive === "9" ? "clicked" : "btn-category"}
             value="9"
             onClick={handleChangeSubject}
           >
             General Knowledge
           </button>
           <button
-            className="btn-category"
+            className={isActive === "27" ? "clicked" : "btn-category"}
             value="27"
             onClick={handleChangeSubject}
           >
             Animals
           </button>
           <button
-            className="btn-category"
+            className={isActive === "21" ? "clicked" : "btn-category"}
             value="21"
             onClick={handleChangeSubject}
           >
             Sports
           </button>
           <button
-            className="btn-category"
+            className={isActive === "18" ? "clicked" : "btn-category"}
             value="18"
             onClick={handleChangeSubject}
           >
             Computers
           </button>
           <button
-            className="btn-category"
+            className={isActive === "15" ? "clicked" : "btn-category"}
             value="15"
             onClick={handleChangeSubject}
           >
             Video Games
           </button>
           <button
-            className="btn-category"
+            className={isActive === "11" ? "clicked" : "btn-category"}
             value="11"
             onClick={handleChangeSubject}
           >
