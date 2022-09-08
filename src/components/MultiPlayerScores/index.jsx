@@ -16,39 +16,40 @@ const MultiPlayerScores = () => {
     navigate("/");
   };
 
-  // function findWinner() {
-  //   console.log("allPlayers: ", allPlayers);
-  //   console.log("allPlayers.users: ", allPlayers.users);
+  function findWinner() {
+    console.log("allPlayers: ", allPlayers);
+    console.log("allPlayers.users: ", allPlayers.users);
 
-  //   let winnerName;
+    let winnerName;
 
-  //   const maxScore = Math.max(
-  //     ...allPlayers.users.map((singleObj) => {
-  //       return singleObj.scores.animals;
-  //     })
-  //   );
-  //   console.log("maxScore==> ", maxScore);
+    // BUG
+    const maxScore = Math.max(
+      ...allPlayers.users.map((singleObj) => {
+        return singleObj.scores.animals;
+      })
+    );
+    console.log("maxScore==> ", maxScore);
 
-  //   for (let i = 0; i < allPlayers.users.length; i++) {
-  //     let singleObj = allPlayers.users[i];
-  //     if (maxScore === singleObj.scores.animals) {
-  //       winnerName = singleObj.username;
-  //     }
-  //   }
+    for (let i = 0; i < allPlayers.users.length; i++) {
+      let singleObj = allPlayers.users[i];
+      if (maxScore === singleObj.scores.animals) {
+        winnerName = singleObj.username;
+      }
+    }
 
-  //   console.log("winnerName==> ", winnerName);
-  //   return winnerName;
+    console.log("winnerName==> ", winnerName);
+    return winnerName;
 
-  //   // let winnerObj = allPlayers.users.reduce(function (prev, current) {
-  //   //   if (+current.id > +prev.id) {
-  //   //     return current;
-  //   //   } else {
-  //   //     return prev;
-  //   //   }
-  //   // });
+    // let winnerObj = allPlayers.users.reduce(function (prev, current) {
+    //   if (+current.id > +prev.id) {
+    //     return current;
+    //   } else {
+    //     return prev;
+    //   }
+    // });
 
-  //   // return winnerObj;
-  // }
+    // return winnerObj;
+  }
 
   function getAllPlayers() {
     useEffect(() => {
