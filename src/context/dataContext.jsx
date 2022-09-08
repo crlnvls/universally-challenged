@@ -60,7 +60,7 @@ export const DataProvider = ({ children }) => {
       return prev;
     });
     // console.log("playerMode (dataContext)==> ", playerMode);
-    navigate('/createRoom')
+    navigate('/create-room')
   };
 
   return (

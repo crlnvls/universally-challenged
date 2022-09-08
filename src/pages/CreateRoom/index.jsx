@@ -8,7 +8,7 @@ const CreateRoom = () => {
   // if playerMode == "single" {render SinglePlayerRoom}
   // if playerMode == "multi" {render MultiPlayerRoom}
 
-  // console.log("playerMode (createRoom)==> ", playerMode);
+  // console.log("playerMode (create-room)==> ", playerMode);
 
   return (
     <>
