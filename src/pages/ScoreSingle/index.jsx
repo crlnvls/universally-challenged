@@ -1,30 +1,35 @@
 import React, { useContext } from "react";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import DataContext from "../../context/dataContext";
 
 const ScoreSingle = () => {
-  const { inputValue } = useContext(DataContext);
-  console.log(inputValue);
+  const { inputValue, score } = useContext(DataContext);
 
   const navigate = useNavigate();
   const navigateToSinglePlayer = () => {
-    navigate('/category') // vivian changed this from '/createRoom' to '/category'
-  }
+    navigate("/create-room");
+  };
   const navigateHome = () => {
-    navigate('/')
-  }
+    navigate("/");
+  };
 
   return (
     <>
-      <h1>{inputValue["username"]} Score:</h1>
+      <h1>
+        {inputValue["username"]} Score: {score}
+      </h1>
 
       <h2>Previous Scores:</h2>
-  
-    {/* onClick navigate back to quiz start */}
-    <button className="btn" onClick={navigateToSinglePlayer}>Play Again</button>
 
-    {/* onClick navigate to home page */}
-    <button className="btn" onClick={navigateHome}>Return Home</button>
+      {/* onClick navigate back to quiz start */}
+      <button className="btn" onClick={navigateToSinglePlayer}>
+        Play Again
+      </button>
+
+      {/* onClick navigate to home page */}
+      <button className="btn" onClick={navigateHome}>
+        Return Home
+      </button>
     </>
   );
 };

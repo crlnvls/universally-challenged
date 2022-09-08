@@ -10,12 +10,14 @@ export const DataProvider = ({ children }) => {
   const [inputValue, setInputValue] = useState({ username: "" });
   const [playerMode, setPlayerMode] = useState("");
   // const [username]
+  const [isActive, setActive] = useState("");
 
   const navigate = useNavigate();
 
   const handleChangeSubject = (e) => {
     e.preventDefault();
     setSubject(e.target.value);
+    setActive(e.target.value);
   };
 
   const handleChangeNumber = (e) => {
@@ -74,6 +76,7 @@ export const DataProvider = ({ children }) => {
         inputValue,
         questionData,
         playerMode,
+        isActive,
       }}
     >
       {children}

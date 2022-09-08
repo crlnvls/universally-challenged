@@ -14,22 +14,10 @@ const Waiting = () => {
 
   return (
     <>
-      <div className="waiting-body">
-        <h1 className="header-waiting">Waiting Room </h1>
-        <div className="container-pacman">
-          <div className="path"></div>
-          <div className="path"></div>
-          <div className="path"></div>
-          <div className="path"></div>
-          <div className="path"></div>
-          <div className="path"></div>
-          <div className="path"></div>
-          <div className="path"></div>
-        </div>
+      <h1 className="header-waiting">Waiting Room </h1>
 
-        <button onClick={moveToNextPage}>Let's play</button>
-        <button onClick={navigate(-1)}>Back</button>
-      </div>
+      <button onClick={moveToNextPage}>Let's play</button>
+      <button onClick={navigate(-1)}>Back</button>
     </>
   );
 };
