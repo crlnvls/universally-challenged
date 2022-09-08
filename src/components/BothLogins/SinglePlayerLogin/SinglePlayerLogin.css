@@ -71,7 +71,7 @@
   font-weight: 900;
 }
 
-#singlePlayerFormContainer button {
+/* #singlePlayerFormContainer button {
   display: grid;
   grid-template-columns: auto auto;
   padding: 1.2rem;
@@ -89,8 +89,7 @@
 
 #singlePlayerFormContainer button:hover {
   background-color: #22def784;
-  /* background-color: transparent; */
-}
+} */
 
 @media (min-width: 576px) {
   #singlePlayerFormContainer {
@@ -130,21 +129,30 @@
 }
 
 /************************************************************************** navigate next */
-#welcomeMessage {
+#singleWelcome {
   color: #fff;
-  margin: 3rem 0;
-  font-size: 1.5rem;
+  margin: 1rem 0;
+  font-size: 1.8rem;
   font-weight: 900;
+  line-height: 1.6;
+}
+
+.fa-solid.fa-spinner.fa-spin-pulse {
+  font-size: 3rem;
 }
 
 @media (min-width: 576px) {
-  #welcomeMessage {
-    font-size: 2rem;
+  #singleWelcome {
+    font-size: 2.5rem;
+  }
+
+  .fa-solid.fa-spinner.fa-spin-pulse {
+    font-size: 3.5rem;
   }
 }
 
 @media (min-width: 768px) {
-  #welcomeMessage {
+  #singleWelcome {
     font-size: 3rem;
     line-height: 1.6;
   }

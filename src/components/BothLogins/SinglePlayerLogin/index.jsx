@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import DataContext from "../../../context/dataContext";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "./SinglePlayerLogin.css";
 
@@ -46,11 +46,11 @@ const SinglePlayerLogin = () => {
       method: "post",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        username: inputValue.username,
-      }),
+        username: inputValue.username
+      })
     };
 
     fetch(`https://universallychallenged.herokuapp.com/users`, options)
@@ -62,6 +62,9 @@ const SinglePlayerLogin = () => {
   function moveToNextPage() {
     navigate("/category");
   }
+  // console.log("handleUsernameInput==> ", handleUsernameInput)
+  // console.log("inputValue==> ", inputValue)
+  // console.log("inputValue.username==> ", inputValue.username)
 
   return (
     <>
@@ -71,25 +74,30 @@ const SinglePlayerLogin = () => {
 
       {submitForm && isValid ? null : (
         <>
-          {/* <NavLink to="/score-single">Score</NavLink> */}
-          <form onSubmit={handleSubmitForm} id="singlePlayerFormContainer">
+          <form
+            onSubmit={handleSubmitForm}
+            id="singlePlayerFormContainer"
+            role="form"
+          >
             <input
+              role="input"
               name="username"
               id="username"
               autoComplete="off"
               type="text"
               placeholder="Enter username"
               value={inputValue.username}
+              // value={inputValue.username} // for testing, it needs to be inputValue???
               onChange={handleUsernameInput}
             />
             {submitForm && !inputValue.username ? (
-              <p>Please enter a username</p>
+              <p role="paragraph">Please enter a username</p>
             ) : null}
             <br />
 
             {submitForm && isValid ? null : (
-              <button>
-                Submit<i className="fa-solid fa-paper-plane"></i>
+              <button role="submit" className="btn">
+                Submit
               </button>
             )}
           </form>
@@ -98,7 +106,7 @@ const SinglePlayerLogin = () => {
 
       {submitForm && isValid ? (
         <>
-          <p id="welcomeMessage">Welcome {inputValue.username}</p>
+          <p id="singleWelcome">Welcome {inputValue.username}</p>
           <i className="fa-solid fa-spinner fa-spin-pulse"></i>
         </>
       ) : null}
