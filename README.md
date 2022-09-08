@@ -2,34 +2,39 @@
 
 ## Client
 
+- This is the client repo of the **_Universally Challenged_** quiz game
+- The server of this project can be found [here](https://github.com/Lap-3-project/server)
+
 ## Installation & Usage
 
 ### Installation
 
-- Clone Repo
+- Download repo at the top of this GitHub page
+- **_git clone_** to clone the repo
 - Open terminal and navigate to current directory in GitBash
-- Run npm install to install dependencies
+- Run `npm install` to install dependencies
+- Enter **_git init_** in the terminal to get the most update version of the repo in the future
 
 ### Usage
 
-- Run `npm install` to install dependencies in package.json
-- Run `npm run dev` to open app
-- Run `npm run test` to run tests
-- Run `npm run coverage` to show coverage
+- `npm install` or `npm install --save-dev` to install dependencies in package.json
+- `npm run dev` to open app
+- `npm run test` to run tests
+- `npm run coverage` to show coverage
 
 ### App.jsx
 
 [Link to App.jsx](./src/App.jsx)
 
 - Add routes to components
-- Wrap routes with DataProvider
+- Wrap routes with `DataProvider`
 
 ### main.jsx
 
 [Link to main.jsx](./src/main.jsx)
 
 - Render React app
-- Wrap React app in BrowserRouter
+- Wrap React app in `BrowserRouter`
 
 ### index.html
 
@@ -41,15 +46,15 @@
 ## Bugs
 
 - Socket does not fully work on app
-- Scores do not fully display correct on app
+- Scores do not fully display correctly on app
 
 ## Wins & Challenges
 
 ### Wins
 
-- Got pages to show via React
+- Pages to show via React
 - Connected pages using Routes & Route
-- Some tests pass
+- Some passing tests
 
 ### Challenges
 
