@@ -13,8 +13,8 @@ function App() {
         <Route path="/category" element={<Pages.Subjects />}></Route>
         <Route path="/waiting" element={<Pages.Waiting />}></Route>
         <Route path="/quiz" element={<Pages.Quiz />}></Route>
-        <Route path="/score-single" element={<Pages.ScoreSingle />}></Route>
-        <Route path="/score-multi" element={<Pages.ScoreMulti />}></Route>
+        <Route path="/single-score" element={<Pages.ScoreSingle />}></Route>
+        <Route path="/multi-score" element={<Pages.ScoreMulti />}></Route>
         <Route path="/leaderboard" element={<Pages.LeaderBoard />}></Route>
         <Route path="*" element={<Pages.NotFound />}></Route>
       </Routes>
