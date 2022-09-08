@@ -37,7 +37,7 @@ const SinglePlayerLogin = () => {
       setTimeout(moveToNextPage, 0);
 
       // creates new user in mongodb
-      // createNewUser();
+      createNewUser();
     }
   };
 
