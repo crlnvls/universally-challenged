@@ -25,8 +25,9 @@ body {
   box-shadow: 1px 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
   text-shadow: 1px 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
   font-size: 2rem;
-  margin-top: 0rem;
+  margin-top: 3rem;
   line-height: 1.6;
+  width: 22rem;
 }
 
 #winningUsername {
@@ -44,6 +45,12 @@ body {
 
 @media (min-width: 576px) {
   #winnerTitle {
+    width: 40rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #winnerTitle {
     font-size: 3rem;
   }
 }
@@ -51,6 +58,9 @@ body {
 @media (min-width: 992px) {
   #winnerTitle {
     font-size: 4rem;
+    width: 50rem;
+    margin-top: 3rem;
+    padding: 1rem 6rem;
   }
 
   #winningUsername {
@@ -62,21 +72,6 @@ body {
   }
 }
 
-@media (min-width: 1200px) {
-  #winnerTitle {
-    font-size: 4.5rem;
-    padding: 1rem 6rem;
-  }
-
-  #winningUsername {
-    font-size: 3.5rem;
-  }
-
-  .fa-solid.fa-trophy {
-    font-size: 5.5rem;
-  }
-}
-
 /************************************************************************** multi players names */
 #multiPlayerContainer {
   list-style: none;
@@ -85,6 +80,7 @@ body {
   overflow-x: hidden;
   /* overflow-y: scroll; */
   box-shadow: 1px 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
+  width: 19rem;
 }
 
 #multiPlayerContainer li {
@@ -93,10 +89,17 @@ body {
   text-shadow: none;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   #multiPlayerContainer {
     margin-top: 1rem;
-    width: 35rem;
+    width: 33rem;
+  }
+}
+
+@media (min-width: 992px) {
+  #multiPlayerContainer {
+    margin-top: 1rem;
+    width: 43rem;
   }
 }
 
@@ -128,10 +131,6 @@ body {
 } */
 
 @media (min-width: 992px) {
-  #btnContainer {
-    grid-template-columns: auto auto;
-  }
-
   #btnContainer button {
     padding: 1.5rem 1rem;
     font-size: 1.3rem;
