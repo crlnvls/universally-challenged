@@ -20,7 +20,7 @@ const Quiz = () => {
 
     if (currentQuestion + 1 == questionData.length) {
       if (playerMode === "single") {
-        navigate("single-score"); // if user chose single player
+        navigate("/single-score"); // if user chose single player
       } else {
         navigate("/multi-score"); // if user chose multi player
       }
