@@ -6,6 +6,7 @@ import { screen, render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
+import userEvent from "@testing-library/user-event";
 import * as router from "react-router";
 
 import SinglePlayerLogin from ".";
@@ -196,8 +197,36 @@ describe("Component text content", () => {
 
   it("Shows correct text on button", () => {
     const btnText = screen.queryByRole("submit");
-    console.log("LOOK==> ", btnText);
     expect(btnText.textContent).toBeTruthy();
     expect(btnText.textContent).toBe("Submit");
   });
+});
+
+describe("User events", () => {
+  beforeEach(() => {
+    render(
+      <BrowserRouter>
+        <SinglePlayerLogin />
+      </BrowserRouter>
+    );
+  });
+
+  // it("Checks input value changes", async () => {
+  //   // console.log("LOOK==> ", inputField);
+  //   const inputField = screen.queryByRole("input"); // get input field
+  //   const warningMessage = screen.queryByRole("paragraph"); // get warning para
+  //   const submitBtn = screen.queryByRole("submit"); // get warning para
+
+  //   expect(inputField.textContent).toBe(""); // input empty at first
+  //   expect(warningMessage.textContent).toBeFalsy(); // para empty at first
+  //   expect(warningMessage.textContent).toBe(""); // might not work...
+
+  //   await userEvent.click(submitBtn)
+
+  //   if (inputField.textContent === "") {
+  //     expect(warningMessage.textContent).toBe("Please enter a username");
+  //     expect(warningMessage.textContent).toBeTruthy();
+  //   }
+
+  // });
 });
