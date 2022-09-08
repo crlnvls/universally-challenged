@@ -4,29 +4,20 @@ import DataContext from "../../context/dataContext";
 import { Subject, Question, AnswerForm, QNumber } from "../../components";
 
 const Quiz = () => {
-  const { questionData, playerMode } = useContext(DataContext);
+  const { questionData, playerMode, score, setScore } = useContext(DataContext);
   const [answers, setAnswers] = useState([]);
-  const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const navigate = useNavigate();
-
-  const calcScore = () => {
-    console.log(questionData[currentQuestion]["correct_answer"]);
-    // Answers is not behaving properly BUG
-    if (
-      answers[currentQuestion] ===
-      questionData[currentQuestion]["correct_answer"]
-    ) {
-      setScore(score + 1);
-      console.log("ducks");
-    }
-  };
 
   const handleAnswer = (e) => {
     e.preventDefault();
     setAnswers((answers) => [...answers, e.target.value]);
+
+    if (e.target.value == questionData[currentQuestion]["correct_answer"]) {
+      setScore(score + 1);
+    }
     setCurrentQuestion(currentQuestion + 1);
-    calcScore();
+
     if (currentQuestion + 1 == questionData.length) {
       if (playerMode === "single") {
         navigate("/score-single"); // if user chose single player
@@ -34,9 +25,8 @@ const Quiz = () => {
         navigate("/scoreMulti"); // if user chose multi player
       }
     }
-    // console.log(answers);
-    console.log(score);
   };
+
   return (
     <>
       <Subject questionData={questionData} />
