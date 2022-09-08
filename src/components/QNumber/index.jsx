@@ -1,9 +1,10 @@
 import React from "react";
+import "./QNumber.css";
 
-const QNumber = ({ currentQuestion, questionData }) => {
+const QNumber = ({ currentQuestion }) => {
   return (
     <>
-      <h5>Question {currentQuestion + 1}</h5>
+      <button className="q-number">Question {currentQuestion + 1}</button>
     </>
   );
 };

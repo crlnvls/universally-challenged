@@ -1,0 +1,12 @@
+.question {
+  font-family: "Roboto Mono", monospace;
+  font-size: 40px;
+  margin-top: 60px;
+}
+
+@media screen and (max-width: 1200px) {
+  .question {
+    font-size: 23px;
+    margin-top: 30px;
+  }
+}

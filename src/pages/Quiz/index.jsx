@@ -39,13 +39,13 @@ const Quiz = () => {
   return (
     <>
       <Subject questionData={questionData} />
+      <QNumber currentQuestion={currentQuestion} questionData={questionData} />
       <Question currentQuestion={currentQuestion} questionData={questionData} />
       <AnswerForm
         handleAnswer={handleAnswer}
         currentQuestion={currentQuestion}
         questionData={questionData}
       />
-      <QNumber currentQuestion={currentQuestion} questionData={questionData} />
     </>
   );
 };
