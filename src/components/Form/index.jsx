@@ -58,7 +58,7 @@ function Form() {
           </button>
         </div>
         <div className="container-p">
-          <p>Number of questions</p>
+          <p className="p-form">Number of questions</p>
           <label htmlFor="number-questions"></label>
           <input
             type="number"
@@ -69,7 +69,7 @@ function Form() {
             value={number}
             onChange={handleChangeNumber}
           />
-          <p>Game Difficulty</p>
+          <p className="p-form">Game Difficulty</p>
           <label htmlFor="difficulty"></label>
           <select
             name="difficulty"
