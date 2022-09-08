@@ -22,3 +22,13 @@ describe("Header component", () => {
     expect(heading).toBeInTheDocument();
   });
 });
+
+describe("Running component", () => {
+  it("Renders without crashing", () => {
+    render(
+      <BrowserRouter>
+        <Subjects />
+      </BrowserRouter>
+    );
+  });
+});

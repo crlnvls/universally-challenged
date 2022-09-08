@@ -6,7 +6,6 @@ import { screen, render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import userEvent from "@testing-library/user-event";
 import * as router from "react-router";
 
 import SinglePlayerLogin from ".";
