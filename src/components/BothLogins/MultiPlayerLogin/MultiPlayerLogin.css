@@ -1,17 +1,15 @@
-#multiPlayerLoginTitle {
-  font-family: "Press Start 2P", sans-serif;
-  padding: 1rem;
-  box-shadow: 1px 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
-  text-shadow: 1px 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
-  font-size: 2rem;
-  margin-top: -1rem;
-  line-height: 1.4;
+.header-multi {
+  margin-top: 60px;
+  font-family: "Press Start 2P", cursive;
+  padding: 20px;
+  box-shadow: 1px 0 2px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
+  text-shadow: 1px 0 2px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
 }
 
-/************************************************************************** form */
-#multiPlayerFormContainer {
-  margin-top: 1.5rem;
+.label-multi {
+  font-family: "Roboto Mono", monospace;
 }
+/************************************************************************** form */
 
 #multiPlayerFormContainer label {
   color: #fff;
@@ -26,12 +24,11 @@
 #multiPlayerFormContainer input[type="text"],
 #multiPlayerFormContainer input[type="number"] {
   border: 0.5rem solid transparent;
-  width: 100%;
   color: white;
   background-color: rgba(150, 193, 216, 0.532);
   border-radius: 0.5rem;
   padding: 0.2rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   outline: none;
   cursor: pointer;
   margin-bottom: 1rem;

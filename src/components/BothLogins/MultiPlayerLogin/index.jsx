@@ -8,7 +8,7 @@ const MultiPlayerLogin = () => {
   const [inputValues, setInputValues] = useState({
     username: "",
     room: "",
-    playerNum: ""
+    playerNum: "",
   });
   const [submitForm, setSubmitForm] = useState(false);
   const [isValid, setIsValid] = useState(false);
@@ -64,11 +64,11 @@ const MultiPlayerLogin = () => {
       method: "post",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username: inputValues.username
-      })
+        username: inputValues.username,
+      }),
     };
 
     fetch(`https://universallychallenged.herokuapp.com/users`, options)
@@ -90,13 +90,16 @@ const MultiPlayerLogin = () => {
   return (
     <>
       {submitForm && isValid ? null : (
-        <h1 id="multiPlayerLoginTitle">Create your room</h1>
+        <h1 className="header-multi">Create your room</h1>
       )}
 
       {submitForm && isValid ? null : (
         <form onSubmit={handleSubmitForm} id="multiPlayerFormContainer">
-          <label htmlFor="username">Choose your Username</label>
+          <label className="label-multi" htmlFor="username">
+            Choose your Username
+          </label>
           <input
+            autoFocus
             autoComplete="off"
             type="text"
             placeholder="Enter username"
@@ -109,7 +112,9 @@ const MultiPlayerLogin = () => {
           ) : null}
           <br />
 
-          <label htmlFor="room">Choose your room name</label>
+          <label className="label-multi" htmlFor="room">
+            Choose your room name
+          </label>
           <input
             autoComplete="off"
             type="text"
@@ -123,7 +128,9 @@ const MultiPlayerLogin = () => {
           ) : null}
           <br />
 
-          <label htmlFor="numOfPlayers">How many players (2-5)?</label>
+          <label className="label-multi" htmlFor="numOfPlayers">
+            How many players (2-5)?
+          </label>
           <input
             min="2"
             autoComplete="off"
@@ -144,7 +151,7 @@ const MultiPlayerLogin = () => {
           <br />
 
           {submitForm && isValid ? null : (
-            <button className="btn">Submit</button>
+            <button className="btn-single">Submit</button>
           )}
         </form>
       )}
