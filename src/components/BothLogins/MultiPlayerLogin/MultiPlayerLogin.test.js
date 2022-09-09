@@ -7,7 +7,6 @@ import * as router from "react-router";
 import { screen, render, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { BrowserRouter } from "react-router-dom";
-
 import MultiPlayerLogin from ".";
 import handleUsernameInput from ".";
 import handleRoomInput from ".";

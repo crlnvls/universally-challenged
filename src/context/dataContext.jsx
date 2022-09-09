@@ -1,7 +1,10 @@
 import React, { createContext, useState } from "react"; // vivian added React for testing
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-const DataContext = createContext({});
+const DataContext = createContext({
+  inputValue: { username: "" },
+  questionData: [],
+});
 
 export const DataProvider = ({ children }) => {
   const [subject, setSubject] = useState(9);

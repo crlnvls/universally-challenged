@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./AllScores.css";
 
 const AllScores = () => {
-  const [allPlayers, setAllPlayers] = useState({});
+  const [allPlayers, setAllPlayers] = useState({ users: [] });
   const navigate = useNavigate();
   const moveBack = () => {
     navigate(-1);
@@ -15,10 +16,10 @@ const AllScores = () => {
 
   useEffect(() => {
     async function fetchUsers() {
-      const response = await fetch(
+      const response = await axios.get(
         "https://universallychallenged.herokuapp.com/users"
       );
-      const json = await response.json();
+      const json = response.data;
       setAllPlayers((prev) => {
         prev = json;
         return prev;

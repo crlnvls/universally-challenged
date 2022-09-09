@@ -17,11 +17,12 @@ import { DataProvider } from "../../../context/dataContext";
 console.log("render==> ", render);
 describe("Running component", () => {
   it("Renders without crashing", () => {
-    render(<DataProvider>
-        <BrowserRouter>
+    render(
+      <BrowserRouter>
+        <DataProvider>
           <SinglePlayerLogin />
-        </BrowserRouter>
-      </DataProvider>
+        </DataProvider>
+      </BrowserRouter>
     );
   });
 });
@@ -84,7 +85,7 @@ describe("Id & Class attribute testing", () => {
 
   test("should find 'h1' id attribute", () => {
     const { container } = render(<SinglePlayerLogin />);
-    const mockComponent = container.querySelector("h1#singlePlayerTitle");
+    const mockComponent = container.querySelector("h1.header-single");
     expect(mockComponent).toBeInTheDocument();
     expect(mockComponent).toBeTruthy();
   });
@@ -107,7 +108,7 @@ describe("Id & Class attribute testing", () => {
 
   test("should find 'button' class attribute", () => {
     const { container } = render(<SinglePlayerLogin />);
-    const mockComponent = container.querySelector("button.btn");
+    const mockComponent = container.querySelector("button.btn-single");
     expect(mockComponent).toBeInTheDocument();
     expect(mockComponent).toBeTruthy();
   });
@@ -158,7 +159,7 @@ describe("Other selector testing", () => {
   test("should find 'input[placeholder='Enter username']' selector", () => {
     const { container } = render(<SinglePlayerLogin />);
     const mockComponent = container.querySelector(
-      "input[placeholder='Enter username']"
+      "input[placeholder='Enter nickname']"
     );
     expect(mockComponent).toBeInTheDocument();
     expect(mockComponent).toBeTruthy();
@@ -174,7 +175,8 @@ describe("Other selector testing", () => {
 
 describe("Component text content", () => {
   beforeEach(() => {
-    render(<DataProvider>
+    render(
+      <DataProvider>
         <BrowserRouter>
           <SinglePlayerLogin />
         </BrowserRouter>
@@ -184,15 +186,15 @@ describe("Component text content", () => {
 
   it("Shows correct text in heading", () => {
     const text = screen.queryByRole("heading");
-    expect(text.textContent).toBe("Choose your username");
+    expect(text.textContent).toBe("Choose your nickname");
     expect(text.textContent).toBeTruthy();
   });
 
   it("Shows correct text in input placeholder", () => {
     const placeholderText = screen
-      .getByPlaceholderText("Enter username")
+      .getByPlaceholderText("Enter nickname")
       .getAttribute("placeholder");
-    expect(placeholderText).toBe("Enter username");
+    expect(placeholderText).toBe("Enter nickname");
     expect(placeholderText).toBeTruthy();
   });
 
