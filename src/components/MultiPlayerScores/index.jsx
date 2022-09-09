@@ -16,6 +16,7 @@ const MultiPlayerScores = () => {
 
   return (
     <>
+
       <h1 className="header-name">Winner</h1>
       <div className="container-nav">
         <NavLink to="/leaderboard" className="link-leader">
@@ -42,6 +43,7 @@ const MultiPlayerScores = () => {
           Return home
         </button>
       </div>
+
     </>
   );
 };

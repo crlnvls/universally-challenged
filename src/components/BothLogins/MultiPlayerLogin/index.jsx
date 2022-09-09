@@ -94,12 +94,14 @@ const MultiPlayerLogin = () => {
       )}
 
       {submitForm && isValid ? null : (
+
         <form onSubmit={handleSubmitForm} id="multiPlayerFormContainer">
           <label className="label-multi" htmlFor="username">
             Choose your Nickname
           </label>
           <input
             autoFocus
+
             autoComplete="off"
             type="text"
             placeholder="Enter nickname"
@@ -108,7 +110,9 @@ const MultiPlayerLogin = () => {
             onChange={handleUsernameInput}
           />
           {submitForm && !inputValues.username ? (
+
             <p style={{ color: "red" }}>Please enter a nickname</p>
+
           ) : null}
           <br />
 
@@ -116,6 +120,7 @@ const MultiPlayerLogin = () => {
             Choose your room name
           </label>
           <input
+            role="input"
             autoComplete="off"
             type="text"
             placeholder="Enter room"
@@ -124,7 +129,9 @@ const MultiPlayerLogin = () => {
             onChange={handleRoomInput}
           />
           {submitForm && !inputValues.room ? (
-            <p style={{ color: "red" }}>Please enter a room name</p>
+            <p style={{ color: "red" }} role="warningPara">
+              Please enter a room name
+            </p>
           ) : null}
           <br />
 
@@ -132,6 +139,7 @@ const MultiPlayerLogin = () => {
             How many players (2-5)?
           </label>
           <input
+            role="input"
             min="2"
             autoComplete="off"
             type="number"
@@ -144,14 +152,16 @@ const MultiPlayerLogin = () => {
           (submitForm && inputValues.playerNum.includes(".")) ||
           (submitForm && parseInt(inputValues.playerNum) < 2) ||
           (submitForm && parseInt(inputValues.playerNum) > 5) ? (
-            <p style={{ color: "red" }}>
+            <p style={{ color: "red" }} role="warningPara">
               Please select a number between 2 and 5
             </p>
           ) : null}
           <br />
 
           {submitForm && isValid ? null : (
-            <button className="btn-single">Submit</button>
+
+            <button className="btn-single" role="submit" >Submit</button>
+
           )}
         </form>
       )}
