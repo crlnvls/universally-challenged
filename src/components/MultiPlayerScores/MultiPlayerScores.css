@@ -1,0 +1,95 @@
+.container-leader {
+  display: grid;
+  grid-template-columns: auto;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+/************************************************************************** titles */
+#winnerTitle {
+  font-family: "Press Start 2P", sans-serif;
+  padding: 30px;
+  box-shadow: 1px 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
+  text-shadow: 1px 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
+  font-size: 2rem;
+  margin-top: 3rem;
+  line-height: 1.6;
+  width: 22rem;
+}
+
+#winningUsername {
+  font-size: 2rem;
+  margin-top: 2rem;
+  text-shadow: 1px 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
+}
+
+.fa-solid.fa-trophy {
+  margin-left: 20px;
+  margin-right: 15px;
+  font-size: 40px;
+  text-shadow: 1px 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
+  border-radius: 2rem;
+}
+
+@media (min-width: 576px) {
+  #winnerTitle {
+    width: 40rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #winnerTitle {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  #winnerTitle {
+    font-size: 4rem;
+    width: 50rem;
+    margin-top: 3rem;
+    padding: 1rem 6rem;
+  }
+
+  #winningUsername {
+    font-size: 3rem;
+  }
+
+  .fa-solid.fa-trophy {
+    font-size: 0;
+  }
+}
+
+/************************************************************************** multi players names */
+#multiPlayerContainer {
+  font-family: "Roboto Mono", monospace;
+  list-style: none;
+  height: 16rem;
+  overflow-x: hidden;
+  /* overflow-y: scroll; */
+  box-shadow: 1px 0 2px #fff, 0 0 25px rgb(0 0 255), 0 0 5px #fff;
+  width: 19rem;
+}
+
+#multiPlayerContainer li {
+  font-size: 2rem;
+  line-height: 3rem;
+  text-shadow: none;
+  margin-left: -30px;
+}
+
+@media (min-width: 768px) {
+  #multiPlayerContainer {
+    margin-top: 1rem;
+    width: 33rem;
+  }
+}
+
+@media (min-width: 992px) {
+  #multiPlayerContainer {
+    margin-top: 1rem;
+    width: 43rem;
+  }
+}

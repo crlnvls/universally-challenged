@@ -1,0 +1,66 @@
+.neonText {
+  animation: flicker 3s infinite alternate;
+  color: rgb(236, 232, 232);
+}
+
+/* Flickering animation */
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px rgb(236, 232, 232), 0 0 11px rgb(112, 112, 112),
+      0 0 19px rgb(112, 112, 112), 0 0 40px rgb(33, 185, 220),
+      0 0 80px rgb(0, 208, 255), 0 0 90px rgb(33, 185, 220),
+      0 0 100px rgb(0, 208, 255), 0 0 150px rgb(33, 185, 220);
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+/* Additional styling */
+.container {
+  margin-top: 20vh;
+}
+
+h1,
+h2 {
+  margin-top: 100px;
+  font-size: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  object-fit: scale-down;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    margin-top: 70px;
+  }
+
+  h2 {
+    margin-top: 10px;
+  }
+}
+
+.homeButtons {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px;
+  height: 200px;
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo {
+  object-fit: scale-down;
+  width: 100%;
+  height: 250px;
+}

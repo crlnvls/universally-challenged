@@ -1,0 +1,120 @@
+.header-single {
+  margin-top: 60px;
+  font-family: "Press Start 2P", cursive;
+  padding: 20px;
+  box-shadow: 1px 0 2px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
+  text-shadow: 1px 0 2px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
+}
+
+.btn-single {
+  cursor: pointer;
+  margin-top: 40px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  padding: 20px 30px;
+  font-size: 30px;
+  background-color: #24b2c5e5;
+  box-shadow: 0 0 2px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
+  text-transform: uppercase;
+  font-family: "Press Start 2P", cursive;
+  max-width: 80%;
+}
+
+@media screen and (max-width: 600px) {
+  .btn-single {
+    padding: 20px 30px;
+    font-size: 20px;
+  }
+}
+/************************************************************************** form */
+#singlePlayerFormContainer {
+  margin-top: 2rem;
+}
+
+#singlePlayerFormContainer input::placeholder {
+  color: rgba(255, 255, 255, 0.633);
+}
+
+#singlePlayerFormContainer input[type="text"] {
+  border: 0.5rem solid transparent;
+  color: white;
+  background-color: rgba(150, 193, 216, 0.532);
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+#singlePlayerFormContainer input[type="text"]:focus,
+#singlePlayerFormContainer input[type="text"]:hover {
+  outline: 0.2rem solid #f0f8ff;
+}
+
+#singlePlayerFormContainer p {
+  color: red;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+@media (min-width: 576px) {
+  #singlePlayerFormContainer {
+    margin-top: 3rem;
+  }
+
+  #singlePlayerFormContainer input[type="text"] {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  #singlePlayerFormContainer p {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #singlePlayerFormContainer {
+    margin-top: 3.5rem;
+  }
+
+  #singlePlayerFormContainer input[type="text"] {
+    font-size: 2.5rem;
+    width: 45rem;
+  }
+
+  #singlePlayerFormContainer p {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+  }
+}
+
+/************************************************************************** navigate next */
+#singleWelcome {
+  color: #fff;
+  margin: 1rem 0;
+  font-size: 1.8rem;
+  font-weight: 900;
+  line-height: 1.6;
+}
+
+.fa-solid.fa-spinner.fa-spin-pulse {
+  font-size: 3rem;
+}
+
+@media (min-width: 576px) {
+  #singleWelcome {
+    font-size: 2.5rem;
+  }
+
+  .fa-solid.fa-spinner.fa-spin-pulse {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #singleWelcome {
+    font-size: 3rem;
+    line-height: 1.6;
+  }
+}
