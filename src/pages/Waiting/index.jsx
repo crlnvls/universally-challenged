@@ -17,8 +17,12 @@ const Waiting = () => {
     <>
       <h1 className="header-waiting">Waiting Room </h1>
 
-      <button onClick={moveToNextPage}>Let's play</button>
-      <button onClick={back}>Back</button>
+      <button className="btn-waiting" onClick={back}>
+        Back
+      </button>
+      <button className="btn-waiting" onClick={moveToNextPage}>
+        Let's play
+      </button>
     </>
   );
 };

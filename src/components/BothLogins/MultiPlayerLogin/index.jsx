@@ -8,7 +8,7 @@ const MultiPlayerLogin = () => {
   const [inputValues, setInputValues] = useState({
     username: "",
     room: "",
-    playerNum: ""
+    playerNum: "",
   });
   const [submitForm, setSubmitForm] = useState(false);
   const [isValid, setIsValid] = useState(false);
@@ -64,11 +64,11 @@ const MultiPlayerLogin = () => {
       method: "post",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username: inputValues.username
-      })
+        username: inputValues.username,
+      }),
     };
 
     fetch(`https://universallychallenged.herokuapp.com/users`, options)
@@ -90,31 +90,35 @@ const MultiPlayerLogin = () => {
   return (
     <>
       {submitForm && isValid ? null : (
-        <h1 id="multiPlayerLoginTitle">Create your room</h1>
+        <h1 className="header-multi">Create your room</h1>
       )}
 
       {submitForm && isValid ? null : (
-        <form onSubmit={handleSubmitForm} id="multiPlayerFormContainer" role="form">
-          <label htmlFor="username" role="label">
-            Choose your Username
+
+        <form onSubmit={handleSubmitForm} id="multiPlayerFormContainer">
+          <label className="label-multi" htmlFor="username">
+            Choose your Nickname
           </label>
           <input
-            role="input"
+            autoFocus
+
             autoComplete="off"
             type="text"
-            placeholder="Enter username"
+            placeholder="Enter nickname"
             id="username"
             value={inputValues.username}
             onChange={handleUsernameInput}
           />
           {submitForm && !inputValues.username ? (
-            <p style={{ color: "red" }} role="warningPara">
-              Please enter a username
-            </p>
+
+            <p style={{ color: "red" }}>Please enter a nickname</p>
+
           ) : null}
           <br />
 
-          <label htmlFor="room">Choose your room name</label>
+          <label className="label-multi" htmlFor="room">
+            Choose your room name
+          </label>
           <input
             role="input"
             autoComplete="off"
@@ -131,7 +135,9 @@ const MultiPlayerLogin = () => {
           ) : null}
           <br />
 
-          <label htmlFor="numOfPlayers">How many players (2-5)?</label>
+          <label className="label-multi" htmlFor="numOfPlayers">
+            How many players (2-5)?
+          </label>
           <input
             role="input"
             min="2"
@@ -153,9 +159,9 @@ const MultiPlayerLogin = () => {
           <br />
 
           {submitForm && isValid ? null : (
-            <button className="btn" role="submit">
-              Submit
-            </button>
+
+            <button className="btn-single" role="submit" >Submit</button>
+
           )}
         </form>
       )}

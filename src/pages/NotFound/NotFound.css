@@ -51,11 +51,11 @@
   background-color: rgb(226, 223, 223);
 }
 
-.zoom {
+.animation-link {
   transition: transform 0.2s;
   animation: wiggle 3s linear infinite;
 }
 
-.zoom:hover {
+.animation-link:hover {
   transform: scale(1.2);
 }

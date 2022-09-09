@@ -1,35 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import "./MultiPlayerScores.css";
 
 const MultiPlayerScores = () => {
   /* state variables for: username & score */
-  const [allPlayers, setAllPlayers] = useState({});
-  const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   fetch("https://universallychallenged.herokuapp.com/users")
-  //     .then((response) => response.json())
-  //     .then((data) => console.log(data))
-  //     .catch(console.log(err));
-  // }, []);
-
-  useEffect(() => {
-    async function fetchUsers() {
-      const response = await fetch(
-        "https://universallychallenged.herokuapp.com/users"
-      );
-      const json = await response.json();
-      setAllPlayers((prev) => {
-        prev = json;
-        return prev;
-      });
-    }
-    fetchUsers();
-  }, []);
-
-  // console.log("allPlayers==> ", allPlayers);
 
   const moveBackToCategory = () => {
     navigate("/category");
@@ -39,77 +14,36 @@ const MultiPlayerScores = () => {
     navigate("/");
   };
 
-  function findWinner() {
-    // console.log("allPlayers: ", allPlayers);
-    // console.log("allPlayers.users: ", allPlayers.users);
-
-    let winnerName;
-
-    // BUG
-    const maxScore = Math.max(
-      ...allPlayers.users.map((singleObj) => {
-        return singleObj.scores.animals;
-      })
-    );
-    // console.log("maxScore==> ", maxScore);
-
-    for (let i = 0; i < allPlayers.users.length; i++) {
-      let singleObj = allPlayers.users[i];
-      if (maxScore === singleObj.scores.animals) {
-        winnerName = singleObj.username;
-      }
-    }
-
-    // console.log("winnerName==> ", winnerName);
-    return winnerName;
-
-    // let winnerObj = allPlayers.users.reduce(function (prev, current) {
-    //   if (+current.id > +prev.id) {
-    //     return current;
-    //   } else {
-    //     return prev;
-    //   }
-    // });
-
-    // return winnerObj;
-  }
-
   return (
     <>
-      {/* check length of obj instead of list */}
-      {Object.keys(allPlayers).length !== 0 ? (
-        <section id="winnerPageSectionContainer">
-          <h1 id="winnerTitle">Winner</h1>
 
-          {/* works when cut out, browser refreshed, pasted back in, vs code saved 😩*/}
-          <h3 id="winningUsername">{findWinner()}</h3>
-          <i className="fa-solid fa-trophy"></i>
-          <ul id="multiPlayerContainer">
-            {allPlayers.users?.map((oneUserObj) => {
-              return (
-                <li key={oneUserObj._id}>
-                  <span>{oneUserObj.username}</span>{" "}
-                  <span>{oneUserObj.scores.animals}/5</span>
-                </li>
-              );
-            })}
-          </ul>
-          {/* works when cut out, browser refreshed, pasted back in, vs code saved 😩*/}
+      <h1 className="header-name">Winner</h1>
+      <div className="container-nav">
+        <NavLink to="/leaderboard" className="link-leader">
+          <img
+            src="/alien.png"
+            alt="start button"
+            className="img-nav"
+            width={30}
+          />
+          Leaderboard
+          <img
+            src="/alien.png"
+            alt="start button"
+            width={30}
+            className="img-nav"
+          />
+        </NavLink>
+      </div>
+      <div className="container-score">
+        <button onClick={moveBackToCategory} className="btn-score">
+          Play again
+        </button>
+        <button onClick={moveBackToHome} className="btn-score">
+          Return home
+        </button>
+      </div>
 
-          <div id="btnContainer">
-            <button onClick={moveBackToCategory} className="btn">
-              Play again
-            </button>
-            <button onClick={moveBackToHome} className="btn">
-              Return home
-            </button>
-          </div>
-        </section>
-      ) : (
-        <section id="winnerPageSectionContainer">
-          <h3 id="winningUsername">Loading...</h3>
-        </section>
-      )}
     </>
   );
 };

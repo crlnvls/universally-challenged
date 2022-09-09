@@ -37,7 +37,7 @@ const SinglePlayerLogin = () => {
       setTimeout(moveToNextPage, 0);
 
       // creates new user in mongodb
-      // createNewUser();
+      createNewUser();
     }
   };
 
@@ -46,11 +46,11 @@ const SinglePlayerLogin = () => {
       method: "post",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username: inputValue.username
-      })
+        username: inputValue.username,
+      }),
     };
 
     fetch(`https://universallychallenged.herokuapp.com/users`, options)
@@ -69,7 +69,7 @@ const SinglePlayerLogin = () => {
   return (
     <>
       {submitForm && isValid ? null : (
-        <h1 id="singlePlayerTitle">Choose your username</h1>
+        <h1 className="header-single">Choose your nickname</h1>
       )}
 
       {submitForm && isValid ? null : (
@@ -80,12 +80,13 @@ const SinglePlayerLogin = () => {
             role="form"
           >
             <input
+              autoFocus
               role="input"
               name="username"
               id="username"
               autoComplete="off"
               type="text"
-              placeholder="Enter username"
+              placeholder="Enter nickname"
               value={inputValue.username}
               // value={inputValue.username} // for testing, it needs to be inputValue???
               onChange={handleUsernameInput}
@@ -96,7 +97,7 @@ const SinglePlayerLogin = () => {
             <br />
 
             {submitForm && isValid ? null : (
-              <button role="submit" className="btn">
+              <button role="submit" className="btn-single">
                 Submit
               </button>
             )}

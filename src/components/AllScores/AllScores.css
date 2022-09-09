@@ -1,12 +1,18 @@
-.header-waiting {
+.header-leader {
   margin-top: 100px;
   font-family: "Press Start 2P", cursive;
-  padding: 30px;
+  padding: 20px;
   box-shadow: 1px 0 2px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
   text-shadow: 1px 0 2px #fff, 0 0 25px rgb(0, 0, 255), 0 0 5px #fff;
 }
 
-.btn-waiting {
+.winner {
+  font-family: "Roboto Mono", monospace;
+  font-size: 60px;
+  text-transform: uppercase;
+}
+
+.btn-leader {
   display: flex;
   flex-direction: column;
   margin-left: auto;
@@ -24,6 +30,40 @@
   max-width: 80%;
 }
 
-.btn-waiting:hover {
+.btn-leader:hover {
   background-color: #921d82;
+}
+
+.gap-leader {
+  margin-bottom: 40px;
+}
+
+.trophy {
+  animation: wiggles 3s linear infinite;
+}
+
+@keyframes wiggles {
+  0%,
+  7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-10deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(10deg);
+  }
+  35% {
+    transform: rotateZ(-10deg);
+  }
+  40%,
+  100% {
+    transform: rotateZ(0);
+  }
 }

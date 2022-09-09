@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import DataContext from "../../context/dataContext";
-import { useNavigate } from "react-router-dom";
 
 import "./style.css";
 

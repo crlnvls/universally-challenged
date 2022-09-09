@@ -6,3 +6,4 @@ export { default as ScoreMulti } from "./ScoreMulti";
 export { default as CreateRoom } from "./CreateRoom";
 export { default as Subjects } from "./Subjects";
 export { default as Waiting } from "./Waiting";
+export { default as LeaderBoard } from "./LeaderBoard";
