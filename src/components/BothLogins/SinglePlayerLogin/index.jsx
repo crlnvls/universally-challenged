@@ -92,7 +92,7 @@ const SinglePlayerLogin = () => {
               onChange={handleUsernameInput}
             />
             {submitForm && !inputValue.username ? (
-              <p role="paragraph">Please enter a username</p>
+              <p role="paragraph">Please enter a nickname</p>
             ) : null}
             <br />
 
